@@ -4,7 +4,7 @@ import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
 import com.brandon3055.draconicevolution.common.items.*;
 import com.brandon3055.draconicevolution.common.items.armor.DraconicArmor;
 import com.brandon3055.draconicevolution.common.items.tools.*;
-import com.brandon3055.draconicevolution.common.items.weapons.DraconicBow;
+import com.brandon3055.draconicevolution.common.items.weapons.ChaoticBow;
 import com.brandon3055.draconicevolution.common.items.weapons.DraconicSword;
 import com.brandon3055.draconicevolution.common.lib.References;
 import com.brandon3055.draconicevolution.common.lib.Strings;
@@ -33,6 +33,7 @@ public class ModItems {
     public static ItemArmor chaoticBoots;
     public static Item chaoticDestructionStaff;
     public static ItemDE chaotiumIngot;
+    public static ItemDE enderArrow;
 
     public static ItemDE chaotiumEnergyCore;
     public static ItemDE chaotiumFluxCapacitor;
@@ -45,6 +46,7 @@ public class ModItems {
     public static ItemDE nugget;
 
     public static void init() {
+        enderArrow = new EnderArrow();
         chaotiumIngot = new chaotiumIngot();
         chaoticDestructionStaff = new ChaoticDistructionStaff();
         chaoticPickaxe = new ChaoticPickaxe();
