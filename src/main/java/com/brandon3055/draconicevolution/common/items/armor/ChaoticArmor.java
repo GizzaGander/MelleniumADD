@@ -61,8 +61,8 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @SideOnly(Side.CLIENT)
     private IIcon bootsIcon;
 
-    private int maxEnergy = BalanceConfigHandler.draconicArmorBaseStorage;
-    private int maxTransfer = BalanceConfigHandler.draconicArmorMaxTransfer;
+    private int maxEnergy = BalanceConfigHandler.chaoticArmorBaseStorage;
+    private int maxTransfer = BalanceConfigHandler.chaoticArmorMaxTransfer;
 
     public ChaoticArmor(ArmorMaterial material, int armorType, String name) {
         super(material, 0, armorType);
@@ -106,18 +106,18 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining) {
-        if (stack.getItem() == ModItems.draconicHelm) return helmIcon;
-        else if (stack.getItem() == ModItems.draconicChest) return chestIcon;
-        else if (stack.getItem() == ModItems.draconicLeggs) return leggsIcon;
+        if (stack.getItem() == ModItems.chaoticHelm) return helmIcon;
+        else if (stack.getItem() == ModItems.chaoticChest) return chestIcon;
+        else if (stack.getItem() == ModItems.chaoticLeggs) return leggsIcon;
         else return bootsIcon;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIconIndex(ItemStack stack) {
-        if (stack.getItem() == ModItems.draconicHelm) return helmIcon;
-        else if (stack.getItem() == ModItems.draconicChest) return chestIcon;
-        else if (stack.getItem() == ModItems.draconicLeggs) return leggsIcon;
+        if (stack.getItem() == ModItems.chaoticHelm) return helmIcon;
+        else if (stack.getItem() == ModItems.chaoticChest) return chestIcon;
+        else if (stack.getItem() == ModItems.chaoticLeggs) return leggsIcon;
         else return bootsIcon;
     }
 
@@ -125,11 +125,11 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @SideOnly(Side.CLIENT)
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
         if (!ConfigHandler.useOldArmorModel)
-            return References.RESOURCESPREFIX + "textures/models/armor/armorDraconic.png";
-        if (stack.getItem() == ModItems.draconicHelm || stack.getItem() == ModItems.draconicChest || stack.getItem() == ModItems.draconicBoots) {
-            return References.RESOURCESPREFIX + "textures/models/armor/draconic_layer_1.png";
+            return References.RESOURCESPREFIX + "textures/models/armor/armorChaotic.png";
+        if (stack.getItem() == ModItems.chaoticHelm || stack.getItem() == ModItems.chaoticChest || stack.getItem() == ModItems.chaoticBoots) {
+            return References.RESOURCESPREFIX + "textures/models/armor/chaotic_layer_1.png";
         } else {
-            return References.RESOURCESPREFIX + "textures/models/armor/draconic_layer_2.png";
+            return References.RESOURCESPREFIX + "textures/models/armor/chaotic_layer_2.png";
         }
     }
 
@@ -183,10 +183,10 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {
         if (stack == null) return;
-        if (stack.getItem() == ModItems.draconicHelm) {
+        if (stack.getItem() == ModItems.chaoticHelm) {
             if (world.isRemote) return;
-            if (this.getEnergyStored(stack) >= BalanceConfigHandler.draconicArmorEnergyToRemoveEffects && clearNegativeEffects(player)) {
-                this.extractEnergy(stack, BalanceConfigHandler.draconicArmorEnergyToRemoveEffects, false);
+            if (this.getEnergyStored(stack) >= BalanceConfigHandler.chaoticArmorEnergyToRemoveEffects && clearNegativeEffects(player)) {
+                this.extractEnergy(stack, BalanceConfigHandler.chaoticArmorEnergyToRemoveEffects, false);
             }
             if (player.worldObj.getBlockLightValue((int) Math.floor(player.posX), (int) player.posY + 1, (int) Math.floor(player.posZ)) < 5 && IConfigurableItem.ProfileHelper.getBoolean(stack, "ArmorNVActive", false)) {
                 player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 419, 0, true));
@@ -226,7 +226,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
                     int id = potion.getPotionID();
                     if (ReflectionHelper.getPrivateValue(Potion.class, Potion.potionTypes[id], new String[]{"isBadEffect", "field_76418_K", "J"})) {
                         if (potion.getPotionID() == Potion.digSlowdown.id && ModHelper.isHoldingCleaver(player)) break;
-                        if ((player.getHeldItem() == null || (player.getHeldItem().getItem() != ModItems.wyvernBow && player.getHeldItem().getItem() != ModItems.draconicBow)) || id != 2) {
+                        if ((player.getHeldItem() == null || ( player.getHeldItem().getItem() != ModItems.chaoticBow)) || id != 2) {
                             player.removePotionEffect(id);
                             flag = true;
                         }
@@ -272,7 +272,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     public int getMaxEnergyStored(ItemStack container) {
         int points = IUpgradableItem.EnumUpgrade.RF_CAPACITY.getUpgradePoints(container);
-        return BalanceConfigHandler.draconicArmorBaseStorage + points * BalanceConfigHandler.draconicArmorStoragePerUpgrade;
+        return BalanceConfigHandler.chaoticArmorBaseStorage + points * BalanceConfigHandler.chaoticArmorStoragePerUpgrade;
     }
 
     /* Misc */
@@ -348,10 +348,10 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
 
         if (!ConfigHandler.useOriginal3DArmorModel) {
             if (model == null) {
-                if (armorType == 0) model = new ModelDraconicArmor(1.1F, true, false, false, false);
-                else if (armorType == 1) model = new ModelDraconicArmor(1.1F, false, true, false, false);
-                else if (armorType == 2) model = new ModelDraconicArmor(1.1F, false, false, true, false);
-                else model = new ModelDraconicArmor(1.1F, false, false, false, true);
+                if (armorType == 0) model = new ModelChaoticArmor(1.1F, true, false, false, false);
+                else if (armorType == 1) model = new ModelChaoticArmor(1.1F, false, true, false, false);
+                else if (armorType == 2) model = new ModelChaoticArmor(1.1F, false, false, true, false);
+                else model = new ModelChaoticArmor(1.1F, false, false, false, true);
                 this.model.bipedHead.showModel = (armorType == 0);
                 this.model.bipedHeadwear.showModel = (armorType == 0);
                 this.model.bipedBody.showModel = ((armorType == 1) || (armorType == 2));
@@ -362,10 +362,10 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
             }
         } else {
             if (model == null) {
-                if (armorType == 0) model = new ModelDraconicArmorOld(1.1F, true, false, false, false, true);
-                else if (armorType == 1) model = new ModelDraconicArmorOld(1.1F, false, true, false, false, true);
-                else if (armorType == 2) model = new ModelDraconicArmorOld(1.1F, false, false, true, false, true);
-                else model = new ModelDraconicArmorOld(1.1F, false, false, false, true, true);
+                if (armorType == 0) model = new ModelChaoticArmorOld(1.1F, true, false, false, false, true);
+                else if (armorType == 1) model = new ModelChaoticArmorOld(1.1F, false, true, false, false, true);
+                else if (armorType == 2) model = new ModelChaoticArmorOld(1.1F, false, false, true, false, true);
+                else model = new ModelChaoticArmorOld(1.1F, false, false, false, true, true);
                 this.model.bipedHead.showModel = (armorType == 0);
                 this.model.bipedHeadwear.showModel = (armorType == 0);
                 this.model.bipedBody.showModel = ((armorType == 1) || (armorType == 2));
@@ -412,7 +412,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
 
     @Override
     public int getUpgradeCap(ItemStack itemstack) {
-        return BalanceConfigHandler.draconicArmorMaxUpgrades;
+        return BalanceConfigHandler.chaoticArmorMaxUpgrades;
     }
 
     @Override
@@ -434,9 +434,9 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.draconicArmorMaxCapacityUpgradePoints;
+            return BalanceConfigHandler.chaoticcArmorMaxCapacityUpgradePoints;
         }
-        return BalanceConfigHandler.draconicArmorMaxUpgradePoints;
+        return BalanceConfigHandler.chaoticArmorMaxUpgradePoints;
     }
 
     @Override
@@ -450,7 +450,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
             return (int) (getProtectionShare() * 25) + (armorType == 2 ? 2 : 0);
         }
         if (upgradeIndex == EnumUpgrade.SHIELD_RECOVERY.index) {
-            return BalanceConfigHandler.draconicArmorMinShieldRecovery;
+            return BalanceConfigHandler.chaoticArmorMinShieldRecovery;
         }
         return 0;
     }
@@ -514,7 +514,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
 
     @Override
     public int getEnergyPerProtectionPoint() {
-        return BalanceConfigHandler.draconicArmorEnergyPerProtectionPoint;
+        return BalanceConfigHandler.chaoticArmorEnergyPerProtectionPoint;
     }
 
     //endregion
