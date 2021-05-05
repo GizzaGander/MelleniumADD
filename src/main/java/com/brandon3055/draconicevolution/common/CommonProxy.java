@@ -50,7 +50,6 @@ public class CommonProxy {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         BalanceConfigHandler.init(event.getModConfigurationDirectory());
         registerEventListeners(event.getSide());
-        ModBlocks.init();
         ModItems.init();
         ContributorHandler.init();
         registerTileEntities();
