@@ -114,7 +114,7 @@ public class ClientProxy2 extends CommonProxy2 {
 
     public void registerRendering() {
         //Item Renderers
-        MinecraftForgeClient.registerItemRenderer(ModItems.chaoticBow, new RenderBow());
+        MinecraftForgeClient.registerItemRenderer(ModItems.chaoticBow, new RenderBow2());
 
         if (!ConfigHandler.useOldArmorModel) {
             MinecraftForgeClient.registerItemRenderer(ModItems.chaoticHelm, new RenderArmor(ModItems.chaoticHelm));
@@ -130,7 +130,7 @@ public class ClientProxy2 extends CommonProxy2 {
             MinecraftForgeClient.registerItemRenderer(ModItems.chaoticShovel, new RenderTool("models/tools/ChaoticShovel.obj", "textures/models/tools/ChaoticShovel.png", (IRenderTweak) ModItems.chaoticShovel));
             MinecraftForgeClient.registerItemRenderer(ModItems.chaoticDestructionStaff, new RenderTool("models/tools/ChaoticStaffOfPower.obj", "textures/models/tools/ChaoticStaffOfPower.png", (IRenderTweak) ModItems.chaoticDestructionStaff));
             MinecraftForgeClient.registerItemRenderer(ModItems.chaoticHoe, new RenderTool("models/tools/ChaoticHoe.obj", "textures/models/tools/ChaoticHoe.png", (IRenderTweak) ModItems.chaoticHoe));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticBow, new RenderBowModel(true));
+            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticBow, new RenderBowModel2(true));
         }
 
 
