@@ -1,7 +1,7 @@
 package com.Mellenium.Addons;
 
 import com.brandon3055.draconicevolution.client.creativetab.DETab;
-import com.brandon3055.draconicevolution.common.CommonProxy;
+import com.brandon3055.draconicevolution.common.CommonProxy2;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
 import com.brandon3055.draconicevolution.common.lib.References;
 import com.brandon3055.draconicevolution.common.utills.LogHelper;
@@ -26,7 +26,7 @@ public class MelleniumAddons {
     public static MelleniumAddons instance;
 
     @SidedProxy(clientSide = References.CLIENTPROXYLOCATION, serverSide = References.SERVERPROXYLOCATION)
-    public static CommonProxy proxy;
+    public static CommonProxy2 proxy;
 
     public static CreativeTabs tabToolsWeapons = new DETab(CreativeTabs.getNextID(), References.MODID, "toolsAndWeapons", 0);
 

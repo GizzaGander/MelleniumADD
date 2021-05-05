@@ -44,7 +44,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class CommonProxy {
+public class CommonProxy2 {
 
     public void preInit(FMLPreInitializationEvent event) {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
@@ -55,8 +55,6 @@ public class CommonProxy {
         registerTileEntities();
         initializeNetwork();
         registerOres();
-
-        DraconicEvolution.reaperEnchant = new EnchantmentReaper(ConfigHandler.reaperEnchantID);
 //
 //		Potion[] potionTypes = null;
 //		LogHelper.info("Expanding Potion array size to 256");
@@ -80,8 +78,6 @@ public class CommonProxy {
 //				e.printStackTrace();
 //			}
 //		}
-
-        Achievements.addModAchievements();
         LogHelper.info("Finished PreInitialization");
     }
 
@@ -155,12 +151,6 @@ public class CommonProxy {
             OreDictionary.registerOre("blockDraconium", new ItemStack(ModBlocks.draconiumBlock));
         if (ModBlocks.isEnabled(ModBlocks.draconicBlock))
             OreDictionary.registerOre("blockDraconiumAwakened", new ItemStack(ModBlocks.draconicBlock));
-
-        if (ModItems.isEnabled(ModItems.chaotiumIngot))
-            OreDictionary.registerOre("ingotChaotium", ModItems.chaotiumIngot);
-        if (ModItems.isEnabled(ModItems.nugget)) {
-            OreDictionary.registerOre("nuggetChaotic", ModItems.nuggetChaotic.copy());
-        }
     }
 
     //@Callback

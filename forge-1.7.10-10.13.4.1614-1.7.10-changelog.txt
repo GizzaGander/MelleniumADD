@@ -1,6 +1,6 @@
 Changelog:
 Build 1614:
-	LexManos: Fix dispensers equipping armor on players in the wrong slot Closes #1649
+	LexManos: Fix rs equipping armor on players in the wrong slot Closes #1649
 
 Build 1.8.8-11.15.0.1613-1.8.8:
 	bx9j52xd: Fixed that oldLight is not being used.
