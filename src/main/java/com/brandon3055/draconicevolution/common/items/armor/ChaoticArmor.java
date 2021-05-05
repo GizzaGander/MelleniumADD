@@ -9,8 +9,8 @@ import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.DraconicEvolution;
-import com.brandon3055.draconicevolution.client.model.ModelDraconicArmor;
-import com.brandon3055.draconicevolution.client.model.ModelDraconicArmorOld;
+import com.brandon3055.draconicevolution.client.model.ModelChaoticArmor;
+import com.brandon3055.draconicevolution.client.model.ModelChaoticArmorOld;
 import com.brandon3055.draconicevolution.common.ModItems;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler;
@@ -434,7 +434,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.chaoticcArmorMaxCapacityUpgradePoints;
+            return BalanceConfigHandler.chaoticArmorMaxCapacityUpgradePoints;
         }
         return BalanceConfigHandler.chaoticArmorMaxUpgradePoints;
     }
