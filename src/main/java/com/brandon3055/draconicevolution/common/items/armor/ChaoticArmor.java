@@ -51,7 +51,7 @@ import thaumcraft.api.nodes.IRevealer;
  * Created by Brandon on 3/07/2014.
  */
 @Optional.InterfaceList(value = {@Optional.Interface(iface = "thaumcraft.api.IGoggles", modid = "Thaumcraft"), @Optional.Interface(iface = "thaumcraft.api.nodes.IRevealer", modid = "Thaumcraft")})
-public class DraconicArmor extends ItemArmor implements ISpecialArmor, IConfigurableItem, IInventoryTool, IGoggles, IRevealer, IUpgradableItem, ICustomArmor {//TODO Wings
+public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigurableItem, IInventoryTool, IGoggles, IRevealer, IUpgradableItem, ICustomArmor {//TODO Wings
     @SideOnly(Side.CLIENT)
     private IIcon helmIcon;
     @SideOnly(Side.CLIENT)
@@ -64,7 +64,7 @@ public class DraconicArmor extends ItemArmor implements ISpecialArmor, IConfigur
     private int maxEnergy = BalanceConfigHandler.draconicArmorBaseStorage;
     private int maxTransfer = BalanceConfigHandler.draconicArmorMaxTransfer;
 
-    public DraconicArmor(ArmorMaterial material, int armorType, String name) {
+    public ChaoticArmor(ArmorMaterial material, int armorType, String name) {
         super(material, 0, armorType);
         this.setUnlocalizedName(name);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
@@ -97,10 +97,10 @@ public class DraconicArmor extends ItemArmor implements ISpecialArmor, IConfigur
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        helmIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_helmet");
-        chestIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_chestplate");
-        leggsIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_leggings");
-        bootsIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_boots");
+        helmIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_helmet");
+        chestIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_chestplate");
+        leggsIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_leggings");
+        bootsIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_boots");
     }
 
     @Override
