@@ -39,13 +39,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
-public class DraconicSword extends ItemSword implements IEnergyContainerWeaponItem, IInventoryTool, IRenderTweak, IUpgradableItem, IHudDisplayItem {
-    protected int capacity = BalanceConfigHandler.draconicWeaponsBaseStorage;
-    protected int maxReceive = BalanceConfigHandler.draconicWeaponsMaxTransfer;
-    protected int maxExtract = BalanceConfigHandler.draconicWeaponsMaxTransfer;
+public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponItem, IInventoryTool, IRenderTweak, IUpgradableItem, IHudDisplayItem {
+    protected int capacity = BalanceConfigHandler.chaoticWeaponsBaseStorage;
+    protected int maxReceive = BalanceConfigHandler.chaoticWeaponsMaxTransfer;
+    protected int maxExtract = BalanceConfigHandler.chaoticWeaponsMaxTransfer;
 
-    public DraconicSword() {
-        super(ModItems.AWAKENED);
+    public ChaoticSword() {
+        super(ModItems.CHAOTIC);
         this.setUnlocalizedName(Strings.draconicSwordName);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
         if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, Strings.draconicSwordName);
@@ -152,7 +152,7 @@ public class DraconicSword extends ItemSword implements IEnergyContainerWeaponIt
     @Override
     public int getMaxEnergyStored(ItemStack container) {
         int points = IUpgradableItem.EnumUpgrade.RF_CAPACITY.getUpgradePoints(container);
-        return BalanceConfigHandler.draconicWeaponsBaseStorage + points * BalanceConfigHandler.draconicWeaponsStoragePerUpgrade;
+        return BalanceConfigHandler.chaoticWeaponsBaseStorage + points * BalanceConfigHandler.chaoticWeaponsStoragePerUpgrade;
     }
 
     @Override
@@ -236,7 +236,7 @@ public class DraconicSword extends ItemSword implements IEnergyContainerWeaponIt
 
     @Override
     public int getUpgradeCap(ItemStack itemstack) {
-        return BalanceConfigHandler.draconicWeaponsMaxUpgrades;
+        return BalanceConfigHandler.chaoticWeaponsMaxUpgrades;
     }
 
     @Override
@@ -247,15 +247,15 @@ public class DraconicSword extends ItemSword implements IEnergyContainerWeaponIt
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.draconicWeaponsMaxCapacityUpgradePoints;
+            return BalanceConfigHandler.chaoticWeaponsMaxCapacityUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ATTACK_AOE.index) {
-            return BalanceConfigHandler.draconicWeaponsMaxAttackAOEUpgradePoints;
+            return BalanceConfigHandler.chaoticWeaponsMaxAttackAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ATTACK_DAMAGE.index) {
-            return BalanceConfigHandler.draconicWeaponsMaxAttackDamageUpgradePoints;
+            return BalanceConfigHandler.chaoticWeaponsMaxAttackDamageUpgradePoints;
         }
-        return BalanceConfigHandler.draconicWeaponsMaxUpgradePoints;
+        return BalanceConfigHandler.chaoticWeaponsMaxUpgradePoints;
     }
 
     @Override
@@ -266,10 +266,10 @@ public class DraconicSword extends ItemSword implements IEnergyContainerWeaponIt
     @Override
     public int getBaseUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.ATTACK_AOE.index) {
-            return BalanceConfigHandler.draconicWeaponsMinAttackAOEUpgradePoints;
+            return BalanceConfigHandler.chaoticWeaponsMinAttackAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ARROW_DAMAGE.index) {
-            return BalanceConfigHandler.draconicWeaponsMinAttackDamageUpgradePoints;
+            return BalanceConfigHandler.chaoticWeaponsMinAttackDamageUpgradePoints;
         }
         return 0;
     }
@@ -316,6 +316,6 @@ public class DraconicSword extends ItemSword implements IEnergyContainerWeaponIt
 
     @Override
     public int getEnergyPerAttack() {
-        return BalanceConfigHandler.draconicWeaponsEnergyPerAttack;
+        return BalanceConfigHandler.chaoticWeaponsEnergyPerAttack;
     }
 }

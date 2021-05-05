@@ -18,17 +18,17 @@ import net.minecraft.util.StatCollector;
 import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
-public class DraconicPickaxe extends MiningTool implements IInventoryTool, IRenderTweak {
+public class ChaoticPickaxe extends MiningTool implements IInventoryTool, IRenderTweak {
 
 
-    public DraconicPickaxe() {
-        super(ModItems.AWAKENED);
+    public ChaoticPickaxe() {
+        super(ModItems.CHAOTIC);
         this.setHarvestLevel("pickaxe", 10);
-        this.setUnlocalizedName(Strings.draconicPickaxeName);
-        this.setCapacity(BalanceConfigHandler.draconicToolsBaseStorage);
-        this.setMaxExtract(BalanceConfigHandler.draconicToolsMaxTransfer);
-        this.setMaxReceive(BalanceConfigHandler.draconicToolsMaxTransfer);
-        this.energyPerOperation = BalanceConfigHandler.draconicToolsEnergyPerAction;
+        this.setUnlocalizedName(Strings.chaoticPickaxeName);
+        this.setCapacity(BalanceConfigHandler.chaoticToolsBaseStorage);
+        this.setMaxExtract(BalanceConfigHandler.chaoticToolsMaxTransfer);
+        this.setMaxReceive(BalanceConfigHandler.chaoticToolsMaxTransfer);
+        this.energyPerOperation = BalanceConfigHandler.chaoticToolsEnergyPerAction;
         ModItems.register(this);
     }
 
@@ -77,7 +77,7 @@ public class DraconicPickaxe extends MiningTool implements IInventoryTool, IRend
 
     @Override
     public int getUpgradeCap(ItemStack itemstack) {
-        return BalanceConfigHandler.draconicToolsMaxUpgrades;
+        return BalanceConfigHandler.chaoticToolsMaxUpgrades;
     }
 
     @Override
@@ -93,36 +93,36 @@ public class DraconicPickaxe extends MiningTool implements IInventoryTool, IRend
     @Override
     public int getCapacity(ItemStack stack) {
         int points = IUpgradableItem.EnumUpgrade.RF_CAPACITY.getUpgradePoints(stack);
-        return BalanceConfigHandler.draconicToolsBaseStorage + points * BalanceConfigHandler.draconicToolsStoragePerUpgrade;
+        return BalanceConfigHandler.chaoticToolsBaseStorage + points * BalanceConfigHandler.chaoticToolsStoragePerUpgrade;
     }
 
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.draconicToolsMaxCapacityUpgradePoints;
+            return BalanceConfigHandler.chaoticToolsMaxCapacityUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_AOE.index) {
-            return BalanceConfigHandler.draconicToolsMaxDigAOEUpgradePoints;
+            return BalanceConfigHandler.chaoticToolsMaxDigAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_DEPTH.index) {
-            return BalanceConfigHandler.draconicToolsMaxDigDepthUpgradePoints;
+            return BalanceConfigHandler.chaoticToolsMaxDigDepthUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_SPEED.index) {
-            return BalanceConfigHandler.draconicToolsMaxDigSpeedUpgradePoints;
+            return BalanceConfigHandler.chaoticToolsMaxDigSpeedUpgradePoints;
         }
-        return BalanceConfigHandler.draconicToolsMaxUpgradePoints;
+        return BalanceConfigHandler.chaoticToolsMaxUpgradePoints;
     }
 
     @Override
     public int getBaseUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.DIG_AOE.index) {
-            return BalanceConfigHandler.draconicToolsMinDigAOEUpgradePoints;
+            return BalanceConfigHandler.chaoticToolsMinDigAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_DEPTH.index) {
-            return BalanceConfigHandler.draconicToolsMinDigDepthUpgradePoints;
+            return BalanceConfigHandler.chaoticToolsMinDigDepthUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_SPEED.index) {
-            return BalanceConfigHandler.draconicToolsMinDigSpeedUpgradePoints;
+            return BalanceConfigHandler.chaoticToolsMinDigSpeedUpgradePoints;
         }
         return 0;
     }

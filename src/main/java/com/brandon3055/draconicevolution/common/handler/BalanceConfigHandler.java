@@ -36,6 +36,13 @@ public class BalanceConfigHandler {
     public static final int chaoticStaffMaxAttackAOEUpgradePoints = 13;
     public static final int chaoticStaffMinAttackDamageUpgradePoints = 0;
     public static final int chaoticStaffMaxAttackDamageUpgradePoints = 64;
+    public static int wyvernCapacitorBaseStorage = 80000000;
+    public static int wyvernCapacitorStoragePerUpgrade = 50000000;
+    public static int wyvernCapacitorMaxReceive = 1000000;
+    public static int wyvernCapacitorMaxExtract = 10000000;
+    public static int wyvernCapacitorMaxUpgradePoints = 50;
+    public static int wyvernCapacitorMaxCapacityUpgradePoints = 50;
+    public static int wyvernCapacitorMaxUpgrades = 3;
     public static int chaoticArmorBaseStorage = 10000000;
     public static int chaoticArmorStoragePerUpgrade = 5000000;
     public static int chaoticArmorMaxTransfer = 500000;

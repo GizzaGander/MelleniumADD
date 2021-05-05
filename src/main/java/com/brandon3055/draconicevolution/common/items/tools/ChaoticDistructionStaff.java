@@ -33,7 +33,7 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
 
     public ChaoticDistructionStaff() {
         super(ModItems.CHAOTIC);
-        this.setUnlocalizedName(Strings.draconicDStaffName);
+        this.setUnlocalizedName(Strings.chaoticDStaffName);
         this.setHarvestLevel("pickaxe", 10);
         this.setHarvestLevel("shovel", 10);
         this.setHarvestLevel("axe", 10);

@@ -30,11 +30,11 @@ import net.minecraft.world.World;
 /**
  * Created by Brandon on 24/11/2014.
  */
-public class DraconiumFluxCapacitor extends RFItemBase implements IUpgradableItem {
+public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem {
     IIcon[] icons = new IIcon[2];
 
-    public DraconiumFluxCapacitor() {
-        this.setUnlocalizedName(Strings.draconiumFluxCapacitorName);
+    public ChaotiumFluxCapacitor() {
+        this.setUnlocalizedName(Strings.chaotiumFluxCapacitorName);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
         this.setHasSubtypes(true);
         this.setMaxStackSize(1);
@@ -61,7 +61,7 @@ public class DraconiumFluxCapacitor extends RFItemBase implements IUpgradableIte
         list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 0), "Energy", 0));
         list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 0), "Energy", BalanceConfigHandler.wyvernCapacitorBaseStorage));
         list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 1), "Energy", 0));
-        list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 1), "Energy", BalanceConfigHandler.draconicCapacitorBaseStorage));
+        list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 1), "Energy", BalanceConfigHandler.chaoticCapacitorBaseStorage));
     }
 
     @Override
@@ -72,17 +72,17 @@ public class DraconiumFluxCapacitor extends RFItemBase implements IUpgradableIte
     @Override
     public int getCapacity(ItemStack stack) {
         int points = EnumUpgrade.RF_CAPACITY.getUpgradePoints(stack);
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorBaseStorage + points * BalanceConfigHandler.wyvernCapacitorStoragePerUpgrade : stack.getItemDamage() == 1 ? BalanceConfigHandler.draconicCapacitorBaseStorage + points * BalanceConfigHandler.draconicCapacitorStoragePerUpgrade : 0;
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorBaseStorage + points * BalanceConfigHandler.wyvernCapacitorStoragePerUpgrade : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorBaseStorage + points * BalanceConfigHandler.chaoticCapacitorStoragePerUpgrade : 0;
     }
 
     @Override
     public int getMaxExtract(ItemStack stack) {
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxExtract : stack.getItemDamage() == 1 ? BalanceConfigHandler.draconicCapacitorMaxExtract : 0;
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxExtract : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxExtract : 0;
     }
 
     @Override
     public int getMaxReceive(ItemStack stack) {
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxReceive : stack.getItemDamage() == 1 ? BalanceConfigHandler.draconicCapacitorMaxReceive : 0;
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxReceive : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxReceive : 0;
     }
 
     @Override
@@ -97,7 +97,7 @@ public class DraconiumFluxCapacitor extends RFItemBase implements IUpgradableIte
                 int max = Math.min(getEnergyStored(container), getMaxExtract(container));
                 ItemStack stack = player.inventory.getStackInSlot(i);
 
-                if (stack != null && stack.getItem() instanceof IEnergyContainerItem && stack.getItem() != ModItems.draconiumFluxCapacitor) {
+                if (stack != null && stack.getItem() instanceof IEnergyContainerItem && stack.getItem() != ModItems.chaotiumFluxCapacitor) {
                     IEnergyContainerItem item = (IEnergyContainerItem) stack.getItem();
                     extractEnergy(container, item.receiveEnergy(stack, max, false), false);
                 }
@@ -109,7 +109,7 @@ public class DraconiumFluxCapacitor extends RFItemBase implements IUpgradableIte
                 int max = Math.min(getEnergyStored(container), getMaxExtract(container));
                 ItemStack stack = player.getEquipmentInSlot(i);
 
-                if (stack != null && stack.getItem() instanceof IEnergyContainerItem && stack.getItem() != ModItems.draconiumFluxCapacitor) {
+                if (stack != null && stack.getItem() instanceof IEnergyContainerItem && stack.getItem() != ModItems.chaotiumFluxCapacitor) {
                     IEnergyContainerItem item = (IEnergyContainerItem) stack.getItem();
                     extractEnergy(container, item.receiveEnergy(stack, max, false), false);
                 }
@@ -163,7 +163,7 @@ public class DraconiumFluxCapacitor extends RFItemBase implements IUpgradableIte
 
     @Override
     public int getUpgradeCap(ItemStack stack) {
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxUpgrades : stack.getItemDamage() == 1 ? BalanceConfigHandler.draconicCapacitorMaxUpgrades : 0;
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxUpgrades : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxUpgrades : 0;
     }
 
     @Override
@@ -173,7 +173,7 @@ public class DraconiumFluxCapacitor extends RFItemBase implements IUpgradableIte
 
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
-        return Math.max(BalanceConfigHandler.wyvernCapacitorMaxUpgradePoints, BalanceConfigHandler.draconicCapacitorMaxUpgradePoints);
+        return Math.max(BalanceConfigHandler.wyvernCapacitorMaxUpgradePoints, BalanceConfigHandler.chaoticCapacitorMaxUpgradePoints);
     }
 
     @Override
@@ -182,9 +182,9 @@ public class DraconiumFluxCapacitor extends RFItemBase implements IUpgradableIte
             return getMaxUpgradePoints(upgradeIndex);
         }
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxCapacityUpgradePoints : stack.getItemDamage() == 1 ? BalanceConfigHandler.draconicCapacitorMaxCapacityUpgradePoints : getMaxUpgradePoints(upgradeIndex);
+            return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxCapacityUpgradePoints : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxCapacityUpgradePoints : getMaxUpgradePoints(upgradeIndex);
         }
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxUpgradePoints : stack.getItemDamage() == 1 ? BalanceConfigHandler.draconicCapacitorMaxUpgradePoints : getMaxUpgradePoints(upgradeIndex);
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxUpgradePoints : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxUpgradePoints : getMaxUpgradePoints(upgradeIndex);
     }
 
     @Override

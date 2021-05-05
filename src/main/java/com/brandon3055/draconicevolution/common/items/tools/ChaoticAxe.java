@@ -27,7 +27,7 @@ public class ChaoticAxe extends MiningTool implements IInventoryTool, IRenderTwe
     public ChaoticAxe() {
         super(ModItems.CHAOTIC);
         this.setHarvestLevel("axe", 10);
-        this.setUnlocalizedName(Strings.draconicAxeName);
+        this.setUnlocalizedName(Strings.chaoticAxeName);
         this.setCapacity(BalanceConfigHandler.chaoticToolsBaseStorage);
         this.setMaxExtract(BalanceConfigHandler.chaoticToolsMaxTransfer);
         this.setMaxReceive(BalanceConfigHandler.chaoticToolsMaxTransfer);

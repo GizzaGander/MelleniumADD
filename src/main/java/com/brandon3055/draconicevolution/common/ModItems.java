@@ -2,10 +2,10 @@ package com.brandon3055.draconicevolution.common;
 
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
 import com.brandon3055.draconicevolution.common.items.*;
-import com.brandon3055.draconicevolution.common.items.armor.DraconicArmor;
+import com.brandon3055.draconicevolution.common.items.armor.ChaoticArmor;
 import com.brandon3055.draconicevolution.common.items.tools.*;
 import com.brandon3055.draconicevolution.common.items.weapons.ChaoticBow;
-import com.brandon3055.draconicevolution.common.items.weapons.DraconicSword;
+import com.brandon3055.draconicevolution.common.items.weapons.ChaoticSword;
 import com.brandon3055.draconicevolution.common.lib.References;
 import com.brandon3055.draconicevolution.common.lib.Strings;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -47,7 +47,7 @@ public class ModItems {
 
     public static void init() {
         enderArrow = new EnderArrow();
-        chaotiumIngot = new chaotiumIngot();
+        chaotiumIngot = new ChaotiumIngot();
         chaoticDestructionStaff = new ChaoticDistructionStaff();
         chaoticPickaxe = new ChaoticPickaxe();
         chaoticAxe = new ChaoticAxe();
@@ -61,8 +61,8 @@ public class ModItems {
         chaoticBoots = new ChaoticArmor(CHAOTIC_ARMOR, 3, Strings.chaoticBootsName);
 
         chaoticCore = new ChaoticCore();
-        chaotiumEnergyCore = new chaoticEnergyCore();
-        chaotiumFluxCapacitor = new chaoticFluxCapacitor();
+        chaotiumEnergyCore = new ChaotiumEnergyCore();
+        chaotiumFluxCapacitor = new ChaotiumFluxCapacitor();
 
         //Custom ItemStacks
         chaoticEnergyCore = new ItemStack(ModItems.chaotiumEnergyCore, 1, 1);
