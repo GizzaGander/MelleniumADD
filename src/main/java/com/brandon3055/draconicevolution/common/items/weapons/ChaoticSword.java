@@ -46,9 +46,9 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
 
     public ChaoticSword() {
         super(ModItems.CHAOTIC);
-        this.setUnlocalizedName(Strings.draconicSwordName);
+        this.setUnlocalizedName(Strings.chaoticSwordName);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
-        if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, Strings.draconicSwordName);
+        if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, Strings.chaoticSwordName);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_sword");
+        this.itemIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_sword");
     }
 
     @Override

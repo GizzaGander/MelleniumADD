@@ -45,7 +45,7 @@ public class ToolHandler {
 //	}
 //
 //	public static boolean disSquare(int x, int y, int z, final EntityPlayer player, final World world, final boolean silk, final int fortune, Material[] materialsListing, ItemStack stack) {
-//		int size = stack.getItem().equals(ModItems.draconicAxe) ? 2 : ItemNBTHelper.getShort(stack, "size", (short) 0);
+//		int size = stack.getItem().equals(ModItems.chaoticAxe) ? 2 : ItemNBTHelper.getShort(stack, "size", (short) 0);
 //		MovingObjectPosition mop = raytraceFromEntity(world, player, 4.5D);
 //		if (mop == null) {
 //			updateGhostBlocks(player, world);
@@ -59,7 +59,7 @@ public class ToolHandler {
 //		Block targetBlock = world.getBlock(x, y, z);
 //		if (size > 0) yOff++;
 //		//if (size == 0) return false;
-//		int side = (stack.getItem().equals(ModItems.draconicAxe)) ? 6 : mop.sideHit;
+//		int side = (stack.getItem().equals(ModItems.chaoticAxe)) ? 6 : mop.sideHit;
 //		switch (side) {
 //			case 0:
 //			case 1:
@@ -112,7 +112,7 @@ public class ToolHandler {
 //				return;
 //			}
 //
-//			if ((stack.getItem().equals(ModItems.draconicAxe) ? 2 : ItemNBTHelper.getShort(stack, "size", (short) 0)) == 0) return;
+//			if ((stack.getItem().equals(ModItems.chaoticAxe) ? 2 : ItemNBTHelper.getShort(stack, "size", (short) 0)) == 0) return;
 //
 //			if ((silk) && (block.canSilkHarvest(world, player, x, y, z, meta))) {
 //				if (block == Blocks.lit_redstone_ore)
@@ -311,7 +311,7 @@ public class ToolHandler {
 
         float sharpMod = (float) EnchantmentHelper.getEnchantmentLevel(Enchantment.sharpness.effectId, stack) * 4F;
 
-        if (stack.getItem() == ModItems.draconicDestructionStaff)
+        if (stack.getItem() == ModItems.chaoticDestructionStaff)
             dmg = (ModItems.CHAOTIC.getDamageVsEntity()) + sharpMod;
         else if (stack.getItem() instanceof ItemSword) dmg = (((ItemSword) stack.getItem()).func_150931_i()) + sharpMod;
 

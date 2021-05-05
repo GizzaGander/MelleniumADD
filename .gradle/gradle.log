@@ -1,48 +1,13 @@
-:compileApiJava UP-TO-DATE
-:processApiResources UP-TO-DATE
-:apiClasses UP-TO-DATE
-:sourceMainJava
-:compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
-E:\Mellenium\Mods\MelleniumADD\build\sources\java\com\brandon3055\draconicevolution\common\items\tools\baseclasses\ToolHandler.java:314: error: cannot find symbol
-        if (stack.getItem() == ModItems.draconicDestructionStaff)
-                                       ^
-  symbol:   variable draconicDestructionStaff
-  location: class ModItems
-E:\Mellenium\Mods\MelleniumADD\build\sources\java\com\brandon3055\draconicevolution\common\items\weapons\ChaoticBow.java:52: error: cannot find symbol
-        this.setUnlocalizedName(Strings.draconicBowName);
-                                       ^
-  symbol:   variable draconicBowName
-  location: class Strings
-E:\Mellenium\Mods\MelleniumADD\build\sources\java\com\brandon3055\draconicevolution\common\items\weapons\ChaoticBow.java:53: error: cannot find symbol
-        if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, Strings.draconicBowName);
-                                                                             ^
-  symbol:   variable draconicBowName
-  location: class Strings
-E:\Mellenium\Mods\MelleniumADD\build\sources\java\com\brandon3055\draconicevolution\common\items\weapons\ChaoticSword.java:49: error: cannot find symbol
-        this.setUnlocalizedName(Strings.draconicSwordName);
-                                       ^
-  symbol:   variable draconicSwordName
-  location: class Strings
-E:\Mellenium\Mods\MelleniumADD\build\sources\java\com\brandon3055\draconicevolution\common\items\weapons\ChaoticSword.java:51: error: cannot find symbol
-        if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, Strings.draconicSwordName);
-                                                                             ^
-  symbol:   variable draconicSwordName
-  location: class Strings
-Note: Some input files use unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
-5 errors
-1 warning
- FAILED
+#################################################
+         ForgeGradle 1.2-SNAPSHOT-399976c5        
+  https://github.com/AlkCorp/ForgeGradle  
+#################################################
+               Powered by MCP unknown               
+             http://modcoderpack.com             
+         by: Searge, ProfMobius, Fesh0r,         
+         R4wk, ZeuX, IngisKahn, bspkrs           
+#################################################
 
-FAILURE: Build failed with an exception.
+CONFIGURE SUCCESSFUL
 
-* What went wrong:
-Execution failed for task ':compileJava'.
-> Compilation failed; see the compiler error output for details.
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
-
-BUILD FAILED
-
-Total time: 2.006 secs
+Total time: 7.48 secs

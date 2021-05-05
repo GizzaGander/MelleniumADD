@@ -49,8 +49,8 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
         this.maxStackSize = 1;
         this.setMaxDamage(-1);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
-        this.setUnlocalizedName(Strings.draconicBowName);
-        if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, Strings.draconicBowName);
+        this.setUnlocalizedName(Strings.chaoticBowName);
+        if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, Strings.chaoticBowName);
     }
 
     //region Regular Item Stuff
@@ -74,11 +74,11 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_bow" + "_standby");
+        this.itemIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_bow" + "_standby");
         this.iconArray = new IIcon[bowPullIconNameArray.length];
 
         for (int i = 0; i < this.iconArray.length; ++i) {
-            this.iconArray[i] = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_bow" + "_" + bowPullIconNameArray[i]);
+            this.iconArray[i] = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_bow" + "_" + bowPullIconNameArray[i]);
         }
     }
 
