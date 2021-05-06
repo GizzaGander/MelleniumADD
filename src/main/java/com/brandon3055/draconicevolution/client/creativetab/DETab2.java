@@ -7,11 +7,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
-import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumChatFormatting;
-import net.minecraftforge.common.util.EnumHelper;
 
 public class DETab2 extends CreativeTabs {
 
@@ -19,15 +16,10 @@ public class DETab2 extends CreativeTabs {
     private int tab;
 
     static ItemStack iconStackStaff;
-    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
-    public EnumRarity getRarity(ItemStack stack)
-    {
-        return EnumRarity2;
-    }
 
     public static void initialize() {
         if (ModItems2.isEnabled(ModItems2.chaoticDestructionStaff))
-            iconStackStaff = ItemNBTHelper.setInteger(new ItemStack(ModItems2.chaoticDestructionStaff), "Energy", 100000000);
+            iconStackStaff = ItemNBTHelper.setInteger(new ItemStack(ModItems2.chaoticDestructionStaff), "Energy", 70000000);
         else iconStackStaff = new ItemStack(Items.stick);
     }
 

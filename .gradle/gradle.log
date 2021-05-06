@@ -1,15 +1,14 @@
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
-:sourceMainJava UP-TO-DATE
-:compileJava UP-TO-DATE
-<<<<<<< HEAD
+:sourceMainJava
+:compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 warning
+
 :processResources
 :classes
-=======
-:processResources UP-TO-DATE
-:classes UP-TO-DATE
->>>>>>> parent of d374a67 (Tab Update)
 :jar
 :compileTestJava UP-TO-DATE
 :processTestResources UP-TO-DATE
@@ -26,8 +25,4 @@
 
 BUILD SUCCESSFUL
 
-<<<<<<< HEAD
-Total time: 3.706 secs
-=======
-Total time: 2.521 secs
->>>>>>> parent of d374a67 (Tab Update)
+Total time: 3.72 secs
