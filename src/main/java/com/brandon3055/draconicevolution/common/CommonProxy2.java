@@ -86,7 +86,6 @@ public class CommonProxy2 {
     public void postInit(FMLPostInitializationEvent event) {
         BalanceConfigHandler2.finishLoading();
         OreDoublingRegistry.init();
-        Achievements.registerAchievementPane();
         LogHelper.info("Finished PostInitialization");
     }
 
