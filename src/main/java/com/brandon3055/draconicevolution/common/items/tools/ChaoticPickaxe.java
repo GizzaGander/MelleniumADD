@@ -3,7 +3,7 @@ package com.brandon3055.draconicevolution.common.items.tools;
 import java.util.List;
 
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
-import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool;
 import com.brandon3055.draconicevolution.common.lib.References;
@@ -22,14 +22,14 @@ public class ChaoticPickaxe extends MiningTool implements IInventoryTool, IRende
 
 
     public ChaoticPickaxe() {
-        super(ModItems.CHAOTIC);
+        super(ModItems2.CHAOTIC);
         this.setHarvestLevel("pickaxe", 10);
         this.setUnlocalizedName(Strings.chaoticPickaxeName);
         this.setCapacity(BalanceConfigHandler2.chaoticToolsBaseStorage);
         this.setMaxExtract(BalanceConfigHandler2.chaoticToolsMaxTransfer);
         this.setMaxReceive(BalanceConfigHandler2.chaoticToolsMaxTransfer);
         this.energyPerOperation = BalanceConfigHandler2.chaoticToolsEnergyPerAction;
-        ModItems.register(this);
+        ModItems2.register(this);
     }
 
 

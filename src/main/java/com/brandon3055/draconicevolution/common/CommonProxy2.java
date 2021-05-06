@@ -38,7 +38,7 @@ public class CommonProxy2 {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         BalanceConfigHandler2.init(event.getModConfigurationDirectory());
         registerEventListeners(event.getSide());
-        ModItems.init();
+        ModItems2.init();
         ContributorHandler.init();
         registerTileEntities();
         initializeNetwork();

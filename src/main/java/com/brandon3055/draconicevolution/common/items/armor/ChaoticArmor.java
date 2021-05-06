@@ -11,7 +11,7 @@ import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.model.ModelChaoticArmor;
 import com.brandon3055.draconicevolution.client.model.ModelChaoticArmorOld;
-import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
@@ -68,7 +68,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
         super(material, 0, armorType);
         this.setUnlocalizedName(name);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
-        if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, name);
+        if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, name);
     }
 
     @Override
@@ -106,18 +106,18 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining) {
-        if (stack.getItem() == ModItems.chaoticHelm) return helmIcon;
-        else if (stack.getItem() == ModItems.chaoticChest) return chestIcon;
-        else if (stack.getItem() == ModItems.chaoticLeggs) return leggsIcon;
+        if (stack.getItem() == ModItems2.chaoticHelm) return helmIcon;
+        else if (stack.getItem() == ModItems2.chaoticChest) return chestIcon;
+        else if (stack.getItem() == ModItems2.chaoticLeggs) return leggsIcon;
         else return bootsIcon;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIconIndex(ItemStack stack) {
-        if (stack.getItem() == ModItems.chaoticHelm) return helmIcon;
-        else if (stack.getItem() == ModItems.chaoticChest) return chestIcon;
-        else if (stack.getItem() == ModItems.chaoticLeggs) return leggsIcon;
+        if (stack.getItem() == ModItems2.chaoticHelm) return helmIcon;
+        else if (stack.getItem() == ModItems2.chaoticChest) return chestIcon;
+        else if (stack.getItem() == ModItems2.chaoticLeggs) return leggsIcon;
         else return bootsIcon;
     }
 
@@ -126,7 +126,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
         if (!ConfigHandler.useOldArmorModel)
             return References.RESOURCESPREFIX + "textures/models/armor/armorChaotic.png";
-        if (stack.getItem() == ModItems.chaoticHelm || stack.getItem() == ModItems.chaoticChest || stack.getItem() == ModItems.chaoticBoots) {
+        if (stack.getItem() == ModItems2.chaoticHelm || stack.getItem() == ModItems2.chaoticChest || stack.getItem() == ModItems2.chaoticBoots) {
             return References.RESOURCESPREFIX + "textures/models/armor/chaotic_layer_1.png";
         } else {
             return References.RESOURCESPREFIX + "textures/models/armor/chaotic_layer_2.png";
@@ -183,7 +183,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {
         if (stack == null) return;
-        if (stack.getItem() == ModItems.chaoticHelm) {
+        if (stack.getItem() == ModItems2.chaoticHelm) {
             if (world.isRemote) return;
             if (this.getEnergyStored(stack) >= BalanceConfigHandler2.chaoticArmorEnergyToRemoveEffects && clearNegativeEffects(player)) {
                 this.extractEnergy(stack, BalanceConfigHandler2.chaoticArmorEnergyToRemoveEffects, false);
@@ -226,7 +226,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
                     int id = potion.getPotionID();
                     if (ReflectionHelper.getPrivateValue(Potion.class, Potion.potionTypes[id], new String[]{"isBadEffect", "field_76418_K", "J"})) {
                         if (potion.getPotionID() == Potion.digSlowdown.id && ModHelper.isHoldingCleaver(player)) break;
-                        if ((player.getHeldItem() == null || ( player.getHeldItem().getItem() != ModItems.chaoticBow)) || id != 2) {
+                        if ((player.getHeldItem() == null || ( player.getHeldItem().getItem() != ModItems2.chaoticBow)) || id != 2) {
                             player.removePotionEffect(id);
                             flag = true;
                         }

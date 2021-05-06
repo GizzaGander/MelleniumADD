@@ -5,7 +5,7 @@ import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.DraconicEvolution;
-import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
@@ -50,7 +50,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
         this.setMaxDamage(-1);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
         this.setUnlocalizedName(Strings.chaoticBowName);
-        if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, Strings.chaoticBowName);
+        if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings.chaoticBowName);
     }
 
     //region Regular Item Stuff

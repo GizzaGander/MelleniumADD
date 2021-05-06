@@ -3,7 +3,7 @@ package com.brandon3055.draconicevolution.common.items.tools;
 import java.util.List;
 
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
-import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool;
 import com.brandon3055.draconicevolution.common.lib.References;
@@ -24,14 +24,14 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
 //	public IIcon itemIcon2;
 
     public ChaoticShovel() {
-        super(ModItems.CHAOTIC);
+        super(ModItems2.CHAOTIC);
         this.setHarvestLevel("shovel", 10);
         this.setUnlocalizedName(Strings.chaoticShovelName);
         this.setCapacity(BalanceConfigHandler2.chaoticToolsBaseStorage);
         this.setMaxExtract(BalanceConfigHandler2.chaoticToolsMaxTransfer);
         this.setMaxReceive(BalanceConfigHandler2.chaoticToolsMaxTransfer);
         this.energyPerOperation = BalanceConfigHandler2.chaoticToolsEnergyPerAction;
-        ModItems.register(this);
+        ModItems2.register(this);
     }
 
     @Override

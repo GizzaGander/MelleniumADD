@@ -9,7 +9,7 @@ import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
-import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
@@ -46,10 +46,10 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     protected int maxExtract = BalanceConfigHandler2.chaoticToolsMaxTransfer;
 
     public ChaoticHoe() {
-        super(ModItems.CHAOTIC);
+        super(ModItems2.CHAOTIC);
         this.setUnlocalizedName(Strings.chaoticHoeName);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
-        if (ModItems.isEnabled(this)) GameRegistry.registerItem(this, Strings.chaoticHoeName);
+        if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings.chaoticHoeName);
     }
 
     @Override

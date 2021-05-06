@@ -17,7 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 @GameRegistry.ObjectHolder(References.MODID)
-public class ModItems {
+public class ModItems2 {
     public static ArmorMaterial CHAOTIC_ARMOR = EnumHelper.addArmorMaterial("CHAOTIC_ARMOR", -1, new int[]{3, 8, 6, 3}, 30);
     public static ToolMaterial CHAOTIC = EnumHelper.addToolMaterial("CHAOTIC", 10, -1, 400.0F, 60.0F, 45);
 
@@ -65,8 +65,8 @@ public class ModItems {
         chaotiumFluxCapacitor = new ChaotiumFluxCapacitor();
 
         //Custom ItemStacks
-        chaoticEnergyCore = new ItemStack(ModItems.chaotiumEnergyCore, 1, 1);
-        chaoticFluxCapacitor = new ItemStack(ModItems.chaotiumFluxCapacitor, 1, 1);
+        chaoticEnergyCore = new ItemStack(ModItems2.chaotiumEnergyCore, 1, 1);
+        chaoticFluxCapacitor = new ItemStack(ModItems2.chaotiumFluxCapacitor, 1, 1);
 
         nuggetChaotic = new ItemStack(nugget, 1, 1);
     }

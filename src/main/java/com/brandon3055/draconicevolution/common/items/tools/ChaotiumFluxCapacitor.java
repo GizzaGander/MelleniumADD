@@ -8,7 +8,7 @@ import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.DraconicEvolution;
-import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.RFItemBase;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
@@ -38,7 +38,7 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
         this.setHasSubtypes(true);
         this.setMaxStackSize(1);
-        ModItems.register(this);
+        ModItems2.register(this);
     }
 
     @SideOnly(Side.CLIENT)
@@ -97,7 +97,7 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
                 int max = Math.min(getEnergyStored(container), getMaxExtract(container));
                 ItemStack stack = player.inventory.getStackInSlot(i);
 
-                if (stack != null && stack.getItem() instanceof IEnergyContainerItem && stack.getItem() != ModItems.chaotiumFluxCapacitor) {
+                if (stack != null && stack.getItem() instanceof IEnergyContainerItem && stack.getItem() != ModItems2.chaotiumFluxCapacitor) {
                     IEnergyContainerItem item = (IEnergyContainerItem) stack.getItem();
                     extractEnergy(container, item.receiveEnergy(stack, max, false), false);
                 }
@@ -109,7 +109,7 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
                 int max = Math.min(getEnergyStored(container), getMaxExtract(container));
                 ItemStack stack = player.getEquipmentInSlot(i);
 
-                if (stack != null && stack.getItem() instanceof IEnergyContainerItem && stack.getItem() != ModItems.chaotiumFluxCapacitor) {
+                if (stack != null && stack.getItem() instanceof IEnergyContainerItem && stack.getItem() != ModItems2.chaotiumFluxCapacitor) {
                     IEnergyContainerItem item = (IEnergyContainerItem) stack.getItem();
                     extractEnergy(container, item.receiveEnergy(stack, max, false), false);
                 }

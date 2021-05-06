@@ -16,7 +16,7 @@ import com.brandon3055.draconicevolution.client.render.particle.ParticleEnergyBe
 import com.brandon3055.draconicevolution.client.render.particle.ParticleEnergyField;
 import com.brandon3055.draconicevolution.client.render.particle.ParticleReactorBeam;
 import com.brandon3055.draconicevolution.common.CommonProxy2;
-import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.blocks.multiblock.IReactorPart;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
 import com.brandon3055.draconicevolution.common.lib.References;
@@ -117,23 +117,23 @@ public class ClientProxy2 extends CommonProxy2 {
 
     public void registerRendering() {
         //Item Renderers
-        MinecraftForgeClient.registerItemRenderer(ModItems.chaoticBow, new RenderBow2());
+        MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBow, new RenderBow2());
 
         if (!ConfigHandler.useOldArmorModel) {
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticHelm, new RenderArmor(ModItems.chaoticHelm));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticChest, new RenderArmor(ModItems.chaoticChest));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticLeggs, new RenderArmor(ModItems.chaoticLeggs));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticBoots, new RenderArmor(ModItems.chaoticBoots));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticHelm, new RenderArmor(ModItems2.chaoticHelm));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticChest, new RenderArmor(ModItems2.chaoticChest));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticLeggs, new RenderArmor(ModItems2.chaoticLeggs));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBoots, new RenderArmor(ModItems2.chaoticBoots));
         }
 
         if (!ConfigHandler.useOldD2DToolTextures) {
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticSword, new RenderTool("models/tools/ChaoticSword.obj", "textures/models/tools/ChaoticSword.png", (IRenderTweak) ModItems.chaoticSword));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticPickaxe, new RenderTool("models/tools/ChaoticPickaxe.obj", "textures/models/tools/ChaoticPickaxe.png", (IRenderTweak) ModItems.chaoticPickaxe));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticAxe, new RenderTool("models/tools/ChaoticLumberAxe.obj", "textures/models/tools/ChaoticLumberAxe.png", (IRenderTweak) ModItems.chaoticAxe));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticShovel, new RenderTool("models/tools/ChaoticShovel.obj", "textures/models/tools/ChaoticShovel.png", (IRenderTweak) ModItems.chaoticShovel));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticDestructionStaff, new RenderTool("models/tools/ChaoticStaffOfPower.obj", "textures/models/tools/ChaoticStaffOfPower.png", (IRenderTweak) ModItems.chaoticDestructionStaff));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticHoe, new RenderTool("models/tools/ChaoticHoe.obj", "textures/models/tools/ChaoticHoe.png", (IRenderTweak) ModItems.chaoticHoe));
-            MinecraftForgeClient.registerItemRenderer(ModItems.chaoticBow, new RenderBowModel2(true));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticSword, new RenderTool("models/tools/ChaoticSword.obj", "textures/models/tools/ChaoticSword.png", (IRenderTweak) ModItems2.chaoticSword));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticPickaxe, new RenderTool("models/tools/ChaoticPickaxe.obj", "textures/models/tools/ChaoticPickaxe.png", (IRenderTweak) ModItems2.chaoticPickaxe));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticAxe, new RenderTool("models/tools/ChaoticLumberAxe.obj", "textures/models/tools/ChaoticLumberAxe.png", (IRenderTweak) ModItems2.chaoticAxe));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticShovel, new RenderTool("models/tools/ChaoticShovel.obj", "textures/models/tools/ChaoticShovel.png", (IRenderTweak) ModItems2.chaoticShovel));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticDestructionStaff, new RenderTool("models/tools/ChaoticStaffOfPower.obj", "textures/models/tools/ChaoticStaffOfPower.png", (IRenderTweak) ModItems2.chaoticDestructionStaff));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticHoe, new RenderTool("models/tools/ChaoticHoe.obj", "textures/models/tools/ChaoticHoe.png", (IRenderTweak) ModItems2.chaoticHoe));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBow, new RenderBowModel2(true));
         }
 
 

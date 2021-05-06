@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
-import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolHandler;
@@ -32,7 +32,7 @@ import org.lwjgl.opengl.GL11;
 public class ChaoticDistructionStaff extends MiningTool implements IInventoryTool, IRenderTweak, IEnergyContainerWeaponItem {
 
     public ChaoticDistructionStaff() {
-        super(ModItems.CHAOTIC);
+        super(ModItems2.CHAOTIC);
         this.setUnlocalizedName(Strings.chaoticDStaffName);
         this.setHarvestLevel("pickaxe", 10);
         this.setHarvestLevel("shovel", 10);
@@ -41,7 +41,7 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
         this.setMaxExtract(BalanceConfigHandler2.chaoticToolsMaxTransfer * 2 + BalanceConfigHandler2.chaoticWeaponsMaxTransfer);
         this.setMaxReceive(BalanceConfigHandler2.chaoticToolsMaxTransfer * 2 + BalanceConfigHandler2.chaoticWeaponsMaxTransfer);
         this.energyPerOperation = BalanceConfigHandler2.chaoticToolsEnergyPerAction;
-        ModItems.register(this);
+        ModItems2.register(this);
     }
 
     @Override
