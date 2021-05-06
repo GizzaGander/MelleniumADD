@@ -91,7 +91,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_hoe");
+        this.itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_hoe");
     }
 
     @Override

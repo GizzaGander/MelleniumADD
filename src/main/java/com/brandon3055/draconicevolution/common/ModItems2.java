@@ -32,18 +32,18 @@ public class ModItems2 {
     public static ItemArmor chaoticLeggs;
     public static ItemArmor chaoticBoots;
     public static Item chaoticDestructionStaff;
-    public static ItemDE chaotiumIngot;
-    public static ItemDE enderArrow;
+    public static ItemDE2 chaotiumIngot;
+    public static ItemDE2 enderArrow;
 
-    public static ItemDE chaotiumEnergyCore;
-    public static ItemDE chaotiumFluxCapacitor;
-    public static ItemDE chaoticCore;
+    public static ItemDE2 chaotiumEnergyCore;
+    public static ItemDE2 chaotiumFluxCapacitor;
+    public static ItemDE2 chaoticCore;
 
     public static ItemStack chaoticFluxCapacitor;
     public static ItemStack chaoticEnergyCore;
 
     public static ItemStack nuggetChaotic;
-    public static ItemDE nugget;
+    public static ItemDE2 nugget;
 
     public static void init() {
         enderArrow = new EnderArrow();
@@ -71,7 +71,7 @@ public class ModItems2 {
         nuggetChaotic = new ItemStack(nugget, 1, 1);
     }
 
-    public static void register(final ItemDE item) {
+    public static void register(final ItemDE2 item) {
         String name = item.getUnwrappedUnlocalizedName(item.getUnlocalizedName());
         if (isEnabled(item)) GameRegistry.registerItem(item, name.substring(name.indexOf(":") + 1));
     }

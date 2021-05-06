@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by Brandon on 24/11/2014.
  */
-public class ChaotiumEnergyCore extends ItemDE {
+public class ChaotiumEnergyCore extends ItemDE2 {
     IIcon[] icons = new IIcon[2];
 
     public ChaotiumEnergyCore() {

@@ -6,7 +6,7 @@ import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
-import com.brandon3055.draconicevolution.common.items.ItemDE;
+import com.brandon3055.draconicevolution.common.items.ItemDE2;
 import com.brandon3055.draconicevolution.common.utills.IConfigurableItem;
 import com.brandon3055.draconicevolution.common.utills.IHudDisplayItem;
 import com.brandon3055.draconicevolution.common.utills.ItemConfigField;
@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by Brandon on 8/01/2015.
  */
-public class RFItemBase2 extends ItemDE implements IEnergyContainerItem, IConfigurableItem, IHudDisplayItem {
+public class RFItemBase2 extends ItemDE2 implements IEnergyContainerItem, IConfigurableItem, IHudDisplayItem {
     protected int capacity = 0;
     /**
      * Max Receive
