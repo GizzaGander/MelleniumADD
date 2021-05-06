@@ -44,7 +44,6 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        icons[0] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + 0);
         icons[1] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + 1);
     }
 
@@ -58,8 +57,6 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
     @SuppressWarnings("unchecked")
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
-        list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 0), "Energy", 0));
-        list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 0), "Energy", BalanceConfigHandler2.wyvernCapacitorBaseStorage));
         list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 1), "Energy", 0));
         list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 1), "Energy", BalanceConfigHandler2.chaoticCapacitorBaseStorage));
     }
