@@ -1,3 +1,12 @@
+#################################################
+         ForgeGradle 1.2-SNAPSHOT-399976c5        
+  https://github.com/AlkCorp/ForgeGradle  
+#################################################
+               Powered by MCP unknown               
+             http://modcoderpack.com             
+         by: Searge, ProfMobius, Fesh0r,         
+         R4wk, ZeuX, IngisKahn, bspkrs           
+#################################################
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
@@ -25,4 +34,4 @@ Note: Recompile with -Xlint:unchecked for details.
 
 BUILD SUCCESSFUL
 
-Total time: 2.244 secs
+Total time: 8.526 secs
