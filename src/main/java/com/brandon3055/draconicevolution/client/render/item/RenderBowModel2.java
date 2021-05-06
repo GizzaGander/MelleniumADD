@@ -1,7 +1,7 @@
 package com.brandon3055.draconicevolution.client.render.item;
 
 import com.brandon3055.draconicevolution.client.handler.ResourceHandler;
-import com.brandon3055.draconicevolution.common.items.weapons.BowHandler;
+import com.brandon3055.draconicevolution.common.items.weapons.BowHandler2;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.IItemRenderer;
@@ -42,13 +42,13 @@ public class RenderBowModel2 implements IItemRenderer {
         //String currentMode = ItemNBTHelper.getString(item, "mode", "rapidfire");
         float j = 0F;
         int selection = 0;
-        BowHandler.BowProperties properties = null;
+        BowHandler2.BowProperties properties = null;
 
         if (data.length >= 2 && (data[1] instanceof EntityPlayer)) {
             EntityPlayer player = (EntityPlayer) data[1];
             j = (float) player.getItemInUseDuration();
             if (j > 0) {
-                properties = new BowHandler.BowProperties(item, player);
+                properties = new BowHandler2.BowProperties(item, player);
                 if (j > properties.getDrawTicks()) j = properties.getDrawTicks();
                 j /= (float) properties.getDrawTicks();
                 int j2 = (int) (j * 3F);
@@ -77,7 +77,7 @@ public class RenderBowModel2 implements IItemRenderer {
         GL11.glPopMatrix();
     }
 
-    private void doRender(IModelCustom modelCustom, ItemRenderType type, int drawState, BowHandler.BowProperties properties) {
+    private void doRender(IModelCustom modelCustom, ItemRenderType type, int drawState, BowHandler2.BowProperties properties) {
 
         if (type == ItemRenderType.EQUIPPED) {
             GL11.glScaled(0.8, 0.8, 0.8);

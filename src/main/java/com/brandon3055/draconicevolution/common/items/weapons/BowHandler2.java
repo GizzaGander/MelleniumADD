@@ -21,7 +21,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 
-public class BowHandler {
+public class BowHandler2 {
 
     public static ItemStack onBowRightClick(Item bow, ItemStack stack, World world, EntityPlayer player) {
         BowHandler.BowProperties properties = new BowHandler.BowProperties(stack, player);
@@ -45,7 +45,7 @@ public class BowHandler {
     }
 
     public static void onPlayerStoppedUsingBow(ItemStack stack, World world, EntityPlayer player, int count) {
-        BowHandler.BowProperties properties = new BowHandler.BowProperties(stack, player);
+        BowHandler2.BowProperties properties = new BowProperties(stack, player);
         if (!properties.canFire() || !(stack.getItem() instanceof IEnergyContainerItem)) return;
 
         int j = 72000 - count;
@@ -121,7 +121,7 @@ public class BowHandler {
     }
 
 
-    public static class BowProperties {
+    public static class BowProperties extends BowHandler.BowProperties {
         public ItemStack bow;
         public EntityPlayer player;
 
