@@ -97,7 +97,6 @@ public class ClientProxy2 extends CommonProxy2 {
         if (ConfigHandler.enableVersionChecker) FMLCommonHandler.instance().bus().register(new UpdateChecker());
         MinecraftForge.EVENT_BUS.register(new HudHandler());
         MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
-        KeyBindings.init();
         registerRenderIDs();
         registerRendering();
         ResourceHandler2.instance.tick(null);

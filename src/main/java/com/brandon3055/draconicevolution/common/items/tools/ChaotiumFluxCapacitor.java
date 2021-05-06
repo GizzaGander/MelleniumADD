@@ -20,12 +20,15 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.EnumHelper;
 
 /**
  * Created by Brandon on 24/11/2014.
@@ -42,6 +45,13 @@ public class ChaotiumFluxCapacitor extends RFItemBase2 implements IUpgradableIte
     }
 
     @SideOnly(Side.CLIENT)
+    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity2;
+    }
     @Override
     public void registerIcons(IIconRegister iconRegister) {
         icons[1] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + 1);

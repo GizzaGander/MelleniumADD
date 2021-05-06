@@ -7,9 +7,12 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
+import net.minecraftforge.common.util.EnumHelper;
 
 import java.util.List;
 
@@ -27,6 +30,13 @@ public class ChaotiumEnergyCore extends ItemDE2 {
     }
 
     @SideOnly(Side.CLIENT)
+    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity2;
+    }
     @Override
     public void registerIcons(IIconRegister iconRegister) {
         icons[1] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + 1);

@@ -36,7 +36,6 @@ public class ModItems2 {
 
     public static ItemDE2 chaotiumEnergyCore;
     public static ItemDE2 chaotiumFluxCapacitor;
-    public static ItemDE2 chaoticCore;
 
     public static ItemStack chaoticFluxCapacitor;
     public static ItemStack chaoticEnergyCore;
@@ -58,7 +57,6 @@ public class ModItems2 {
         chaoticLeggs = new ChaoticArmor(CHAOTIC_ARMOR, 2, Strings2.chaoticLeggsName);
         chaoticBoots = new ChaoticArmor(CHAOTIC_ARMOR, 3, Strings2.chaoticBootsName);
 
-        chaoticCore = new ChaoticCore2();
         chaotiumEnergyCore = new ChaotiumEnergyCore();
         chaotiumFluxCapacitor = new ChaotiumFluxCapacitor();
 
