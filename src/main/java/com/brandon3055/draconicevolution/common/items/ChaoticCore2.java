@@ -7,8 +7,8 @@ import net.minecraft.item.ItemStack;
 /**
  * Created by brandon3055 on 2/10/2015.
  */
-public class ChaoticCore extends ItemDE2 {
-    public ChaoticCore() {
+public class ChaoticCore2 extends ItemDE2 {
+    public ChaoticCore2() {
         this.setUnlocalizedName("chaoticCore");
         this.setCreativeTab(DraconicEvolution.tabBlocksItems);
         ModItems2.register(this);

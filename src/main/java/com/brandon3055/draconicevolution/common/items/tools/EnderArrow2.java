@@ -3,7 +3,7 @@ package com.brandon3055.draconicevolution.common.items.tools;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.items.ItemDE2;
 import com.brandon3055.draconicevolution.common.ModItems2;
-import com.brandon3055.draconicevolution.common.lib.References2;
+import com.brandon3055.draconicevolution.common.lib.References;
 import com.brandon3055.draconicevolution.common.lib.Strings;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,8 +16,8 @@ import java.util.List;
 /**
  * Created by Brandon on 15/08/2014.
  */
-public class EnderArrow extends ItemDE2 {
-    public EnderArrow() {
+public class EnderArrow2 extends ItemDE2 {
+    public EnderArrow2() {
         this.setUnlocalizedName(Strings.enderArrowName);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
         ModItems2.register(this);
@@ -25,7 +25,7 @@ public class EnderArrow extends ItemDE2 {
 
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "ender_arrow");
+        itemIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "ender_arrow");
     }
 
     @SuppressWarnings("unchecked")

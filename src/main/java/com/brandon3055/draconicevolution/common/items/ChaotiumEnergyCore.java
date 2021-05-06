@@ -29,7 +29,6 @@ public class ChaotiumEnergyCore extends ItemDE2 {
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        icons[0] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + 0);
         icons[1] = iconRegister.registerIcon(getUnwrappedUnlocalizedName(super.getUnlocalizedName()) + 1);
     }
 
@@ -43,7 +42,6 @@ public class ChaotiumEnergyCore extends ItemDE2 {
     @SuppressWarnings("unchecked")
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
-        list.add(new ItemStack(item, 1, 0));
         list.add(new ItemStack(item, 1, 1));
 
     }

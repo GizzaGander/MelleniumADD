@@ -22,7 +22,8 @@ Note: Recompile with -Xlint:unchecked for details.
 :assemble
 :check UP-TO-DATE
 :build
+:buildDependents
 
 BUILD SUCCESSFUL
 
-Total time: 3.102 secs
+Total time: 3.444 secs
