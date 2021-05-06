@@ -2,23 +2,32 @@ package com.brandon3055.draconicevolution.client.creativetab;
 
 import com.brandon3055.draconicevolution.common.ModBlocks;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
-import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraftforge.common.util.EnumHelper;
 
 public class DETab2 extends CreativeTabs {
+
     private String label;
     private int tab;
 
     static ItemStack iconStackStaff;
+    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity2;
+    }
 
     public static void initialize() {
-        if (ModItems.isEnabled(ModItems.draconicDestructionStaff))
-            iconStackStaff = ItemNBTHelper.setInteger(new ItemStack(ModItems.draconicDestructionStaff), "Energy", 30000000);
+        if (ModItems2.isEnabled(ModItems2.chaoticDestructionStaff))
+            iconStackStaff = ItemNBTHelper.setInteger(new ItemStack(ModItems2.chaoticDestructionStaff), "Energy", 100000000);
         else iconStackStaff = new ItemStack(Items.stick);
     }
 
@@ -47,4 +56,5 @@ public class DETab2 extends CreativeTabs {
     public String getTabLabel() {
         return this.label;
     }
+
 }
