@@ -10,10 +10,10 @@ item.melads:chaoticChest.name=Chaotic Chestplate
 item.melads:chaoticLeggs.name=Chaotic Leggings
 item.melads:chaoticBoots.name=Chaotic Boots
 item.melads:chaoticDistructionStaff.name=Chaotic Staff of Power
-item.melads:draconiumEnergyCore1.name=Chaotic Energy Core
-item.melads:draconiumFluxCapacitor1.name=Chaotic Flux Capacitor
-item.melads:chaoticIngot.name=Chaotic Ingot
-item.melads:nugget.awakened.name=Chaotic Nugget
+item.melads:chaotiumEnergyCore1.name=Chaotic Energy Core
+item.melads:chaotiumFluxCapacitor1.name=Chaotic Flux Capacitor
+item.melads:chaotiumIngot.name=Chaotic Ingot
+item.melads:nugget.chaotic.name=Chaotic Nugget
 
 //Item Groups ----------------------------------------------------------------------------------------------------------------------------------------
 itemGroup.tabMelleniumAds=Mellenium Addon
