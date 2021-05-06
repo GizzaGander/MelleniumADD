@@ -230,10 +230,9 @@ public class ChaoticPickaxe extends MiningTool2 implements IInventoryTool, IRend
 private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
 
     @Override
-	public EnumRarity getRarity(ItemStack stack)
-	{
-		return EnumRarity2;
-//	}
+	public EnumRarity getRarity(ItemStack stack) {
+        return EnumRarity2;
+    }
 //
 //	@Override
 //	public int receiveEnergy(ItemStack container, int maxReceive, boolean simulate) {
