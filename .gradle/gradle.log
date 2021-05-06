@@ -3,8 +3,13 @@
 :apiClasses UP-TO-DATE
 :sourceMainJava UP-TO-DATE
 :compileJava UP-TO-DATE
+<<<<<<< HEAD
 :processResources
 :classes
+=======
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+>>>>>>> parent of d374a67 (Tab Update)
 :jar
 :compileTestJava UP-TO-DATE
 :processTestResources UP-TO-DATE
@@ -21,4 +26,8 @@
 
 BUILD SUCCESSFUL
 
+<<<<<<< HEAD
 Total time: 3.706 secs
+=======
+Total time: 2.521 secs
+>>>>>>> parent of d374a67 (Tab Update)
