@@ -8,15 +8,15 @@ import net.minecraft.entity.Entity;
 
 public class ModelChaoticArmor extends ModelBiped {
 
-    public ModelRenderOBJ head;
-    public ModelRenderOBJ body;
-    public ModelRenderOBJ rightArm;
-    public ModelRenderOBJ leftArm;
-    public ModelRenderOBJ belt;
-    public ModelRenderOBJ rightLeg;
-    public ModelRenderOBJ leftLeg;
-    public ModelRenderOBJ rightBoot;
-    public ModelRenderOBJ leftBoot;
+    public ModelRenderOBJ2 head;
+    public ModelRenderOBJ2 body;
+    public ModelRenderOBJ2 rightArm;
+    public ModelRenderOBJ2 leftArm;
+    public ModelRenderOBJ2 belt;
+    public ModelRenderOBJ2 rightLeg;
+    public ModelRenderOBJ2 leftLeg;
+    public ModelRenderOBJ2 rightBoot;
+    public ModelRenderOBJ2 leftBoot;
 
     public ModelChaoticArmor(float f, boolean isHelmet, boolean isChestPiece, boolean isLeggings, boolean isdBoots) {
         super(f, 0.0f, 128, 128);
@@ -46,15 +46,15 @@ public class ModelChaoticArmor extends ModelBiped {
         this.bipedRightLeg.addBox(-2.0F, 0.0F, -2.0F, 4, 12, 4, 0.0F);
 
 
-        this.head = new ModelRenderOBJ(this, ResourceHandler2.getResource("models/armor/DraconicHelmet.obj"), ResourceHandler2.getResource("textures/models/armor/DraconicHelmet.png"));
-        this.body = new ModelRenderOBJ(this, ResourceHandler2.getResource("models/armor/DraconicBody.obj"), ResourceHandler2.getResource("textures/models/armor/DraconicBody.png"));
-        this.rightArm = new ModelRenderOBJ(this, ResourceHandler2.getResource("models/armor/DraconicRightArm.obj"), ResourceHandler2.getResource("textures/models/armor/DraconicRightArm.png"));
-        this.leftArm = new ModelRenderOBJ(this, ResourceHandler2.getResource("models/armor/DraconicLeftArm.obj"), ResourceHandler2.getResource("textures/models/armor/DraconicLeftArm.png"));
-        this.belt = new ModelRenderOBJ(this, ResourceHandler2.getResource("models/armor/DraconicBelt.obj"), ResourceHandler2.getResource("textures/models/armor/DraconicBelt.png"));
-        this.rightLeg = new ModelRenderOBJ(this, ResourceHandler2.getResource("models/armor/DraconicRightLeg.obj"), ResourceHandler2.getResource("textures/models/armor/DraconicRightLeg.png"));
-        this.leftLeg = new ModelRenderOBJ(this, ResourceHandler2.getResource("models/armor/DraconicLeftLeg.obj"), ResourceHandler2.getResource("textures/models/armor/DraconicLeftLeg.png"));
-        this.rightBoot = new ModelRenderOBJ(this, ResourceHandler2.getResource("models/armor/DraconicRightBoot.obj"), ResourceHandler2.getResource("textures/models/armor/DraconicRightBoot.png"));
-        this.leftBoot = new ModelRenderOBJ(this, ResourceHandler2.getResource("models/armor/DraconicLeftBoot.obj"), ResourceHandler2.getResource("textures/models/armor/DraconicLeftBoot.png"));
+        this.head = new ModelRenderOBJ2(this, ResourceHandler2.getResource("models/armor/ChaoticHelmet.obj"), ResourceHandler2.getResource("textures/models/armor/ChaoticHelmet.png"));
+        this.body = new ModelRenderOBJ2(this, ResourceHandler2.getResource("models/armor/ChaoticBody.obj"), ResourceHandler2.getResource("textures/models/armor/ChaoticBody.png"));
+        this.rightArm = new ModelRenderOBJ2(this, ResourceHandler2.getResource("models/armor/ChaoticRightArm.obj"), ResourceHandler2.getResource("textures/models/armor/ChaoticRightArm.png"));
+        this.leftArm = new ModelRenderOBJ2(this, ResourceHandler2.getResource("models/armor/ChaoticLeftArm.obj"), ResourceHandler2.getResource("textures/models/armor/ChaoticLeftArm.png"));
+        this.belt = new ModelRenderOBJ2(this, ResourceHandler2.getResource("models/armor/ChaoticBelt.obj"), ResourceHandler2.getResource("textures/models/armor/ChaoticBelt.png"));
+        this.rightLeg = new ModelRenderOBJ2(this, ResourceHandler2.getResource("models/armor/ChaoticRightLeg.obj"), ResourceHandler2.getResource("textures/models/armor/ChaoticRightLeg.png"));
+        this.leftLeg = new ModelRenderOBJ2(this, ResourceHandler2.getResource("models/armor/ChaoticLeftLeg.obj"), ResourceHandler2.getResource("textures/models/armor/ChaoticLeftLeg.png"));
+        this.rightBoot = new ModelRenderOBJ2(this, ResourceHandler2.getResource("models/armor/ChaoticRightBoot.obj"), ResourceHandler2.getResource("textures/models/armor/ChaoticRightBoot.png"));
+        this.leftBoot = new ModelRenderOBJ2(this, ResourceHandler2.getResource("models/armor/ChaoticLeftBoot.obj"), ResourceHandler2.getResource("textures/models/armor/ChaoticLeftBoot.png"));
 
         this.bipedHead.cubeList.clear();
         this.bipedHeadwear.cubeList.clear();
