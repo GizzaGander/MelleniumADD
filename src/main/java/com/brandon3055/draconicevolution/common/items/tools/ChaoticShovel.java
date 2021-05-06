@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems;
-import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler;
+import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool;
 import com.brandon3055.draconicevolution.common.lib.References;
 import com.brandon3055.draconicevolution.common.lib.Strings;
@@ -27,10 +27,10 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
         super(ModItems.CHAOTIC);
         this.setHarvestLevel("shovel", 10);
         this.setUnlocalizedName(Strings.chaoticShovelName);
-        this.setCapacity(BalanceConfigHandler.chaoticToolsBaseStorage);
-        this.setMaxExtract(BalanceConfigHandler.chaoticToolsMaxTransfer);
-        this.setMaxReceive(BalanceConfigHandler.chaoticToolsMaxTransfer);
-        this.energyPerOperation = BalanceConfigHandler.chaoticToolsEnergyPerAction;
+        this.setCapacity(BalanceConfigHandler2.chaoticToolsBaseStorage);
+        this.setMaxExtract(BalanceConfigHandler2.chaoticToolsMaxTransfer);
+        this.setMaxReceive(BalanceConfigHandler2.chaoticToolsMaxTransfer);
+        this.energyPerOperation = BalanceConfigHandler2.chaoticToolsEnergyPerAction;
         ModItems.register(this);
     }
 
@@ -80,7 +80,7 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
 
     @Override
     public int getUpgradeCap(ItemStack itemstack) {
-        return BalanceConfigHandler.chaoticToolsMaxUpgrades;
+        return BalanceConfigHandler2.chaoticToolsMaxUpgrades;
     }
 
     @Override
@@ -96,36 +96,36 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
     @Override
     public int getCapacity(ItemStack stack) {
         int points = IUpgradableItem.EnumUpgrade.RF_CAPACITY.getUpgradePoints(stack);
-        return BalanceConfigHandler.chaoticToolsBaseStorage + points * BalanceConfigHandler.chaoticToolsStoragePerUpgrade;
+        return BalanceConfigHandler2.chaoticToolsBaseStorage + points * BalanceConfigHandler2.chaoticToolsStoragePerUpgrade;
     }
 
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.chaoticToolsMaxCapacityUpgradePoints;
+            return BalanceConfigHandler2.chaoticToolsMaxCapacityUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_AOE.index) {
-            return BalanceConfigHandler.chaoticToolsMaxDigAOEUpgradePoints;
+            return BalanceConfigHandler2.chaoticToolsMaxDigAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_DEPTH.index) {
-            return BalanceConfigHandler.chaoticToolsMaxDigDepthUpgradePoints;
+            return BalanceConfigHandler2.chaoticToolsMaxDigDepthUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_SPEED.index) {
-            return BalanceConfigHandler.chaoticToolsMaxDigSpeedUpgradePoints;
+            return BalanceConfigHandler2.chaoticToolsMaxDigSpeedUpgradePoints;
         }
-        return BalanceConfigHandler.chaoticToolsMaxUpgradePoints;
+        return BalanceConfigHandler2.chaoticToolsMaxUpgradePoints;
     }
 
     @Override
     public int getBaseUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.DIG_AOE.index) {
-            return BalanceConfigHandler.chaoticToolsMinDigAOEUpgradePoints;
+            return BalanceConfigHandler2.chaoticToolsMinDigAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_DEPTH.index) {
-            return BalanceConfigHandler.chaoticToolsMinDigDepthUpgradePoints;
+            return BalanceConfigHandler2.chaoticToolsMinDigDepthUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_SPEED.index) {
-            return BalanceConfigHandler.chaoticToolsMinDigSpeedUpgradePoints;
+            return BalanceConfigHandler2.chaoticToolsMinDigSpeedUpgradePoints;
         }
         return 0;
     }

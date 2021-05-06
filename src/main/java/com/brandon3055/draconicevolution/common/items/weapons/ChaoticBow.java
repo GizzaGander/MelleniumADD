@@ -7,7 +7,7 @@ import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.ModItems;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
-import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler;
+import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
 import com.brandon3055.draconicevolution.common.lib.References;
@@ -39,9 +39,9 @@ import java.util.List;
 public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableItem, IEnergyContainerWeaponItem, IHudDisplayItem {
     public static final String[] bowPullIconNameArray = new String[]{"pulling_0", "pulling_1", "pulling_2"};
 
-    protected int capacity = BalanceConfigHandler.chaoticWeaponsBaseStorage;
-    protected int maxReceive = BalanceConfigHandler.chaoticWeaponsMaxTransfer;
-    protected int maxExtract = BalanceConfigHandler.chaoticWeaponsMaxTransfer;
+    protected int capacity = BalanceConfigHandler2.chaoticWeaponsBaseStorage;
+    protected int maxReceive = BalanceConfigHandler2.chaoticWeaponsMaxTransfer;
+    protected int maxExtract = BalanceConfigHandler2.chaoticWeaponsMaxTransfer;
     @SideOnly(Side.CLIENT)
     private IIcon[] iconArray;
 
@@ -90,7 +90,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
             return this.itemIcon;
         }
 
-        BowHandler.BowProperties properties = new BowHandler.BowProperties(stack, player);
+        BowHandler2.BowProperties properties = new BowHandler2.BowProperties(stack, player);
 
         if (j > properties.getDrawTicks()) j = properties.getDrawTicks();
 
@@ -163,7 +163,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
 
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-        return BowHandler.onBowRightClick(this, stack, world, player);
+        return BowHandler2.onBowRightClick(this, stack, world, player);
     }
 
     @Override
@@ -173,7 +173,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
 
     @Override
     public void onPlayerStoppedUsing(ItemStack stack, World world, EntityPlayer player, int count) {
-        BowHandler.onPlayerStoppedUsingBow(stack, world, player, count);
+        BowHandler2.onPlayerStoppedUsingBow(stack, world, player, count);
     }
 
     //region Interfaces
@@ -220,7 +220,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
 
     @Override
     public int getUpgradeCap(ItemStack itemstack) {
-        return BalanceConfigHandler.chaoticBowMaxUpgrades;
+        return BalanceConfigHandler2.chaoticBowMaxUpgrades;
     }
 
     @Override
@@ -231,18 +231,18 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.chaoticBowMaxCapacityUpgradePoints;
+            return BalanceConfigHandler2.chaoticBowMaxCapacityUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DRAW_SPEED.index) {
-            return BalanceConfigHandler.chaoticBowMaxDrawSpeedUpgradePoints;
+            return BalanceConfigHandler2.chaoticBowMaxDrawSpeedUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ARROW_SPEED.index) {
-            return BalanceConfigHandler.chaoticBowMaxArrowSpeedUpgradePoints;
+            return BalanceConfigHandler2.chaoticBowMaxArrowSpeedUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ARROW_DAMAGE.index) {
-            return BalanceConfigHandler.chaoticBowMaxArrowDamageUpgradePoints;
+            return BalanceConfigHandler2.chaoticBowMaxArrowDamageUpgradePoints;
         }
-        return BalanceConfigHandler.chaoticBowMaxUpgradePoints;
+        return BalanceConfigHandler2.chaoticBowMaxUpgradePoints;
     }
 
     @Override
@@ -253,20 +253,20 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     @Override
     public int getBaseUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.DRAW_SPEED.index) {
-            return BalanceConfigHandler.chaoticBowMinDrawSpeedUpgradePoints;
+            return BalanceConfigHandler2.chaoticBowMinDrawSpeedUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ARROW_SPEED.index) {
-            return BalanceConfigHandler.chaoticBowMinArrowSpeedUpgradePoints;
+            return BalanceConfigHandler2.chaoticBowMinArrowSpeedUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ARROW_DAMAGE.index) {
-            return BalanceConfigHandler.chaoticBowMinArrowDamageUpgradePoints;
+            return BalanceConfigHandler2.chaoticBowMinArrowDamageUpgradePoints;
         }
         return 0;
     }
 
     @Override
     public List<String> getUpgradeStats(ItemStack stack) {
-        BowHandler.BowProperties properties = new BowHandler.BowProperties(stack, null);
+        BowHandler2.BowProperties properties = new BowHandler2.BowProperties(stack, null);
         List<String> list = new ArrayList<String>();
         list.add(InfoHelper.ITC() + StatCollector.translateToLocal("gui.de.RFCapacity.txt") + ": " + InfoHelper.HITC() + Utills.formatNumber(getMaxEnergyStored(stack)));
         list.add(InfoHelper.ITC() + StatCollector.translateToLocal("gui.de.max.txt") + " " + StatCollector.translateToLocal("gui.de.ArrowSpeed.txt") + ": " + InfoHelper.HITC() + "+" + EnumUpgrade.ARROW_SPEED.getUpgradePoints(stack) * 100 + "%");
@@ -313,7 +313,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     @Override
     public int getMaxEnergyStored(ItemStack stack) {
         int points = IUpgradableItem.EnumUpgrade.RF_CAPACITY.getUpgradePoints(stack);
-        return BalanceConfigHandler.chaoticWeaponsBaseStorage + points * BalanceConfigHandler.chaoticWeaponsStoragePerUpgrade;
+        return BalanceConfigHandler2.chaoticWeaponsBaseStorage + points * BalanceConfigHandler2.chaoticWeaponsStoragePerUpgrade;
     }
 
     @Override
@@ -322,7 +322,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
 
         if (BrandonsCore.proxy.getClientPlayer() != null && BrandonsCore.proxy.getClientPlayer().getItemInUse() != null && BrandonsCore.proxy.getClientPlayer().getItemInUseDuration() > 2) {
             EntityPlayer player = BrandonsCore.proxy.getClientPlayer();
-            BowHandler.BowProperties properties = new BowHandler.BowProperties(stack, player);
+            BowHandler2.BowProperties properties = new BowHandler2.BowProperties(stack, player);
             int power = (int) Math.min(((float) player.getItemInUseDuration() / (float) properties.getDrawTicks() * 100F), 100F);
             list.add(InfoHelper.ITC() + StatCollector.translateToLocal("info.de.power.txt") + ": " + InfoHelper.HITC() + power + "%");
         } else {
@@ -337,7 +337,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
             list.add(InfoHelper.ITC() + StatCollector.translateToLocal("info.de.charge.txt") + ": " + InfoHelper.HITC() + Utills.formatNumber(getEnergyStored(stack)) + " / " + Utills.formatNumber(getMaxEnergyStored(stack)));
 
             if (BrandonsCore.proxy.getClientPlayer() != null) {
-                BowHandler.BowProperties properties = new BowHandler.BowProperties(stack, BrandonsCore.proxy.getClientPlayer());
+                BowHandler2.BowProperties properties = new BowHandler2.BowProperties(stack, BrandonsCore.proxy.getClientPlayer());
                 list.add(InfoHelper.ITC() + StatCollector.translateToLocal("gui.de.rfPerShot.txt") + ": " + InfoHelper.HITC() + Utills.addCommas(properties.calculateEnergyCost()));
                 if (!properties.canFire() && properties.cantFireMessage != null)
                     list.add(EnumChatFormatting.DARK_RED + StatCollector.translateToLocal(properties.cantFireMessage));
@@ -348,7 +348,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
 
     @Override
     public int getEnergyPerAttack() {
-        return BalanceConfigHandler.chaoticBowEnergyPerShot;
+        return BalanceConfigHandler2.chaoticBowEnergyPerShot;
     }
 
     //endregion

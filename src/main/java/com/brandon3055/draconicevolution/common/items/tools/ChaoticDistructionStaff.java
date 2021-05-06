@@ -5,7 +5,7 @@ import java.util.List;
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems;
-import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler;
+import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolHandler;
 import com.brandon3055.draconicevolution.common.items.weapons.IEnergyContainerWeaponItem;
@@ -37,10 +37,10 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
         this.setHarvestLevel("pickaxe", 10);
         this.setHarvestLevel("shovel", 10);
         this.setHarvestLevel("axe", 10);
-        this.setCapacity(BalanceConfigHandler.chaoticToolsBaseStorage * 2 + BalanceConfigHandler.chaoticWeaponsBaseStorage);
-        this.setMaxExtract(BalanceConfigHandler.chaoticToolsMaxTransfer * 2 + BalanceConfigHandler.chaoticWeaponsMaxTransfer);
-        this.setMaxReceive(BalanceConfigHandler.chaoticToolsMaxTransfer * 2 + BalanceConfigHandler.chaoticWeaponsMaxTransfer);
-        this.energyPerOperation = BalanceConfigHandler.chaoticToolsEnergyPerAction;
+        this.setCapacity(BalanceConfigHandler2.chaoticToolsBaseStorage * 2 + BalanceConfigHandler2.chaoticWeaponsBaseStorage);
+        this.setMaxExtract(BalanceConfigHandler2.chaoticToolsMaxTransfer * 2 + BalanceConfigHandler2.chaoticWeaponsMaxTransfer);
+        this.setMaxReceive(BalanceConfigHandler2.chaoticToolsMaxTransfer * 2 + BalanceConfigHandler2.chaoticWeaponsMaxTransfer);
+        this.energyPerOperation = BalanceConfigHandler2.chaoticToolsEnergyPerAction;
         ModItems.register(this);
     }
 
@@ -120,7 +120,7 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
 
     @Override
     public int getUpgradeCap(ItemStack itemstack) {
-        return BalanceConfigHandler.chaoticStaffMaxUpgrades;
+        return BalanceConfigHandler2.chaoticStaffMaxUpgrades;
     }
 
     @Override
@@ -131,36 +131,36 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.chaoticStaffMaxCapacityUpgradePoints;
+            return BalanceConfigHandler2.chaoticStaffMaxCapacityUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_AOE.index) {
-            return BalanceConfigHandler.chaoticStaffMaxDigAOEUpgradePoints;
+            return BalanceConfigHandler2.chaoticStaffMaxDigAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_DEPTH.index) {
-            return BalanceConfigHandler.chaoticStaffMaxDigDepthUpgradePoints;
+            return BalanceConfigHandler2.chaoticStaffMaxDigDepthUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ATTACK_AOE.index) {
-            return BalanceConfigHandler.chaoticStaffMaxAttackAOEUpgradePoints;
+            return BalanceConfigHandler2.chaoticStaffMaxAttackAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ATTACK_DAMAGE.index) {
-            return BalanceConfigHandler.chaoticStaffMaxAttackDamageUpgradePoints;
+            return BalanceConfigHandler2.chaoticStaffMaxAttackDamageUpgradePoints;
         }
-        return BalanceConfigHandler.chaoticStaffMaxUpgradePoints;
+        return BalanceConfigHandler2.chaoticStaffMaxUpgradePoints;
     }
 
     @Override
     public int getBaseUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.DIG_AOE.index) {
-            return BalanceConfigHandler.chaoticStaffMinDigAOEUpgradePoints;
+            return BalanceConfigHandler2.chaoticStaffMinDigAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_DEPTH.index) {
-            return BalanceConfigHandler.chaoticStaffMinDigDepthUpgradePoints;
+            return BalanceConfigHandler2.chaoticStaffMinDigDepthUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ATTACK_AOE.index) {
-            return BalanceConfigHandler.chaoticStaffMinAttackAOEUpgradePoints;
+            return BalanceConfigHandler2.chaoticStaffMinAttackAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ATTACK_DAMAGE.index) {
-            return BalanceConfigHandler.chaoticStaffMinAttackDamageUpgradePoints;
+            return BalanceConfigHandler2.chaoticStaffMinAttackDamageUpgradePoints;
         }
         return 0;
     }
@@ -168,8 +168,8 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
     @Override
     public int getCapacity(ItemStack stack) {
         int points = IUpgradableItem.EnumUpgrade.RF_CAPACITY.getUpgradePoints(stack);
-        return BalanceConfigHandler.chaoticToolsBaseStorage * 2 + BalanceConfigHandler.chaoticWeaponsBaseStorage +
-                points * (BalanceConfigHandler.chaoticToolsStoragePerUpgrade + BalanceConfigHandler.chaoticWeaponsStoragePerUpgrade);
+        return BalanceConfigHandler2.chaoticToolsBaseStorage * 2 + BalanceConfigHandler2.chaoticWeaponsBaseStorage +
+                points * (BalanceConfigHandler2.chaoticToolsStoragePerUpgrade + BalanceConfigHandler2.chaoticWeaponsStoragePerUpgrade);
     }
 
     @Override
@@ -191,6 +191,6 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
 
     @Override
     public int getEnergyPerAttack() {
-        return BalanceConfigHandler.chaoticWeaponsEnergyPerAttack;
+        return BalanceConfigHandler2.chaoticWeaponsEnergyPerAttack;
     }
 }

@@ -9,7 +9,7 @@ import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.ModItems;
-import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler;
+import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.RFItemBase;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
 import com.brandon3055.draconicevolution.common.lib.Strings;
@@ -59,9 +59,9 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 0), "Energy", 0));
-        list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 0), "Energy", BalanceConfigHandler.wyvernCapacitorBaseStorage));
+        list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 0), "Energy", BalanceConfigHandler2.wyvernCapacitorBaseStorage));
         list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 1), "Energy", 0));
-        list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 1), "Energy", BalanceConfigHandler.chaoticCapacitorBaseStorage));
+        list.add(ItemNBTHelper.setInteger(new ItemStack(item, 1, 1), "Energy", BalanceConfigHandler2.chaoticCapacitorBaseStorage));
     }
 
     @Override
@@ -72,17 +72,17 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
     @Override
     public int getCapacity(ItemStack stack) {
         int points = EnumUpgrade.RF_CAPACITY.getUpgradePoints(stack);
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorBaseStorage + points * BalanceConfigHandler.wyvernCapacitorStoragePerUpgrade : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorBaseStorage + points * BalanceConfigHandler.chaoticCapacitorStoragePerUpgrade : 0;
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler2.wyvernCapacitorBaseStorage + points * BalanceConfigHandler2.wyvernCapacitorStoragePerUpgrade : stack.getItemDamage() == 1 ? BalanceConfigHandler2.chaoticCapacitorBaseStorage + points * BalanceConfigHandler2.chaoticCapacitorStoragePerUpgrade : 0;
     }
 
     @Override
     public int getMaxExtract(ItemStack stack) {
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxExtract : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxExtract : 0;
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler2.wyvernCapacitorMaxExtract : stack.getItemDamage() == 1 ? BalanceConfigHandler2.chaoticCapacitorMaxExtract : 0;
     }
 
     @Override
     public int getMaxReceive(ItemStack stack) {
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxReceive : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxReceive : 0;
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler2.wyvernCapacitorMaxReceive : stack.getItemDamage() == 1 ? BalanceConfigHandler2.chaoticCapacitorMaxReceive : 0;
     }
 
     @Override
@@ -163,7 +163,7 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
 
     @Override
     public int getUpgradeCap(ItemStack stack) {
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxUpgrades : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxUpgrades : 0;
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler2.wyvernCapacitorMaxUpgrades : stack.getItemDamage() == 1 ? BalanceConfigHandler2.chaoticCapacitorMaxUpgrades : 0;
     }
 
     @Override
@@ -173,7 +173,7 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
 
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
-        return Math.max(BalanceConfigHandler.wyvernCapacitorMaxUpgradePoints, BalanceConfigHandler.chaoticCapacitorMaxUpgradePoints);
+        return Math.max(BalanceConfigHandler2.wyvernCapacitorMaxUpgradePoints, BalanceConfigHandler2.chaoticCapacitorMaxUpgradePoints);
     }
 
     @Override
@@ -182,9 +182,9 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
             return getMaxUpgradePoints(upgradeIndex);
         }
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxCapacityUpgradePoints : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxCapacityUpgradePoints : getMaxUpgradePoints(upgradeIndex);
+            return stack.getItemDamage() == 0 ? BalanceConfigHandler2.wyvernCapacitorMaxCapacityUpgradePoints : stack.getItemDamage() == 1 ? BalanceConfigHandler2.chaoticCapacitorMaxCapacityUpgradePoints : getMaxUpgradePoints(upgradeIndex);
         }
-        return stack.getItemDamage() == 0 ? BalanceConfigHandler.wyvernCapacitorMaxUpgradePoints : stack.getItemDamage() == 1 ? BalanceConfigHandler.chaoticCapacitorMaxUpgradePoints : getMaxUpgradePoints(upgradeIndex);
+        return stack.getItemDamage() == 0 ? BalanceConfigHandler2.wyvernCapacitorMaxUpgradePoints : stack.getItemDamage() == 1 ? BalanceConfigHandler2.chaoticCapacitorMaxUpgradePoints : getMaxUpgradePoints(upgradeIndex);
     }
 
     @Override

@@ -10,20 +10,8 @@ import com.brandon3055.draconicevolution.common.achievements.Achievements;
 import com.brandon3055.draconicevolution.common.entity.*;
 import com.brandon3055.draconicevolution.common.handler.*;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
-import com.brandon3055.draconicevolution.common.lib.References;
-import com.brandon3055.draconicevolution.common.magic.EnchantmentReaper;
 import com.brandon3055.draconicevolution.common.magic.PotionHandler;
 import com.brandon3055.draconicevolution.common.network.*;
-import com.brandon3055.draconicevolution.common.tileentities.*;
-import com.brandon3055.draconicevolution.common.tileentities.energynet.TileEnergyRelay;
-import com.brandon3055.draconicevolution.common.tileentities.energynet.TileEnergyTransceiver;
-import com.brandon3055.draconicevolution.common.tileentities.energynet.TileWirelessEnergyTransceiver;
-import com.brandon3055.draconicevolution.common.tileentities.gates.TileFluidGate;
-import com.brandon3055.draconicevolution.common.tileentities.gates.TileFluxGate;
-import com.brandon3055.draconicevolution.common.tileentities.multiblocktiles.*;
-import com.brandon3055.draconicevolution.common.tileentities.multiblocktiles.reactor.TileReactorCore;
-import com.brandon3055.draconicevolution.common.tileentities.multiblocktiles.reactor.TileReactorEnergyInjector;
-import com.brandon3055.draconicevolution.common.tileentities.multiblocktiles.reactor.TileReactorStabilizer;
 import com.brandon3055.draconicevolution.common.utills.DragonChunkLoader;
 import com.brandon3055.draconicevolution.common.utills.LogHelper;
 import com.brandon3055.draconicevolution.common.world.DraconicWorldGenerator;
@@ -48,7 +36,7 @@ public class CommonProxy2 {
 
     public void preInit(FMLPreInitializationEvent event) {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
-        BalanceConfigHandler.init(event.getModConfigurationDirectory());
+        BalanceConfigHandler2.init(event.getModConfigurationDirectory());
         registerEventListeners(event.getSide());
         ModItems.init();
         ContributorHandler.init();
@@ -96,7 +84,7 @@ public class CommonProxy2 {
     }
 
     public void postInit(FMLPostInitializationEvent event) {
-        BalanceConfigHandler.finishLoading();
+        BalanceConfigHandler2.finishLoading();
         OreDoublingRegistry.init();
         Achievements.registerAchievementPane();
         LogHelper.info("Finished PostInitialization");

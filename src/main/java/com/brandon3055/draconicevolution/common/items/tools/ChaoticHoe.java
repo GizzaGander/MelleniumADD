@@ -11,7 +11,7 @@ import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
-import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler;
+import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
 import com.brandon3055.draconicevolution.common.lib.References;
 import com.brandon3055.draconicevolution.common.lib.Strings;
@@ -41,9 +41,9 @@ import org.lwjgl.opengl.GL11;
 
 public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRenderTweak, IUpgradableItem, IConfigurableItem, IHudDisplayItem {
 
-    protected int capacity = BalanceConfigHandler.chaoticToolsBaseStorage;
-    protected int maxReceive = BalanceConfigHandler.chaoticToolsMaxTransfer;
-    protected int maxExtract = BalanceConfigHandler.chaoticToolsMaxTransfer;
+    protected int capacity = BalanceConfigHandler2.chaoticToolsBaseStorage;
+    protected int maxReceive = BalanceConfigHandler2.chaoticToolsMaxTransfer;
+    protected int maxExtract = BalanceConfigHandler2.chaoticToolsMaxTransfer;
 
     public ChaoticHoe() {
         super(ModItems.CHAOTIC);
@@ -103,7 +103,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
             LogHelper.info(size);
             for (int x1 = -size; x1 <= size; x1++) {
                 for (int z1 = -size; z1 <= size; z1++) {
-                    if (!(stack.getItem() instanceof IEnergyContainerItem) || ((IEnergyContainerItem) stack.getItem()).getEnergyStored(stack) < BalanceConfigHandler.chaoticToolsEnergyPerAction) {
+                    if (!(stack.getItem() instanceof IEnergyContainerItem) || ((IEnergyContainerItem) stack.getItem()).getEnergyStored(stack) < BalanceConfigHandler2.chaoticToolsEnergyPerAction) {
                         if (!player.capabilities.isCreativeMode) return false;
                     }
                     Block topBlock = world.getBlock(x + x1, y + 1, z + z1);
@@ -143,11 +143,11 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     }
 
     private boolean hoe(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int par7) {
-        if (!(stack.getItem() instanceof IEnergyContainerItem) || ((IEnergyContainerItem) stack.getItem()).getEnergyStored(stack) < BalanceConfigHandler.chaoticToolsEnergyPerAction) {
+        if (!(stack.getItem() instanceof IEnergyContainerItem) || ((IEnergyContainerItem) stack.getItem()).getEnergyStored(stack) < BalanceConfigHandler2.chaoticToolsEnergyPerAction) {
             if (!player.capabilities.isCreativeMode) return false;
         } else {
             if (!player.capabilities.isCreativeMode)
-                ((IEnergyContainerItem) stack.getItem()).extractEnergy(stack, BalanceConfigHandler.chaoticToolsEnergyPerAction, false);
+                ((IEnergyContainerItem) stack.getItem()).extractEnergy(stack, BalanceConfigHandler2.chaoticToolsEnergyPerAction, false);
         }
         if (!player.canPlayerEdit(x, y, z, par7, stack)) {
             return false;
@@ -231,7 +231,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     @Override
     public int getMaxEnergyStored(ItemStack container) {
         int points = IUpgradableItem.EnumUpgrade.RF_CAPACITY.getUpgradePoints(container);
-        return BalanceConfigHandler.chaoticToolsBaseStorage + points * BalanceConfigHandler.chaoticToolsStoragePerUpgrade;
+        return BalanceConfigHandler2.chaoticToolsBaseStorage + points * BalanceConfigHandler2.chaoticToolsStoragePerUpgrade;
     }
 
     @Override
@@ -285,7 +285,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
 
     @Override
     public int getUpgradeCap(ItemStack itemstack) {
-        return BalanceConfigHandler.chaoticToolsMaxUpgrades;
+        return BalanceConfigHandler2.chaoticToolsMaxUpgrades;
     }
 
     @Override
@@ -296,12 +296,12 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.chaoticToolsMaxCapacityUpgradePoints;
+            return BalanceConfigHandler2.chaoticToolsMaxCapacityUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.DIG_AOE.index) {
-            return BalanceConfigHandler.chaoticToolsMaxDigAOEUpgradePoints + 1;
+            return BalanceConfigHandler2.chaoticToolsMaxDigAOEUpgradePoints + 1;
         }
-        return BalanceConfigHandler.chaoticToolsMaxUpgradePoints;
+        return BalanceConfigHandler2.chaoticToolsMaxUpgradePoints;
     }
 
     @Override
@@ -312,7 +312,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     @Override
     public int getBaseUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.DIG_AOE.index) {
-            return BalanceConfigHandler.chaoticToolsMinDigAOEUpgradePoints + 1;
+            return BalanceConfigHandler2.chaoticToolsMinDigAOEUpgradePoints + 1;
         }
         return 0;
     }

@@ -13,7 +13,7 @@ import com.brandon3055.draconicevolution.client.model.ModelChaoticArmor;
 import com.brandon3055.draconicevolution.client.model.ModelChaoticArmorOld;
 import com.brandon3055.draconicevolution.common.ModItems;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
-import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler;
+import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
 import com.brandon3055.draconicevolution.common.lib.References;
@@ -61,8 +61,8 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @SideOnly(Side.CLIENT)
     private IIcon bootsIcon;
 
-    private int maxEnergy = BalanceConfigHandler.chaoticArmorBaseStorage;
-    private int maxTransfer = BalanceConfigHandler.chaoticArmorMaxTransfer;
+    private int maxEnergy = BalanceConfigHandler2.chaoticArmorBaseStorage;
+    private int maxTransfer = BalanceConfigHandler2.chaoticArmorMaxTransfer;
 
     public ChaoticArmor(ArmorMaterial material, int armorType, String name) {
         super(material, 0, armorType);
@@ -185,8 +185,8 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
         if (stack == null) return;
         if (stack.getItem() == ModItems.chaoticHelm) {
             if (world.isRemote) return;
-            if (this.getEnergyStored(stack) >= BalanceConfigHandler.chaoticArmorEnergyToRemoveEffects && clearNegativeEffects(player)) {
-                this.extractEnergy(stack, BalanceConfigHandler.chaoticArmorEnergyToRemoveEffects, false);
+            if (this.getEnergyStored(stack) >= BalanceConfigHandler2.chaoticArmorEnergyToRemoveEffects && clearNegativeEffects(player)) {
+                this.extractEnergy(stack, BalanceConfigHandler2.chaoticArmorEnergyToRemoveEffects, false);
             }
             if (player.worldObj.getBlockLightValue((int) Math.floor(player.posX), (int) player.posY + 1, (int) Math.floor(player.posZ)) < 5 && IConfigurableItem.ProfileHelper.getBoolean(stack, "ArmorNVActive", false)) {
                 player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 419, 0, true));
@@ -272,7 +272,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     public int getMaxEnergyStored(ItemStack container) {
         int points = IUpgradableItem.EnumUpgrade.RF_CAPACITY.getUpgradePoints(container);
-        return BalanceConfigHandler.chaoticArmorBaseStorage + points * BalanceConfigHandler.chaoticArmorStoragePerUpgrade;
+        return BalanceConfigHandler2.chaoticArmorBaseStorage + points * BalanceConfigHandler2.chaoticArmorStoragePerUpgrade;
     }
 
     /* Misc */
@@ -412,7 +412,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
 
     @Override
     public int getUpgradeCap(ItemStack itemstack) {
-        return BalanceConfigHandler.chaoticArmorMaxUpgrades;
+        return BalanceConfigHandler2.chaoticArmorMaxUpgrades;
     }
 
     @Override
@@ -434,9 +434,9 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.chaoticArmorMaxCapacityUpgradePoints;
+            return BalanceConfigHandler2.chaoticArmorMaxCapacityUpgradePoints;
         }
-        return BalanceConfigHandler.chaoticArmorMaxUpgradePoints;
+        return BalanceConfigHandler2.chaoticArmorMaxUpgradePoints;
     }
 
     @Override
@@ -450,7 +450,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
             return (int) (getProtectionShare() * 25) + (armorType == 2 ? 2 : 0);
         }
         if (upgradeIndex == EnumUpgrade.SHIELD_RECOVERY.index) {
-            return BalanceConfigHandler.chaoticArmorMinShieldRecovery;
+            return BalanceConfigHandler2.chaoticArmorMinShieldRecovery;
         }
         return 0;
     }
@@ -514,7 +514,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
 
     @Override
     public int getEnergyPerProtectionPoint() {
-        return BalanceConfigHandler.chaoticArmorEnergyPerProtectionPoint;
+        return BalanceConfigHandler2.chaoticArmorEnergyPerProtectionPoint;
     }
 
     //endregion

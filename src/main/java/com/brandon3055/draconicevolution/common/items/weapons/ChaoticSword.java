@@ -11,7 +11,7 @@ import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
-import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler;
+import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolHandler;
 import com.brandon3055.draconicevolution.common.lib.References;
@@ -40,9 +40,9 @@ import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
 public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponItem, IInventoryTool, IRenderTweak, IUpgradableItem, IHudDisplayItem {
-    protected int capacity = BalanceConfigHandler.chaoticWeaponsBaseStorage;
-    protected int maxReceive = BalanceConfigHandler.chaoticWeaponsMaxTransfer;
-    protected int maxExtract = BalanceConfigHandler.chaoticWeaponsMaxTransfer;
+    protected int capacity = BalanceConfigHandler2.chaoticWeaponsBaseStorage;
+    protected int maxReceive = BalanceConfigHandler2.chaoticWeaponsMaxTransfer;
+    protected int maxExtract = BalanceConfigHandler2.chaoticWeaponsMaxTransfer;
 
     public ChaoticSword() {
         super(ModItems.CHAOTIC);
@@ -152,7 +152,7 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     @Override
     public int getMaxEnergyStored(ItemStack container) {
         int points = IUpgradableItem.EnumUpgrade.RF_CAPACITY.getUpgradePoints(container);
-        return BalanceConfigHandler.chaoticWeaponsBaseStorage + points * BalanceConfigHandler.chaoticWeaponsStoragePerUpgrade;
+        return BalanceConfigHandler2.chaoticWeaponsBaseStorage + points * BalanceConfigHandler2.chaoticWeaponsStoragePerUpgrade;
     }
 
     @Override
@@ -236,7 +236,7 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
 
     @Override
     public int getUpgradeCap(ItemStack itemstack) {
-        return BalanceConfigHandler.chaoticWeaponsMaxUpgrades;
+        return BalanceConfigHandler2.chaoticWeaponsMaxUpgrades;
     }
 
     @Override
@@ -247,15 +247,15 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     @Override
     public int getMaxUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.RF_CAPACITY.index) {
-            return BalanceConfigHandler.chaoticWeaponsMaxCapacityUpgradePoints;
+            return BalanceConfigHandler2.chaoticWeaponsMaxCapacityUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ATTACK_AOE.index) {
-            return BalanceConfigHandler.chaoticWeaponsMaxAttackAOEUpgradePoints;
+            return BalanceConfigHandler2.chaoticWeaponsMaxAttackAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ATTACK_DAMAGE.index) {
-            return BalanceConfigHandler.chaoticWeaponsMaxAttackDamageUpgradePoints;
+            return BalanceConfigHandler2.chaoticWeaponsMaxAttackDamageUpgradePoints;
         }
-        return BalanceConfigHandler.chaoticWeaponsMaxUpgradePoints;
+        return BalanceConfigHandler2.chaoticWeaponsMaxUpgradePoints;
     }
 
     @Override
@@ -266,10 +266,10 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     @Override
     public int getBaseUpgradePoints(int upgradeIndex) {
         if (upgradeIndex == EnumUpgrade.ATTACK_AOE.index) {
-            return BalanceConfigHandler.chaoticWeaponsMinAttackAOEUpgradePoints;
+            return BalanceConfigHandler2.chaoticWeaponsMinAttackAOEUpgradePoints;
         }
         if (upgradeIndex == EnumUpgrade.ARROW_DAMAGE.index) {
-            return BalanceConfigHandler.chaoticWeaponsMinAttackDamageUpgradePoints;
+            return BalanceConfigHandler2.chaoticWeaponsMinAttackDamageUpgradePoints;
         }
         return 0;
     }
@@ -316,6 +316,6 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
 
     @Override
     public int getEnergyPerAttack() {
-        return BalanceConfigHandler.chaoticWeaponsEnergyPerAttack;
+        return BalanceConfigHandler2.chaoticWeaponsEnergyPerAttack;
     }
 }
