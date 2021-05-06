@@ -3,6 +3,7 @@ package com.brandon3055.draconicevolution.common.items.weapons;
 import java.util.Random;
 
 import cofh.api.energy.IEnergyContainerItem;
+import com.brandon3055.draconicevolution.common.ModItems;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityCustomArrow;
 import com.brandon3055.draconicevolution.common.entity.EntityEnderArrow;
@@ -93,7 +94,7 @@ public class BowHandler2 {
         }
         j = event.charge;
 
-        if (player.inventory.hasItem(ModItems2.enderArrow)) {
+        if (player.inventory.hasItem(ModItems.enderArrow)) {
             float f = j / pullSpeedModifier;
             f = (f * f + f * 2.0F) / 3.0F;
 
@@ -109,8 +110,8 @@ public class BowHandler2 {
             stack.damageItem(1, player);                                                                            //
             world.playSoundAtEntity(player, "random.bow", 1.0F, soundPitchModifier * (1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.3F));
 
-            if (player.inventory.hasItem(ModItems2.enderArrow))
-                player.inventory.consumeInventoryItem(ModItems2.enderArrow);
+            if (player.inventory.hasItem(ModItems.enderArrow))
+                player.inventory.consumeInventoryItem(ModItems.enderArrow);
 
             if (!world.isRemote) {
                 world.spawnEntityInWorld(entityArrow);

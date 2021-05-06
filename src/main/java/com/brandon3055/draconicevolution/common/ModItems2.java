@@ -33,7 +33,6 @@ public class ModItems2 {
     public static ItemArmor chaoticBoots;
     public static Item chaoticDestructionStaff;
     public static ItemDE2 chaotiumIngot;
-    public static ItemDE2 enderArrow;
 
     public static ItemDE2 chaotiumEnergyCore;
     public static ItemDE2 chaotiumFluxCapacitor;
@@ -46,7 +45,6 @@ public class ModItems2 {
     public static ItemDE2 nugget;
 
     public static void init() {
-        enderArrow = new EnderArrow2();
         chaotiumIngot = new ChaotiumIngot();
         chaoticDestructionStaff = new ChaoticDistructionStaff();
         chaoticPickaxe = new ChaoticPickaxe();
