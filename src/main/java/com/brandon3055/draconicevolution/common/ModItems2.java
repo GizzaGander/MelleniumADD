@@ -64,7 +64,8 @@ public class ModItems2 {
         chaoticEnergyCore = new ItemStack(ModItems2.chaotiumEnergyCore, 1, 1);
         chaoticFluxCapacitor = new ItemStack(ModItems2.chaotiumFluxCapacitor, 1, 1);
 
-        nuggetChaotic = new ItemStack(nugget, 1, 1);
+        nugget = new Nugget2();
+        nuggetChaotic = new ItemStack(nugget, 1, 2);
     }
 
     public static void register(final ItemDE2 item) {

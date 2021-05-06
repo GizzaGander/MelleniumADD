@@ -18,7 +18,7 @@ item.draconicevolution:draconicIngot.name=Awakened Draconium Ingot
 item.draconicevolution:nugget.awakened.name=Awakened Draconium Nugget
 
 //Item Groups ----------------------------------------------------------------------------------------------------------------------------------------
-itemGroup.toolsAndWeapons=Draconic Evolution Tools & Weapons 
+itemGroup.tabMelleniumAds=Mellenium Addon
 
 //Achievements ----------------------------------------------------------------------------------------------------------------------------------------
 draconicevolution.achievementPage.name=Draconic Evolution

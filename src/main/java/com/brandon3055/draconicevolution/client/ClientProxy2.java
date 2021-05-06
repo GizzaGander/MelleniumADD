@@ -14,7 +14,6 @@ import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.blocks.multiblock.IReactorPart;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
 import com.brandon3055.draconicevolution.common.lib.References2;
-import com.brandon3055.draconicevolution.common.utills.UpdateChecker;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -94,7 +93,6 @@ public class ClientProxy2 extends CommonProxy2 {
         super.init(event);
         FMLCommonHandler.instance().bus().register(new KeyInputHandler());
         FMLCommonHandler.instance().bus().register(new ClientEventHandler());
-        if (ConfigHandler.enableVersionChecker) FMLCommonHandler.instance().bus().register(new UpdateChecker());
         MinecraftForge.EVENT_BUS.register(new HudHandler());
         MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
         registerRenderIDs();
