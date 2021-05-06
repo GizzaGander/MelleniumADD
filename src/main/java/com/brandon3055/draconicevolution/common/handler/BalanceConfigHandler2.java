@@ -11,7 +11,7 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 
 public class BalanceConfigHandler2 {
-    public static final int chaoticArmorMinShieldRecovery = 5;
+    public static final int chaoticArmorMinShieldRecovery = 7;
     public static final int chaoticToolsMinDigAOEUpgradePoints = 2;
     public static final int chaoticToolsMaxDigAOEUpgradePoints = 4;
     public static final int chaoticToolsMinDigSpeedUpgradePoints = 5;

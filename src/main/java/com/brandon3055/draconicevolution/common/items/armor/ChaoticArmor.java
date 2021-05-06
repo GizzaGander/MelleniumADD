@@ -154,13 +154,13 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     protected float getProtectionShare() {
         switch (armorType) {
             case 0:
-                return 0.15F;
+                return 0.55F;
             case 1:
-                return 0.40F;
+                return 0.80F;
             case 2:
-                return 0.30F;
+                return 0.65F;
             case 3:
-                return 0.15F;
+                return 0.55F;
         }
         return 0;
     }
