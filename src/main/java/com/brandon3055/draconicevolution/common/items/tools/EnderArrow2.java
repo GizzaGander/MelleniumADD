@@ -1,6 +1,6 @@
 package com.brandon3055.draconicevolution.common.items.tools;
 
-import com.brandon3055.draconicevolution.DraconicEvolution;
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.draconicevolution.common.items.ItemDE2;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.lib.References;
@@ -19,7 +19,7 @@ import java.util.List;
 public class EnderArrow2 extends ItemDE2 {
     public EnderArrow2() {
         this.setUnlocalizedName(Strings.enderArrowName);
-        this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
         ModItems2.register(this);
     }
 

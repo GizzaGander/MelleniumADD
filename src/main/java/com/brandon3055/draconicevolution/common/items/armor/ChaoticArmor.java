@@ -8,7 +8,7 @@ import com.brandon3055.brandonscore.BrandonsCore;
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
-import com.brandon3055.draconicevolution.DraconicEvolution;
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.draconicevolution.client.model.ModelChaoticArmor;
 import com.brandon3055.draconicevolution.client.model.ModelChaoticArmorOld;
 import com.brandon3055.draconicevolution.common.ModItems2;
@@ -67,7 +67,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     public ChaoticArmor(ArmorMaterial material, int armorType, String name) {
         super(material, 0, armorType);
         this.setUnlocalizedName(name);
-        this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
         if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, name);
     }
 

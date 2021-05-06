@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cofh.api.energy.IEnergyContainerItem;
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
-import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.items.tools.baseclasses.RFItemBase2;
@@ -35,7 +35,7 @@ public class ChaotiumFluxCapacitor extends RFItemBase2 implements IUpgradableIte
 
     public ChaotiumFluxCapacitor() {
         this.setUnlocalizedName(Strings2.chaotiumFluxCapacitorName);
-        this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
         this.setHasSubtypes(true);
         this.setMaxStackSize(1);
         ModItems2.register(this);

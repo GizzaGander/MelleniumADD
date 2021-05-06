@@ -1,6 +1,6 @@
 package com.brandon3055.draconicevolution.common.items;
 
-import com.brandon3055.draconicevolution.DraconicEvolution;
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.lib.Strings2;
 import cpw.mods.fml.relauncher.Side;
@@ -21,7 +21,7 @@ public class ChaotiumEnergyCore extends ItemDE2 {
 
     public ChaotiumEnergyCore() {
         this.setUnlocalizedName(Strings2.chaotiumEnergyCoreName);
-        this.setCreativeTab(DraconicEvolution.tabBlocksItems);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
         this.setHasSubtypes(true);
         ModItems2.register(this);
     }

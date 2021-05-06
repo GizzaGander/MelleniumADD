@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cofh.api.energy.IEnergyContainerItem;
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
-import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
@@ -48,7 +48,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     public ChaoticHoe() {
         super(ModItems2.CHAOTIC);
         this.setUnlocalizedName(Strings2.chaoticHoeName);
-        this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
         if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings2.chaoticHoeName);
     }
 

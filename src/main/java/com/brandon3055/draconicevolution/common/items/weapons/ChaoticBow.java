@@ -1,10 +1,10 @@
 package com.brandon3055.draconicevolution.common.items.weapons;
 
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.brandonscore.BrandonsCore;
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
-import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
@@ -48,7 +48,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     public ChaoticBow() {
         this.maxStackSize = 1;
         this.setMaxDamage(-1);
-        this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
         this.setUnlocalizedName(Strings2.chaoticBowName);
         if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings2.chaoticBowName);
     }
@@ -190,7 +190,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
 
     @Override
     public boolean isEnchantValid(Enchantment enchant) {
-        return enchant.type == EnumEnchantmentType.bow || enchant.effectId == DraconicEvolution.reaperEnchant.effectId;
+        return enchant.type == EnumEnchantmentType.bow || enchant.effectId == MelleniumAddons.reaperEnchant.effectId;
     }
 
     @Override

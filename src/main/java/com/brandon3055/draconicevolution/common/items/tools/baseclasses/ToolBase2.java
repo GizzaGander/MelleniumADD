@@ -1,10 +1,10 @@
 package com.brandon3055.draconicevolution.common.items.tools.baseclasses;
 
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.brandonscore.BrandonsCore;
 import com.brandon3055.brandonscore.common.utills.DataUtills;
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
-import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.keybinding.KeyBindings;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
 import com.brandon3055.draconicevolution.common.lib.References2;
@@ -68,7 +68,7 @@ public class ToolBase2 extends RFItemBase2 {
         this.setMaxDamage(material.getMaxUses());
         this.efficiencyOnProperMaterial = material.getEfficiencyOnProperMaterial();
         this.damageVsEntity = baseDamage + material.getDamageVsEntity();
-        this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
     }
 
     public float getEfficiency(ItemStack stack) {
@@ -184,7 +184,7 @@ public class ToolBase2 extends RFItemBase2 {
             handleModeChange(stack, player, InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown());
         } else if (world.isRemote && BrandonsCore.proxy.getMCServer() == null) {
             handleModeChange(stack, player, InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown());
-            DraconicEvolution.network.sendToServer(new ToolModePacket(InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown()));
+           MelleniumAddons.network.sendToServer(new ToolModePacket(InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown()));
         }
 
         return super.onItemRightClick(stack, world, player);

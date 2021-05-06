@@ -1,10 +1,10 @@
 package com.brandon3055.draconicevolution.common.items.tools.baseclasses;
 
 import cofh.api.energy.IEnergyContainerItem;
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
-import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.items.ItemDE2;
 import com.brandon3055.draconicevolution.common.utills.IConfigurableItem;
@@ -39,7 +39,7 @@ public class RFItemBase2 extends ItemDE2 implements IEnergyContainerItem, IConfi
 
     public RFItemBase2() {
         this.setMaxStackSize(1);
-        this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
     }
 
     @Override

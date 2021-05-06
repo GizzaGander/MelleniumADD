@@ -1,6 +1,6 @@
 package com.brandon3055.draconicevolution.common.items;
 
-import com.brandon3055.draconicevolution.DraconicEvolution;
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import net.minecraft.item.ItemStack;
 
@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 public class ChaoticCore2 extends ItemDE2 {
     public ChaoticCore2() {
         this.setUnlocalizedName("chaoticCore");
-        this.setCreativeTab(DraconicEvolution.tabBlocksItems);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
         ModItems2.register(this);
     }
 

@@ -1,7 +1,7 @@
 package com.brandon3055.draconicevolution.common;
 
 import com.brandon3055.draconicevolution.DraconicEvolution;
-import com.brandon3055.draconicevolution.client.creativetab.DETab;
+import com.brandon3055.draconicevolution.client.creativetab.DETab2;
 import com.brandon3055.draconicevolution.client.gui.GuiHandler;
 import com.brandon3055.draconicevolution.client.render.particle.ParticleEnergyBeam;
 import com.brandon3055.draconicevolution.client.render.particle.ParticleEnergyField;
@@ -74,7 +74,7 @@ public class CommonProxy2 {
         registerGuiHandeler();
         registerWorldGen();
         registerEntities();
-        DETab.initialize();
+        DETab2.initialize();
         PotionHandler.init();
         CCOCIntegration.init();
         ModHelper.init();

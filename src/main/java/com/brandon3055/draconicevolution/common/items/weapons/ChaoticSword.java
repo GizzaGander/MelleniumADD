@@ -3,11 +3,11 @@ package com.brandon3055.draconicevolution.common.items.weapons;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.Mellenium.Addons.MelleniumAddons;
 import com.brandon3055.brandonscore.BrandonsCore;
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
-import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
@@ -47,7 +47,7 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     public ChaoticSword() {
         super(ModItems2.CHAOTIC);
         this.setUnlocalizedName(Strings2.chaoticSwordName);
-        this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
+        this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
         if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings2.chaoticSwordName);
     }
 
@@ -304,7 +304,7 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
             ToolBase2.handleModeChange(stack, player, InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown());
         } else if (world.isRemote && BrandonsCore.proxy.getMCServer() == null) {
             ToolBase2.handleModeChange(stack, player, InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown());
-            DraconicEvolution.network.sendToServer(new ToolModePacket(InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown()));
+            MelleniumAddons.network.sendToServer(new ToolModePacket(InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown()));
         }
         return super.onItemRightClick(stack, world, player);
     }

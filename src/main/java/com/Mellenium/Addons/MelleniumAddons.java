@@ -1,6 +1,6 @@
 package com.Mellenium.Addons;
 
-import com.brandon3055.draconicevolution.client.creativetab.DETab;
+import com.brandon3055.draconicevolution.client.creativetab.DETab2;
 import com.brandon3055.draconicevolution.common.CommonProxy2;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
 import com.brandon3055.draconicevolution.common.lib.References2;
@@ -28,7 +28,7 @@ public class MelleniumAddons {
     @SidedProxy(clientSide = References2.CLIENTPROXYLOCATION, serverSide = References2.SERVERPROXYLOCATION)
     public static CommonProxy2 proxy;
 
-    public static CreativeTabs tabToolsWeapons = new DETab(CreativeTabs.getNextID(), References2.MODID, "toolsAndWeapons", 0);
+    public static CreativeTabs tabMelleniumAds = new DETab2(CreativeTabs.getNextID(), References2.MODID, "tabMelleniumAds", 0);
 
     public static final String networkChannelName = "DEvolutionNC";
     public static SimpleNetworkWrapper network;
