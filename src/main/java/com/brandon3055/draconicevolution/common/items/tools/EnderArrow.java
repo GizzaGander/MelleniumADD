@@ -3,7 +3,7 @@ package com.brandon3055.draconicevolution.common.items.tools;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.items.ItemDE2;
 import com.brandon3055.draconicevolution.common.ModItems2;
-import com.brandon3055.draconicevolution.common.lib.References;
+import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.lib.Strings;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,7 +25,7 @@ public class EnderArrow extends ItemDE2 {
 
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "ender_arrow");
+        itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "ender_arrow");
     }
 
     @SuppressWarnings("unchecked")
