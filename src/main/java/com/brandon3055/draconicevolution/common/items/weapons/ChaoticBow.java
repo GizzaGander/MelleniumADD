@@ -5,11 +5,12 @@ import com.brandon3055.brandonscore.BrandonsCore;
 import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
+import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase2;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
 import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.lib.Strings2;
 import com.brandon3055.draconicevolution.common.utills.IHudDisplayItem;
@@ -38,7 +39,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableItem, IEnergyContainerWeaponItem2, IHudDisplayItem {
+public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableItem, IEnergyContainerWeaponItem, IHudDisplayItem {
     public static final String[] bowPullIconNameArray = new String[]{"pulling_0", "pulling_1", "pulling_2"};
 
     protected int capacity = BalanceConfigHandler2.chaoticWeaponsBaseStorage;
@@ -76,11 +77,11 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_bow" + "_standby");
+        this.itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_bow" + "_standby");
         this.iconArray = new IIcon[bowPullIconNameArray.length];
 
         for (int i = 0; i < this.iconArray.length; ++i) {
-            this.iconArray[i] = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_bow" + "_" + bowPullIconNameArray[i]);
+            this.iconArray[i] = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_bow" + "_" + bowPullIconNameArray[i]);
         }
     }
 
@@ -122,7 +123,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
             List<ItemConfigField> l = getFields(stack, 0);
             for (ItemConfigField f : l) list.add(f.getTooltipInfo());
         }
-        ToolBase2.holdCTRLForUpgrades(list, stack);
+        ToolBase.holdCTRLForUpgrades(list, stack);
         InfoHelper.addEnergyInfo(stack, list);
         if (show && !ConfigHandler.disableLore) InfoHelper.addLore(stack, list, true);
     }
@@ -170,7 +171,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
 
     @Override
     public void onUsingTick(ItemStack stack, EntityPlayer player, int count) {
-        BowHandler.onBowUsingTick(stack, player, count);
+        BowHandler2.onBowUsingTick(stack, player, count);
     }
 
     @Override
@@ -192,15 +193,9 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
 
     @Override
     public boolean isEnchantValid(Enchantment enchant) {
-        return enchant.type == EnumEnchantmentType.bow || enchant.effectId == MelleniumAddons.reaperEnchant.effectId;
+        return enchant.type == EnumEnchantmentType.bow || enchant.effectId == DraconicEvolution.reaperEnchant.effectId;
     }
-    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
 
-    @Override
-    public EnumRarity getRarity(ItemStack stack)
-    {
-        return EnumRarity2;
-    }
     @Override
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = new ArrayList<ItemConfigField>();
@@ -352,6 +347,12 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
             }
         }
         return list;
+    }
+    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack) {
+        return EnumRarity2;
     }
 
     @Override

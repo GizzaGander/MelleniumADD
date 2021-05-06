@@ -1,6 +1,12 @@
 package com.brandon3055.draconicevolution.common.entity;
 
+import com.Mellenium.Addons.MelleniumAddons;
+import com.brandon3055.draconicevolution.client.handler.ParticleHandler;
+import com.brandon3055.draconicevolution.client.render.particle.Particles;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
+import com.brandon3055.draconicevolution.common.items.weapons.BowHandler2;
+import com.brandon3055.draconicevolution.common.network.GenericParticlePacket;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -23,7 +29,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class EntityChaoticArrow extends EntityArrow {
+public class EntityChaoticArrow2 extends EntityArrow {
     private int blockX = -1;
     private int blockY = -1;
     private int blockZ = -1;
@@ -32,34 +38,39 @@ public class EntityChaoticArrow extends EntityArrow {
     private boolean inGround;
     private int ticksInGround;
     private int ticksInAir;
-    private double damage = 2.0D;
-    /**
-     * The amount of knockback an arrow applies when it hits a mob.
-     */
-    private int knockbackStrength;
-    public boolean ignorSpeed = false;
-    public boolean explosive = false;
 
-    public EntityChaoticArrow(World p_i1753_1_) {
+    //Arrow Properties
+    public boolean ignorSpeed = false;    //old
+    public boolean explosive = false;    //old
+    public int knockbackStrength = 0;
+
+    public BowHandler2.BowProperties bowProperties = new BowHandler2.BowProperties();
+
+    public EntityChaoticArrow2(World p_i1753_1_) {
         super(p_i1753_1_);
+        renderDistanceWeight = 40;
     }
 
-    public EntityChaoticArrow(World p_i1754_1_, double p_i1754_2_, double p_i1754_4_, double p_i1754_6_) {
+    public EntityChaoticArrow2(World p_i1754_1_, double p_i1754_2_, double p_i1754_4_, double p_i1754_6_) {
         super(p_i1754_1_, p_i1754_2_, p_i1754_4_, p_i1754_6_);
+        renderDistanceWeight = 40;
     }
 
-    public EntityChaoticArrow(World p_i1755_1_, EntityLivingBase p_i1755_2_, EntityLivingBase p_i1755_3_, float p_i1755_4_, float p_i1755_5_) {
+    public EntityChaoticArrow2(World p_i1755_1_, EntityLivingBase p_i1755_2_, EntityLivingBase p_i1755_3_, float p_i1755_4_, float p_i1755_5_) {
         super(p_i1755_1_, p_i1755_2_, p_i1755_3_, p_i1755_4_, p_i1755_5_);
+        renderDistanceWeight = 40;
     }
 
-    public EntityChaoticArrow(World par1World, EntityLivingBase par2EntityLivingBase, float par3) {
-        super(par1World, par2EntityLivingBase, par3);
+    public EntityChaoticArrow2(World par1World, EntityLivingBase par2EntityLivingBase, float velocity) {
+        super(par1World, par2EntityLivingBase, velocity);
+        renderDistanceWeight = 40;
     }
 
     @Override
     protected void entityInit() {
         super.entityInit();
-        //this.dataWatcher.addObject(16, Byte.valueOf((byte) 0));
+        this.dataWatcher.addObject(17, Byte.valueOf((byte) 0));
+        //this.dataWatcher.updateObject(17, Byte.valueOf((byte)(bowProperties.energyBolt ? 1 : 0)));
     }
 
     @Override
@@ -68,9 +79,9 @@ public class EntityChaoticArrow extends EntityArrow {
         par1 /= f2;
         par3 /= f2;
         par5 /= f2;
-        par1 += this.rand.nextGaussian() * (this.rand.nextBoolean() ? -1 : 1) * 0.007499999832361937D * par8;
-        par3 += this.rand.nextGaussian() * (this.rand.nextBoolean() ? -1 : 1) * 0.007499999832361937D * par8;
-        par5 += this.rand.nextGaussian() * (this.rand.nextBoolean() ? -1 : 1) * 0.007499999832361937D * par8;
+        par1 += this.rand.nextGaussian() * (this.rand.nextBoolean() ? -1 : 1) * 0.0007499999832361937D * par8;
+        par3 += this.rand.nextGaussian() * (this.rand.nextBoolean() ? -1 : 1) * 0.0007499999832361937D * par8;
+        par5 += this.rand.nextGaussian() * (this.rand.nextBoolean() ? -1 : 1) * 0.0007499999832361937D * par8;
         par1 *= par7;
         par3 *= par7;
         par5 *= par7;
@@ -83,50 +94,32 @@ public class EntityChaoticArrow extends EntityArrow {
         this.ticksInGround = 0;
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void setPositionAndRotation2(double par1, double par3, double par5, float par7, float par8, int par9) {
-        this.setPosition(par1, par3, par5);
-        this.setRotation(par7, par8);
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void setVelocity(double par1, double par3, double par5) {
-        this.motionX = par1;
-        this.motionY = par3;
-        this.motionZ = par5;
-
-        if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
-            float f = MathHelper.sqrt_double(par1 * par1 + par5 * par5);
-            this.prevRotationYaw = this.rotationYaw = (float) (Math.atan2(par1, par5) * 180.0D / Math.PI);
-            this.prevRotationPitch = this.rotationPitch = (float) (Math.atan2(par3, f) * 180.0D / Math.PI);
-            this.prevRotationPitch = this.rotationPitch;
-            this.prevRotationYaw = this.rotationYaw;
-            this.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
-            this.ticksInGround = 0;
-        }
-    }
-
     @SuppressWarnings("rawtypes")
     @Override
     public void onUpdate() {
-        //super.onUpdate();
+        //region Entity Update And motion
         super.onEntityUpdate();
+        if (worldObj.isRemote) {
+            bowProperties.energyBolt = dataWatcher.getWatchableObjectByte(17) == 1;
+        } else dataWatcher.updateObject(17, (byte) (bowProperties.energyBolt ? 1 : 0));
+
+
         if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
             float f = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
             this.prevRotationYaw = this.rotationYaw = (float) (Math.atan2(this.motionX, this.motionZ) * 180.0D / Math.PI);
             this.prevRotationPitch = this.rotationPitch = (float) (Math.atan2(this.motionY, f) * 180.0D / Math.PI);
         }
 
+        if (this.arrowShake > 0) {
+            --this.arrowShake;
+        }
+        //endregion
+
+        //region Block Collision Detection
         Block block = this.worldObj.getBlock(this.blockX, this.blockY, this.blockZ);
 
         if (block.getMaterial() != Material.air) {
-            if (explosive) {
-                worldObj.createExplosion(this.shootingEntity, this.prevPosX, this.prevPosY, this.prevPosZ, 4, ConfigHandler.bowBlockDamage);
-                this.setDead();
-                return;
-            }
+            onHitAnything();
             block.setBlockBoundsBasedOnState(this.worldObj, this.blockX, this.blockY, this.blockZ);
             AxisAlignedBB axisalignedbb = block.getCollisionBoundingBoxFromPool(this.worldObj, this.blockX, this.blockY, this.blockZ);
 
@@ -134,10 +127,7 @@ public class EntityChaoticArrow extends EntityArrow {
                 this.inGround = true;
             }
         }
-
-        if (this.arrowShake > 0) {
-            --this.arrowShake;
-        }
+        //endregion
 
         if (this.inGround) {
             int j = this.worldObj.getBlockMetadata(this.blockX, this.blockY, this.blockZ);
@@ -145,7 +135,7 @@ public class EntityChaoticArrow extends EntityArrow {
             if (block == this.blockHit && j == this.inData) {
                 ++this.ticksInGround;
 
-                if (this.ticksInGround == 1200) {
+                if (this.ticksInGround == 1200 || bowProperties.energyBolt) { //Delete the entity when it hits the ground if it is an energy bolt
                     this.setDead();
                 }
             } else {
@@ -157,6 +147,7 @@ public class EntityChaoticArrow extends EntityArrow {
                 this.ticksInAir = 0;
             }
         } else {
+            //region Detect Entity Hit
             ++this.ticksInAir;
             Vec3 vec31 = Vec3.createVectorHelper(this.posX, this.posY, this.posZ);
             Vec3 vec3 = Vec3.createVectorHelper(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
@@ -166,7 +157,6 @@ public class EntityChaoticArrow extends EntityArrow {
 
             if (movingobjectposition != null) {
                 vec3 = Vec3.createVectorHelper(movingobjectposition.hitVec.xCoord, movingobjectposition.hitVec.yCoord, movingobjectposition.hitVec.zCoord);
-
             }
 
             Entity entity = null;
@@ -205,52 +195,37 @@ public class EntityChaoticArrow extends EntityArrow {
                     movingobjectposition = null;
                 }
             }
+            //endregion
 
-            float f2;
+            float velocity;
             float f4;
 
+            //region Process Entity Hit
             if (movingobjectposition != null) {
                 if (movingobjectposition.entityHit != null) {
-                    if (explosive) {
-                        //world.createExplosion(this.shootingEntity, movingobjectposition.entityHit.posX, movingobjectposition.entityHit.posY, movingobjectposition.entityHit.posZ, 6, false);
-                        //movingobjectposition.entityHit.hurtResistantTime = 0;
-                        worldObj.createExplosion(this.shootingEntity, movingobjectposition.entityHit.posX, movingobjectposition.entityHit.posY, movingobjectposition.entityHit.posZ, 4, ConfigHandler.bowBlockDamage);
-                        this.setDead();
-                    }
-                    int k;
-                    if (!ignorSpeed) {
-                        f2 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ);
-                        k = MathHelper.ceiling_double_int(f2 * this.damage);
+                    onHitAnything();
+                    if (isDead) return;
+                    int actualDamage;
+                    //Calculate Damage
+                    velocity = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ);
+                    actualDamage = MathHelper.ceiling_double_int(velocity * bowProperties.arrowDamage);
 
-                        if (this.getIsCritical()) {
-                            k += this.rand.nextInt(k / 2 + 2);
-                        }
-                    } else {
-                        k = (int) this.damage;
-                        if (this.getIsCritical()) {
-                            k += this.rand.nextInt(k / 2 + 2);
-                        }
-                    }
+                    if (bowProperties.energyBolt) actualDamage *= 1.1F;
 
-                    DamageSource damagesource = null;
-
-                    if (this.shootingEntity == null) {
-                        damagesource = DamageSource.causeArrowDamage(this, this);
-                    } else {
-                        damagesource = DamageSource.causeArrowDamage(this, this.shootingEntity);
+                    if (this.getIsCritical()) {
+                        actualDamage += this.rand.nextInt(actualDamage / 2 + 2);
                     }
-                    if (movingobjectposition.entityHit instanceof EntityEnderman) damagesource = DamageSource.magic;
 
                     if (this.isBurning() && !(movingobjectposition.entityHit instanceof EntityEnderman)) {
                         movingobjectposition.entityHit.setFire(5);
                     }
 
-                    movingobjectposition.entityHit.hurtResistantTime = 0;
-                    if (movingobjectposition.entityHit instanceof EntityDragonPart && ((EntityDragonPart) movingobjectposition.entityHit).entityDragonObj instanceof EntityDragon) {
+                    if (bowProperties.energyBolt) movingobjectposition.entityHit.hurtResistantTime = 0;
+                    if (movingobjectposition.entityHit instanceof EntityDragonPart && ((EntityDragonPart) movingobjectposition.entityHit).entityDragonObj instanceof EntityDragon && bowProperties.energyBolt) {
                         ((EntityDragon) ((EntityDragonPart) movingobjectposition.entityHit).entityDragonObj).hurtResistantTime = 0;
                     }
 
-                    if (movingobjectposition.entityHit.attackEntityFrom(damagesource, k)) {
+                    if (movingobjectposition.entityHit.attackEntityFrom(getDamageSource(), actualDamage)) {
                         if (movingobjectposition.entityHit instanceof EntityLivingBase) {
                             EntityLivingBase entitylivingbase = (EntityLivingBase) movingobjectposition.entityHit;
 
@@ -277,18 +252,17 @@ public class EntityChaoticArrow extends EntityArrow {
                         }
 
                         this.playSound("random.bowhit", 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
-
-                        // if (!(movingobjectposition.entityHit instanceof EntityEnderman))
-                        //{
                         this.setDead();
-                        //}
+
                     } else {
-                        this.motionX *= -0.10000000149011612D;
-                        this.motionY *= -0.10000000149011612D;
-                        this.motionZ *= -0.10000000149011612D;
-                        this.rotationYaw += 180.0F;
-                        this.prevRotationYaw += 180.0F;
-                        this.ticksInAir = 0;
+                        if (!(worldObj.isRemote && ticksInAir < 5)) { //Fix arrow wobble on fire due to client side collision with shooting entity
+                            this.motionX *= -0.10000000149011612D;
+                            this.motionY *= -0.10000000149011612D;
+                            this.motionZ *= -0.10000000149011612D;
+                            this.rotationYaw += 180.0F;
+                            this.prevRotationYaw += 180.0F;
+                            this.ticksInAir = 0;
+                        }
                     }
                 } else {
                     this.blockX = movingobjectposition.blockX;
@@ -300,10 +274,10 @@ public class EntityChaoticArrow extends EntityArrow {
                     this.motionX = ((float) (movingobjectposition.hitVec.xCoord - this.posX));
                     this.motionY = ((float) (movingobjectposition.hitVec.yCoord - this.posY));
                     this.motionZ = ((float) (movingobjectposition.hitVec.zCoord - this.posZ));
-                    f2 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ);
-                    this.posX -= this.motionX / f2 * 0.05000000074505806D;
-                    this.posY -= this.motionY / f2 * 0.05000000074505806D;
-                    this.posZ -= this.motionZ / f2 * 0.05000000074505806D;
+                    velocity = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ);
+                    this.posX -= this.motionX / velocity * 0.05000000074505806D;
+                    this.posY -= this.motionY / velocity * 0.05000000074505806D;
+                    this.posZ -= this.motionZ / velocity * 0.05000000074505806D;
                     this.playSound("random.bowhit", 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
                     this.inGround = true;
                     this.arrowShake = 7;
@@ -313,20 +287,26 @@ public class EntityChaoticArrow extends EntityArrow {
                     }
                 }
             }
+            //endregion
 
-            if (this.getIsCritical()) {
+            //region Motion
+            if ((this.getIsCritical() || bowProperties.energyBolt) && worldObj.isRemote) {
                 for (i = 0; i < 4; ++i) {
-                    this.worldObj.spawnParticle("crit", this.posX + this.motionX * i / 4.0D, this.posY + this.motionY * i / 4.0D, this.posZ + this.motionZ * i / 4.0D, -this.motionX, -this.motionY + 0.2D, -this.motionZ);
+                    if (bowProperties.energyBolt) {
+                        spawnArrowParticles();
+                    } else {
+                        this.worldObj.spawnParticle("crit", this.posX + this.motionX * i / 4.0D, this.posY + this.motionY * i / 4.0D, this.posZ + this.motionZ * i / 4.0D, -this.motionX, -this.motionY + 0.2D, -this.motionZ);
+                    }
                 }
             }
 
             this.posX += this.motionX;
             this.posY += this.motionY;
             this.posZ += this.motionZ;
-            f2 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
+            velocity = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
             this.rotationYaw = (float) (Math.atan2(this.motionX, this.motionZ) * 180.0D / Math.PI);
 
-            for (this.rotationPitch = (float) (Math.atan2(this.motionY, f2) * 180.0D / Math.PI); this.rotationPitch - this.prevRotationPitch < -180.0F; this.prevRotationPitch -= 360.0F) {
+            for (this.rotationPitch = (float) (Math.atan2(this.motionY, velocity) * 180.0D / Math.PI); this.rotationPitch - this.prevRotationPitch < -180.0F; this.prevRotationPitch -= 360.0F) {
                 ;
             }
 
@@ -345,7 +325,7 @@ public class EntityChaoticArrow extends EntityArrow {
             this.rotationPitch = this.prevRotationPitch + (this.rotationPitch - this.prevRotationPitch) * 0.2F;
             this.rotationYaw = this.prevRotationYaw + (this.rotationYaw - this.prevRotationYaw) * 0.2F;
             float f3 = 0.99F;
-            f1 = 0.05F;
+            f1 = bowProperties.energyBolt ? 0.025F : 0.05F;
 
             if (this.isInWater()) {
                 for (int l = 0; l < 4; ++l) {
@@ -366,45 +346,52 @@ public class EntityChaoticArrow extends EntityArrow {
             this.motionY -= f1;
             this.setPosition(this.posX, this.posY, this.posZ);
             this.func_145775_I();
+            //endregion
         }
     }
 
-    @Override
-    public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound) {
-        par1NBTTagCompound.setShort("xTile", (short) this.blockX);
-        par1NBTTagCompound.setShort("yTile", (short) this.blockY);
-        par1NBTTagCompound.setShort("zTile", (short) this.blockZ);
-        par1NBTTagCompound.setShort("life", (short) this.ticksInGround);
-        par1NBTTagCompound.setByte("inTile", (byte) Block.getIdFromBlock(this.blockHit));
-        par1NBTTagCompound.setByte("inData", (byte) this.inData);
-        par1NBTTagCompound.setByte("shake", (byte) this.arrowShake);
-        par1NBTTagCompound.setByte("inGround", (byte) (this.inGround ? 1 : 0));
-        par1NBTTagCompound.setByte("pickup", (byte) this.canBePickedUp);
-        par1NBTTagCompound.setDouble("damage", this.damage);
-        //par1NBTTagCompound.setString("shooter", getShooter() instanceof EntityPlayer ? ((EntityPlayer) getShooter()).getCommandSenderName() : "");
+    @SideOnly(Side.CLIENT)
+    private void spawnArrowParticles() {
+        Particles.ArrowParticle particle = new Particles.ArrowParticle(worldObj, posX - 0.25 + rand.nextDouble() * 0.5, posY + rand.nextDouble() * 0.5, posZ - 0.25 + rand.nextDouble() * 0.5, 0xff6000, 0.2F + rand.nextFloat() * 0.5f);
+        double mm = 0.2;
+        particle.motionX = (rand.nextDouble() - 0.5) * mm;
+        particle.motionY = (rand.nextDouble() - 0.5) * mm;
+        particle.motionZ = (rand.nextDouble() - 0.5) * mm;
+        ParticleHandler.spawnCustomParticle(particle, 64);
     }
 
     @Override
-    public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound) {
-        this.blockX = par1NBTTagCompound.getShort("xTile");
-        this.blockY = par1NBTTagCompound.getShort("yTile");
-        this.blockZ = par1NBTTagCompound.getShort("zTile");
-        this.ticksInGround = par1NBTTagCompound.getShort("life");
-        this.blockHit = Block.getBlockById(par1NBTTagCompound.getByte("inTile") & 255);
-        this.inData = par1NBTTagCompound.getByte("inData") & 255;
-        this.arrowShake = par1NBTTagCompound.getByte("shake") & 255;
-        this.inGround = par1NBTTagCompound.getByte("inGround") == 1;
-        //dataWatcher.updateObject(SHOOTER_DATAWATCHER_INDEX, par1NBTTagCompound.hasKey("shooter") ? par1NBTTagCompound.getString("shooter") : "");
+    public void writeEntityToNBT(NBTTagCompound compound) {
+        compound.setShort("xTile", (short) this.blockX);
+        compound.setShort("yTile", (short) this.blockY);
+        compound.setShort("zTile", (short) this.blockZ);
+        compound.setShort("life", (short) this.ticksInGround);
+        compound.setByte("inTile", (byte) Block.getIdFromBlock(this.blockHit));
+        compound.setByte("inData", (byte) this.inData);
+        compound.setByte("shake", (byte) this.arrowShake);
+        compound.setByte("inGround", (byte) (this.inGround ? 1 : 0));
+        compound.setByte("pickup", (byte) this.canBePickedUp);
+        if (bowProperties != null) bowProperties.writeToNBT(compound);
+    }
 
-        if (par1NBTTagCompound.hasKey("damage", 99)) {
-            this.damage = par1NBTTagCompound.getDouble("damage");
+    @Override
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        this.blockX = compound.getShort("xTile");
+        this.blockY = compound.getShort("yTile");
+        this.blockZ = compound.getShort("zTile");
+        this.ticksInGround = compound.getShort("life");
+        this.blockHit = Block.getBlockById(compound.getByte("inTile") & 255);
+        this.inData = compound.getByte("inData") & 255;
+        this.arrowShake = compound.getByte("shake") & 255;
+        this.inGround = compound.getByte("inGround") == 1;
+
+        if (compound.hasKey("pickup", 99)) {
+            this.canBePickedUp = compound.getByte("pickup");
+        } else if (compound.hasKey("player", 99)) {
+            this.canBePickedUp = compound.getBoolean("player") ? 1 : 0;
         }
 
-        if (par1NBTTagCompound.hasKey("pickup", 99)) {
-            this.canBePickedUp = par1NBTTagCompound.getByte("pickup");
-        } else if (par1NBTTagCompound.hasKey("player", 99)) {
-            this.canBePickedUp = par1NBTTagCompound.getBoolean("player") ? 1 : 0;
-        }
+        if (bowProperties != null) bowProperties.readFromNBT(compound);
     }
 
     @Override
@@ -425,51 +412,44 @@ public class EntityChaoticArrow extends EntityArrow {
         }
     }
 
-    @Override
-    protected boolean canTriggerWalking() {
-        return false;
+    public void onHitEntityLiving(EntityLivingBase entityLivingBase) {
     }
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public float getShadowSize() {
-        return 0.0F;
-    }
+    public void onHitAnything() {
+        if (bowProperties.explosionPower > 0 && !worldObj.isRemote) {
+            worldObj.createExplosion(this, prevPosX, prevPosY, prevPosZ, bowProperties.explosionPower, ConfigHandler.bowBlockDamage);
+            setDead();
+        }
+        if (bowProperties.shockWavePower > 0 && !worldObj.isRemote) {
+            MelleniumAddons.network.sendToAllAround(new GenericParticlePacket(GenericParticlePacket.ARROW_SHOCK_WAVE, posX, posY, posZ, (int) (bowProperties.shockWavePower * 100)), new NetworkRegistry.TargetPoint(dimension, posX, posY, posZ, 256));
+            worldObj.playSoundEffect(posX, posY, posZ, "random.explode", 4.0F, (1.0F + (this.worldObj.rand.nextFloat() - this.worldObj.rand.nextFloat()) * 0.2F) * 0.7F);
 
-    @Override
-    public void setDamage(double par1) {
-        this.damage = par1;
-    }
+            double range = (double) bowProperties.shockWavePower + 5;
+            List<Entity> list = worldObj.getEntitiesWithinAABB(Entity.class, boundingBox.expand(range, range, range));
 
-    @Override
-    public double getDamage() {
-        return this.damage;
-    }
+            float damage = 40F * bowProperties.shockWavePower;
 
-    @Override
-    public void setKnockbackStrength(int par1) {
-        this.knockbackStrength = par1;
-    }
+            for (Entity e : list) {
+                if (e instanceof EntityLivingBase) {
+                    Entity entity = e;
+                    float distanceModifier = 1F - (entity.getDistanceToEntity(this) / bowProperties.shockWavePower);
 
-    @Override
-    public boolean canAttackWithItem() {
-        return false;
-    }
+                    if (e instanceof EntityDragon) {
+                        entity = ((EntityDragon) entity).dragonPartBody;
+                        distanceModifier = 1F - (entity.getDistanceToEntity(this) / (bowProperties.shockWavePower * 4));
+                    }
 
-    @Override
-    public void setIsCritical(boolean par1) {
-        byte b0 = this.dataWatcher.getWatchableObjectByte(16);
+                    if (distanceModifier > 0) entity.attackEntityFrom(getDamageSource(), distanceModifier * damage);
+                }
+            }
 
-        if (par1) {
-            this.dataWatcher.updateObject(16, Byte.valueOf((byte) (b0 | 1)));
-        } else {
-            this.dataWatcher.updateObject(16, Byte.valueOf((byte) (b0 & -2)));
+            setDead();
         }
     }
 
-    @Override
-    public boolean getIsCritical() {
-        byte b0 = this.dataWatcher.getWatchableObjectByte(16);
-        return (b0 & 1) != 0;
+    private DamageSource getDamageSource() {
+        if (bowProperties.energyBolt) {
+            return new EntityDamageSourceIndirect("customArrowEnergy", this, shootingEntity != null ? shootingEntity : this).setProjectile().setDamageIsAbsolute();
+        } else return DamageSource.causeArrowDamage(this, shootingEntity != null ? shootingEntity : this);
     }
 }

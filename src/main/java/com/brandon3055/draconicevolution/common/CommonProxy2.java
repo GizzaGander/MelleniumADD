@@ -142,7 +142,7 @@ public class CommonProxy2 {
 
     //@Callback
     public void registerEntities() {
-        EntityRegistry.registerModEntity(EntityChaoticArrow.class, "Arrow", 2, DraconicEvolution.instance, 32, 5, true);
+        EntityRegistry.registerModEntity(EntityChaoticArrow2.class, "Arrow", 2, DraconicEvolution.instance, 32, 5, true);
     }
 
     public ParticleEnergyBeam energyBeam(World worldObj, double x, double y, double z, double tx, double ty, double tz, int powerFlow, boolean advanced, ParticleEnergyBeam oldBeam, boolean render, int beamType) {

@@ -1,6 +1,6 @@
 package com.brandon3055.draconicevolution.client.model;
 
-import com.brandon3055.draconicevolution.client.handler.ResourceHandler;
+import com.brandon3055.draconicevolution.client.handler.ResourceHandler2;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GLAllocation;
@@ -73,7 +73,7 @@ public class ModelRenderOBJ2 extends ModelRenderer {
         GL11.glNewList(this.displayList, GL11.GL_COMPILE);
 
         GL11.glPushMatrix();
-        ResourceHandler.bindTexture(texture);
+        ResourceHandler2.bindTexture(texture);
         //scale = 1F/15F;
         GL11.glScalef(scale, scale, scale);
         GL11.glRotatef(180, -1, 0, 1);

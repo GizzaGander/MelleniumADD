@@ -19,7 +19,7 @@ public class DETab2 extends CreativeTabs {
 
     public static void initialize() {
         if (ModItems2.isEnabled(ModItems2.chaoticDestructionStaff))
-            iconStackStaff = ItemNBTHelper.setInteger(new ItemStack(ModItems2.chaoticDestructionStaff), "Energy", 70000000);
+            iconStackStaff = ItemNBTHelper.setInteger(new ItemStack(ModItems2.chaoticDestructionStaff), "Energy", 150000000);
         else iconStackStaff = new ItemStack(Items.stick);
     }
 
