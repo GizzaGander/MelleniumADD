@@ -1,6 +1,6 @@
 package com.brandon3055.draconicevolution.client.render.item;
 
-import com.brandon3055.draconicevolution.client.handler.ResourceHandler;
+import com.brandon3055.draconicevolution.client.handler.ResourceHandler2;
 import com.brandon3055.draconicevolution.common.items.weapons.BowHandler2;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -21,8 +21,8 @@ public class RenderBowModel2 implements IItemRenderer {
         this.chaotic = chaotic;
 
         for (int i = 0; i < 4; i++)
-            chaoticModels[i] = AdvancedModelLoader.loadModel(ResourceHandler.getResource("models/tools/ChaoticBow0" + i + ".obj"));
-        this.arrow = AdvancedModelLoader.loadModel(ResourceHandler.getResource("models/tools/ArrowCommon.obj"));
+            chaoticModels[i] = AdvancedModelLoader.loadModel(ResourceHandler2.getResource("models/tools/ChaoticBow0" + i + ".obj"));
+        this.arrow = AdvancedModelLoader.loadModel(ResourceHandler2.getResource("models/tools/ArrowCommon.obj"));
     }
 
     @Override
@@ -65,10 +65,10 @@ public class RenderBowModel2 implements IItemRenderer {
 
         if (chaotic) {
             activeModel = chaoticModels[selection];
-            ResourceHandler.bindResource("textures/models/tools/ChaoticBow0" + selection + ".png");
+            ResourceHandler2.bindResource("textures/models/tools/ChaoticBow0" + selection + ".png");
         } else {
             activeModel = chaoticModels[selection];
-            ResourceHandler.bindResource("textures/models/tools/WyvernBow0" + selection + ".png");
+            ResourceHandler2.bindResource("textures/models/tools/WyvernBow0" + selection + ".png");
         }
 
 
@@ -109,7 +109,7 @@ public class RenderBowModel2 implements IItemRenderer {
             GL11.glRotatef(90, 0, 0, 1);
 
             if (properties != null && properties.energyBolt) {
-                ResourceHandler.bindResource("textures/models/reactorCore.png");
+                ResourceHandler2.bindResource("textures/models/reactorCore.png");
                 arrow.renderAll();
 
                 GL11.glTranslated(0, -0.025, 0);
@@ -121,7 +121,7 @@ public class RenderBowModel2 implements IItemRenderer {
                 GL11.glScaled(1.05, 1.05, 1.05);
                 arrow.renderAll();
             } else {
-                ResourceHandler.bindResource("textures/models/tools/ArrowCommon.png");
+                ResourceHandler2.bindResource("textures/models/tools/ArrowCommon.png");
                 arrow.renderAll();
             }
         }

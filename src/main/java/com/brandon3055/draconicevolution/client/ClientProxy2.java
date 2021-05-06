@@ -1,17 +1,11 @@
 package com.brandon3055.draconicevolution.client;
 
 import com.brandon3055.draconicevolution.DraconicEvolution;
-import com.brandon3055.draconicevolution.client.handler.ClientEventHandler;
-import com.brandon3055.draconicevolution.client.handler.HudHandler;
-import com.brandon3055.draconicevolution.client.handler.ParticleHandler;
-import com.brandon3055.draconicevolution.client.handler.ResourceHandler;
+import com.brandon3055.draconicevolution.client.handler.*;
 import com.brandon3055.draconicevolution.client.keybinding.KeyBindings;
 import com.brandon3055.draconicevolution.client.keybinding.KeyInputHandler;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
-import com.brandon3055.draconicevolution.client.render.item.RenderArmor;
-import com.brandon3055.draconicevolution.client.render.item.RenderBow2;
-import com.brandon3055.draconicevolution.client.render.item.RenderBowModel2;
-import com.brandon3055.draconicevolution.client.render.item.RenderTool;
+import com.brandon3055.draconicevolution.client.render.item.*;
 import com.brandon3055.draconicevolution.client.render.particle.ParticleEnergyBeam;
 import com.brandon3055.draconicevolution.client.render.particle.ParticleEnergyField;
 import com.brandon3055.draconicevolution.client.render.particle.ParticleReactorBeam;
@@ -44,7 +38,7 @@ public class ClientProxy2 extends CommonProxy2 {
         if (debug) System.out.println("on Client side");
         super.preInit(event);
 
-        ResourceHandler.init(event);
+        ResourceHandler2.init(event);
 
 //		downloadLocation = event.getModConfigurationDirectory().getParentFile().getAbsolutePath() + "/mods/derspack";
 //		downloadLocation = downloadLocation.replaceAll("\\\\", "/");
@@ -106,13 +100,13 @@ public class ClientProxy2 extends CommonProxy2 {
         KeyBindings.init();
         registerRenderIDs();
         registerRendering();
-        ResourceHandler.instance.tick(null);
+        ResourceHandler2.instance.tick(null);
     }
 
     @Override
     public void postInit(FMLPostInitializationEvent event) {
         super.postInit(event);
-        ResourceHandler.instance.tick(null);
+        ResourceHandler2.instance.tick(null);
     }
 
     public void registerRendering() {
@@ -120,19 +114,19 @@ public class ClientProxy2 extends CommonProxy2 {
         MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBow, new RenderBow2());
 
         if (!ConfigHandler.useOldArmorModel) {
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticHelm, new RenderArmor(ModItems2.chaoticHelm));
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticChest, new RenderArmor(ModItems2.chaoticChest));
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticLeggs, new RenderArmor(ModItems2.chaoticLeggs));
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBoots, new RenderArmor(ModItems2.chaoticBoots));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticHelm, new RenderArmor2(ModItems2.chaoticHelm));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticChest, new RenderArmor2(ModItems2.chaoticChest));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticLeggs, new RenderArmor2(ModItems2.chaoticLeggs));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBoots, new RenderArmor2(ModItems2.chaoticBoots));
         }
 
         if (!ConfigHandler.useOldD2DToolTextures) {
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticSword, new RenderTool("models/tools/ChaoticSword.obj", "textures/models/tools/ChaoticSword.png", (IRenderTweak) ModItems2.chaoticSword));
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticPickaxe, new RenderTool("models/tools/ChaoticPickaxe.obj", "textures/models/tools/ChaoticPickaxe.png", (IRenderTweak) ModItems2.chaoticPickaxe));
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticAxe, new RenderTool("models/tools/ChaoticLumberAxe.obj", "textures/models/tools/ChaoticLumberAxe.png", (IRenderTweak) ModItems2.chaoticAxe));
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticShovel, new RenderTool("models/tools/ChaoticShovel.obj", "textures/models/tools/ChaoticShovel.png", (IRenderTweak) ModItems2.chaoticShovel));
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticDestructionStaff, new RenderTool("models/tools/ChaoticStaffOfPower.obj", "textures/models/tools/ChaoticStaffOfPower.png", (IRenderTweak) ModItems2.chaoticDestructionStaff));
-            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticHoe, new RenderTool("models/tools/ChaoticHoe.obj", "textures/models/tools/ChaoticHoe.png", (IRenderTweak) ModItems2.chaoticHoe));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticSword, new RenderTool2("models/tools/ChaoticSword.obj", "textures/models/tools/ChaoticSword.png", (IRenderTweak) ModItems2.chaoticSword));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticPickaxe, new RenderTool2("models/tools/ChaoticPickaxe.obj", "textures/models/tools/ChaoticPickaxe.png", (IRenderTweak) ModItems2.chaoticPickaxe));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticAxe, new RenderTool2("models/tools/ChaoticLumberAxe.obj", "textures/models/tools/ChaoticLumberAxe.png", (IRenderTweak) ModItems2.chaoticAxe));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticShovel, new RenderTool2("models/tools/ChaoticShovel.obj", "textures/models/tools/ChaoticShovel.png", (IRenderTweak) ModItems2.chaoticShovel));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticDestructionStaff, new RenderTool2("models/tools/ChaoticStaffOfPower.obj", "textures/models/tools/ChaoticStaffOfPower.png", (IRenderTweak) ModItems2.chaoticDestructionStaff));
+            MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticHoe, new RenderTool2("models/tools/ChaoticHoe.obj", "textures/models/tools/ChaoticHoe.png", (IRenderTweak) ModItems2.chaoticHoe));
             MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBow, new RenderBowModel2(true));
         }
 
