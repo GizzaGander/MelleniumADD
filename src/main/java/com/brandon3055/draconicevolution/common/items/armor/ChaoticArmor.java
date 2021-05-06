@@ -15,8 +15,8 @@ import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
-import com.brandon3055.draconicevolution.common.lib.References;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase2;
+import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.utills.IConfigurableItem;
 import com.brandon3055.draconicevolution.common.utills.IInventoryTool;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
@@ -86,7 +86,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     public String getUnlocalizedName() {
 
-        return String.format("item.%s%s", References.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
+        return String.format("item.%s%s", References2.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
     }
 
     @Override
@@ -97,10 +97,10 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        helmIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_helmet");
-        chestIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_chestplate");
-        leggsIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_leggings");
-        bootsIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_boots");
+        helmIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_helmet");
+        chestIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_chestplate");
+        leggsIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_leggings");
+        bootsIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_boots");
     }
 
     @Override
@@ -125,11 +125,11 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @SideOnly(Side.CLIENT)
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
         if (!ConfigHandler.useOldArmorModel)
-            return References.RESOURCESPREFIX + "textures/models/armor/armorChaotic.png";
+            return References2.RESOURCESPREFIX + "textures/models/armor/armorChaotic.png";
         if (stack.getItem() == ModItems2.chaoticHelm || stack.getItem() == ModItems2.chaoticChest || stack.getItem() == ModItems2.chaoticBoots) {
-            return References.RESOURCESPREFIX + "textures/models/armor/chaotic_layer_1.png";
+            return References2.RESOURCESPREFIX + "textures/models/armor/chaotic_layer_1.png";
         } else {
-            return References.RESOURCESPREFIX + "textures/models/armor/chaotic_layer_2.png";
+            return References2.RESOURCESPREFIX + "textures/models/armor/chaotic_layer_2.png";
         }
     }
 
@@ -202,7 +202,7 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     @Override
     public void addInformation(ItemStack stack, EntityPlayer par2EntityPlayer, List list, boolean par4) {
         InfoHelper.addEnergyAndLore(stack, list);
-        ToolBase.holdCTRLForUpgrades(list, stack);
+        ToolBase2.holdCTRLForUpgrades(list, stack);
     }
 
     @SuppressWarnings("unchecked")
@@ -290,23 +290,23 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = new ArrayList<ItemConfigField>();
         if (armorType == 0) {
-            list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "ArmorNVActive").readFromItem(stack, false));
-            list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "ArmorNVLock").readFromItem(stack, true));
+            list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "ArmorNVActive").readFromItem(stack, false));
+            list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "ArmorNVLock").readFromItem(stack, true));
             if (Loader.isModLoaded("Thaumcraft"))
-                list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "GogglesOfRevealing").readFromItem(stack, true));
+                list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "GogglesOfRevealing").readFromItem(stack, true));
         } else if (armorType == 1) {
-            list.add(new ItemConfigField(References.FLOAT_ID, slot, "VerticalAcceleration").setMinMaxAndIncromente(0f, 8f, 0.1f).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
-            list.add(new ItemConfigField(References.FLOAT_ID, slot, "ArmorFlightSpeedMult").setMinMaxAndIncromente(0f, 6f, 0.1f).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
-            list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "EffectiveOnSprint").readFromItem(stack, false));
-            list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "ArmorFlightLock").readFromItem(stack, false));
-            list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "ArmorInertiaCancellation").readFromItem(stack, false));
+            list.add(new ItemConfigField(References2.FLOAT_ID, slot, "VerticalAcceleration").setMinMaxAndIncromente(0f, 8f, 0.1f).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
+            list.add(new ItemConfigField(References2.FLOAT_ID, slot, "ArmorFlightSpeedMult").setMinMaxAndIncromente(0f, 6f, 0.1f).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
+            list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "EffectiveOnSprint").readFromItem(stack, false));
+            list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "ArmorFlightLock").readFromItem(stack, false));
+            list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "ArmorInertiaCancellation").readFromItem(stack, false));
         } else if (armorType == 2) {
-            list.add(new ItemConfigField(References.FLOAT_ID, slot, "ArmorSpeedMult").setMinMaxAndIncromente(0f, 8f, 0.1f).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
-            list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "ArmorSprintOnly").readFromItem(stack, false));
+            list.add(new ItemConfigField(References2.FLOAT_ID, slot, "ArmorSpeedMult").setMinMaxAndIncromente(0f, 8f, 0.1f).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
+            list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "ArmorSprintOnly").readFromItem(stack, false));
         } else if (armorType == 3) {
-            list.add(new ItemConfigField(References.FLOAT_ID, slot, "ArmorJumpMult").setMinMaxAndIncromente(0f, 15f, 0.1f).readFromItem(stack, 0f).setModifier("PLUSPERCENT"));
-            list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "ArmorSprintOnly").readFromItem(stack, false));
-            list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "ArmorHillStep").readFromItem(stack, true));
+            list.add(new ItemConfigField(References2.FLOAT_ID, slot, "ArmorJumpMult").setMinMaxAndIncromente(0f, 15f, 0.1f).readFromItem(stack, 0f).setModifier("PLUSPERCENT"));
+            list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "ArmorSprintOnly").readFromItem(stack, false));
+            list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "ArmorHillStep").readFromItem(stack, true));
         }
         return list;
     }

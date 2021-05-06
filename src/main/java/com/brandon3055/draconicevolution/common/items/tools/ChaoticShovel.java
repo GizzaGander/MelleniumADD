@@ -5,9 +5,9 @@ import java.util.List;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool;
-import com.brandon3055.draconicevolution.common.lib.References;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool2;
+import com.brandon3055.draconicevolution.common.lib.References2;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import com.brandon3055.draconicevolution.common.utills.IInventoryTool;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
 import com.brandon3055.draconicevolution.common.utills.ItemConfigField;
@@ -18,7 +18,7 @@ import net.minecraft.util.StatCollector;
 import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
-public class ChaoticShovel extends MiningTool implements IInventoryTool, IRenderTweak {
+public class ChaoticShovel extends MiningTool2 implements IInventoryTool, IRenderTweak {
 //	public IIcon itemIcon0;
 //	public IIcon itemIcon1;
 //	public IIcon itemIcon2;
@@ -26,7 +26,7 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
     public ChaoticShovel() {
         super(ModItems2.CHAOTIC);
         this.setHarvestLevel("shovel", 10);
-        this.setUnlocalizedName(Strings.chaoticShovelName);
+        this.setUnlocalizedName(Strings2.chaoticShovelName);
         this.setCapacity(BalanceConfigHandler2.chaoticToolsBaseStorage);
         this.setMaxExtract(BalanceConfigHandler2.chaoticToolsMaxTransfer);
         this.setMaxReceive(BalanceConfigHandler2.chaoticToolsMaxTransfer);
@@ -37,9 +37,9 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
     @Override
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = super.getFields(stack, slot);
-        list.add(new ItemConfigField(References.INT_ID, slot, References.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
-        list.add(new ItemConfigField(References.INT_ID, slot, References.DIG_DEPTH).setMinMaxAndIncromente(1, EnumUpgrade.DIG_DEPTH.getUpgradePoints(stack), 1).readFromItem(stack, 1));
-        list.add(new ItemConfigField(References.BOOLEAN_ID, slot, References.OBLITERATE).readFromItem(stack, false));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.DIG_DEPTH).setMinMaxAndIncromente(1, EnumUpgrade.DIG_DEPTH.getUpgradePoints(stack), 1).readFromItem(stack, 1));
+        list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, References2.OBLITERATE).readFromItem(stack, false));
         return list;
     }
 
@@ -145,7 +145,7 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
 //	@Override
 //	public String getUnlocalizedName(){
 //
-//		return String.format("item.%s%s", References.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
+//		return String.format("item.%s%s", References2.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
 //	}
 //
 //	@Override
@@ -157,9 +157,9 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
 //	@SideOnly(Side.CLIENT)
 //	public void registerIcons(final IIconRegister iconRegister)
 //	{
-//		this.itemIcon0 = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_shovel");
-//		this.itemIcon1 = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_shovel_active");
-//		this.itemIcon2 = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_shovel_obliterate");
+//		this.itemIcon0 = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_shovel");
+//		this.itemIcon1 = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_shovel_active");
+//		this.itemIcon2 = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_shovel_obliterate");
 //	}
 //
 //	@Override
@@ -192,19 +192,19 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
 //		World world = player.worldObj;
 //		Block block = world.getBlock(x, y, z);
 //		Material mat = block.getMaterial();
-//		if (!ToolHandler.isRightMaterial(mat, ToolHandler.materialsShovel)) {
+//		if (!ToolHandler2.isRightMaterial(mat, ToolHandler2.materialsShovel)) {
 //			return false;
 //		}
 //		int fortune = EnchantmentHelper.getFortuneModifier(player);
 //		boolean silk = EnchantmentHelper.getSilkTouchModifier(player);
-//		ToolHandler.disSquare(x, y, z, player, world, silk, fortune, ToolHandler.materialsShovel, stack);
+//		ToolHandler2.disSquare(x, y, z, player, world, silk, fortune, ToolHandler2.materialsShovel, stack);
 //		return false;
 //	}
 //
 //	@Override
 //	public ItemStack onItemRightClick(final ItemStack stack, final World world, final EntityPlayer player)
 //	{
-//		return ToolHandler.changeMode(stack, player, true, 3);
+//		return ToolHandler2.changeMode(stack, player, true, 3);
 //	}
 //
 //	public static int getMode(final ItemStack tool)
@@ -294,7 +294,7 @@ public class ChaoticShovel extends MiningTool implements IInventoryTool, IRender
 //
 //	@Override
 //	public float getDigSpeed(ItemStack stack, Block block, int meta) {
-//		if ((stack.getItem() instanceof IEnergyContainerItem) && ((IEnergyContainerItem)stack.getItem()).getEnergyStored(stack) >= References.ENERGYPERBLOCK)
+//		if ((stack.getItem() instanceof IEnergyContainerItem) && ((IEnergyContainerItem)stack.getItem()).getEnergyStored(stack) >= References2.ENERGYPERBLOCK)
 //			return super.getDigSpeed(stack, block, meta);
 //		else
 //			return 1F;

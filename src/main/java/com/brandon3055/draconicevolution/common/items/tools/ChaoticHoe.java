@@ -12,9 +12,9 @@ import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
-import com.brandon3055.draconicevolution.common.lib.References;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase2;
+import com.brandon3055.draconicevolution.common.lib.References2;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import com.brandon3055.draconicevolution.common.utills.*;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -47,9 +47,9 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
 
     public ChaoticHoe() {
         super(ModItems2.CHAOTIC);
-        this.setUnlocalizedName(Strings.chaoticHoeName);
+        this.setUnlocalizedName(Strings2.chaoticHoeName);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
-        if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings.chaoticHoeName);
+        if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings2.chaoticHoeName);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     @Override
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = new ArrayList<ItemConfigField>();
-        list.add(new ItemConfigField(References.INT_ID, slot, References.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
         return list;
     }
 
@@ -80,7 +80,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     @Override
     public String getUnlocalizedName() {
 
-        return String.format("item.%s%s", References.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
+        return String.format("item.%s%s", References2.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
     }
 
     @Override
@@ -91,7 +91,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_hoe");
+        this.itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_hoe");
     }
 
     @Override
@@ -99,7 +99,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
         boolean successfull = false;
         Block clicked = world.getBlock(x, y, z);
         if (!player.isSneaking() && player.canPlayerEdit(x, y, z, par7, stack) && (clicked == Blocks.dirt || clicked == Blocks.grass || clicked == Blocks.farmland) && par7 == 1) {
-            int size = IConfigurableItem.ProfileHelper.getInteger(stack, References.DIG_AOE, 0);
+            int size = IConfigurableItem.ProfileHelper.getInteger(stack, References2.DIG_AOE, 0);
             LogHelper.info(size);
             for (int x1 = -size; x1 <= size; x1++) {
                 for (int z1 = -size; z1 <= size; z1++) {
@@ -184,7 +184,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     @Override
     public void addInformation(final ItemStack stack, final EntityPlayer player, final List list, final boolean extraInformation) {
         InfoHelper.addEnergyInfo(stack, list);
-        ToolBase.holdCTRLForUpgrades(list, stack);
+        ToolBase2.holdCTRLForUpgrades(list, stack);
         InfoHelper.addLore(stack, list);
     }
 
@@ -323,7 +323,7 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
 
         int digaoe = 0;
         for (ItemConfigField field : getFields(itemstack, 0))
-            if (field.name.equals(References.DIG_AOE)) digaoe = 1 + ((Integer) field.max * 2);
+            if (field.name.equals(References2.DIG_AOE)) digaoe = 1 + ((Integer) field.max * 2);
 
 
         strings.add(InfoHelper.ITC() + StatCollector.translateToLocal("gui.de.RFCapacity.txt") + ": " + InfoHelper.HITC() + Utills.formatNumber(getMaxEnergyStored(itemstack)));

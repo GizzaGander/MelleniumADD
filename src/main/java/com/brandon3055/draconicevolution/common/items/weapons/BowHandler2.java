@@ -149,7 +149,7 @@ public class BowHandler2 {
 
         public int calculateEnergyCost() {
             updateValues();
-            double rfCost = (bow.getItem() instanceof IEnergyContainerWeaponItem) ? ((IEnergyContainerWeaponItem) bow.getItem()).getEnergyPerAttack() : 80;
+            double rfCost = (bow.getItem() instanceof IEnergyContainerWeaponItem2) ? ((IEnergyContainerWeaponItem2) bow.getItem()).getEnergyPerAttack() : 80;
 
             rfCost *= 1 + arrowDamage;
             rfCost *= (1 + arrowSpeed) * (1 + arrowSpeed) * (1 + arrowSpeed);
@@ -164,7 +164,7 @@ public class BowHandler2 {
             updateValues();
 
             if (player == null) return false;
-            if (!(bow.getItem() instanceof IEnergyContainerWeaponItem)) {
+            if (!(bow.getItem() instanceof IEnergyContainerWeaponItem2)) {
                 cantFireMessage = "[Error] This bow is not a valid energy container (This is a bug, Please report on the Draconic Evolution github)";
                 return false;
             } else if (!energyBolt && shockWavePower > 0) {
@@ -173,7 +173,7 @@ public class BowHandler2 {
             } else if (energyBolt && explosionPower > 0) {
                 cantFireMessage = "msg.de.explosiveNotForEnergyBolts.txt";
                 return false;
-            } else if (calculateEnergyCost() > ((IEnergyContainerWeaponItem) bow.getItem()).getEnergyStored(bow) && !player.capabilities.isCreativeMode) {
+            } else if (calculateEnergyCost() > ((IEnergyContainerWeaponItem2) bow.getItem()).getEnergyStored(bow) && !player.capabilities.isCreativeMode) {
                 cantFireMessage = "msg.de.insufficientPowerToFire.txt";
                 return false;
             } else if (!energyBolt && !player.inventory.hasItem(Items.arrow) && EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, bow) == 0 && !player.capabilities.isCreativeMode) {
@@ -208,7 +208,7 @@ public class BowHandler2 {
         public boolean consumeArrowAndEnergy() {
 
             if (!player.capabilities.isCreativeMode)
-                ((IEnergyContainerWeaponItem) bow.getItem()).extractEnergy(bow, calculateEnergyCost(), false);
+                ((IEnergyContainerWeaponItem2) bow.getItem()).extractEnergy(bow, calculateEnergyCost(), false);
 
             if (!energyBolt && EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, bow) == 0 && !player.capabilities.isCreativeMode) {
                 player.inventory.consumeInventoryItem(Items.arrow);

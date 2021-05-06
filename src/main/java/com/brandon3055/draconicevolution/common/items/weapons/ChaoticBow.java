@@ -9,9 +9,9 @@ import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
-import com.brandon3055.draconicevolution.common.lib.References;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase2;
+import com.brandon3055.draconicevolution.common.lib.References2;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import com.brandon3055.draconicevolution.common.utills.IHudDisplayItem;
 import com.brandon3055.draconicevolution.common.utills.IInventoryTool;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
@@ -36,7 +36,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableItem, IEnergyContainerWeaponItem, IHudDisplayItem {
+public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableItem, IEnergyContainerWeaponItem2, IHudDisplayItem {
     public static final String[] bowPullIconNameArray = new String[]{"pulling_0", "pulling_1", "pulling_2"};
 
     protected int capacity = BalanceConfigHandler2.chaoticWeaponsBaseStorage;
@@ -49,8 +49,8 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
         this.maxStackSize = 1;
         this.setMaxDamage(-1);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
-        this.setUnlocalizedName(Strings.chaoticBowName);
-        if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings.chaoticBowName);
+        this.setUnlocalizedName(Strings2.chaoticBowName);
+        if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings2.chaoticBowName);
     }
 
     //region Regular Item Stuff
@@ -63,7 +63,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     @Override
     public String getUnlocalizedName() {
 
-        return String.format("item.%s%s", References.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
+        return String.format("item.%s%s", References2.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
     }
 
     @Override
@@ -74,11 +74,11 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_bow" + "_standby");
+        this.itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_bow" + "_standby");
         this.iconArray = new IIcon[bowPullIconNameArray.length];
 
         for (int i = 0; i < this.iconArray.length; ++i) {
-            this.iconArray[i] = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_bow" + "_" + bowPullIconNameArray[i]);
+            this.iconArray[i] = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_bow" + "_" + bowPullIconNameArray[i]);
         }
     }
 
@@ -120,7 +120,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
             List<ItemConfigField> l = getFields(stack, 0);
             for (ItemConfigField f : l) list.add(f.getTooltipInfo());
         }
-        ToolBase.holdCTRLForUpgrades(list, stack);
+        ToolBase2.holdCTRLForUpgrades(list, stack);
         InfoHelper.addEnergyInfo(stack, list);
         if (show && !ConfigHandler.disableLore) InfoHelper.addLore(stack, list, true);
     }
@@ -197,13 +197,13 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = new ArrayList<ItemConfigField>();
 
-        list.add(new ItemConfigField(References.FLOAT_ID, slot, "BowArrowDamage").setMinMaxAndIncromente((float) getBaseUpgradePoints(EnumUpgrade.ARROW_DAMAGE.index), (float) EnumUpgrade.ARROW_DAMAGE.getUpgradePoints(stack), 0.1F).readFromItem(stack, (float) EnumUpgrade.ARROW_DAMAGE.getUpgradePoints(stack)));
-        list.add(new ItemConfigField(References.FLOAT_ID, slot, "BowArrowSpeedModifier").setMinMaxAndIncromente(0F, (float) EnumUpgrade.ARROW_SPEED.getUpgradePoints(stack), 0.01F).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
-        list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "BowAutoFire").readFromItem(stack, false));
-        list.add(new ItemConfigField(References.FLOAT_ID, slot, "BowExplosionPower").setMinMaxAndIncromente(0F, 6F, 0.1F).readFromItem(stack, 0F));
-        list.add(new ItemConfigField(References.FLOAT_ID, slot, "BowShockWavePower").setMinMaxAndIncromente(0F, 10F, 0.1F).readFromItem(stack, 0F));
-        list.add(new ItemConfigField(References.BOOLEAN_ID, slot, "BowEnergyBolt").readFromItem(stack, false));
-        list.add(new ItemConfigField(References.FLOAT_ID, slot, "BowZoomModifier").setMinMaxAndIncromente(0F, 6F, 0.01F).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
+        list.add(new ItemConfigField(References2.FLOAT_ID, slot, "BowArrowDamage").setMinMaxAndIncromente((float) getBaseUpgradePoints(EnumUpgrade.ARROW_DAMAGE.index), (float) EnumUpgrade.ARROW_DAMAGE.getUpgradePoints(stack), 0.1F).readFromItem(stack, (float) EnumUpgrade.ARROW_DAMAGE.getUpgradePoints(stack)));
+        list.add(new ItemConfigField(References2.FLOAT_ID, slot, "BowArrowSpeedModifier").setMinMaxAndIncromente(0F, (float) EnumUpgrade.ARROW_SPEED.getUpgradePoints(stack), 0.01F).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
+        list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "BowAutoFire").readFromItem(stack, false));
+        list.add(new ItemConfigField(References2.FLOAT_ID, slot, "BowExplosionPower").setMinMaxAndIncromente(0F, 6F, 0.1F).readFromItem(stack, 0F));
+        list.add(new ItemConfigField(References2.FLOAT_ID, slot, "BowShockWavePower").setMinMaxAndIncromente(0F, 10F, 0.1F).readFromItem(stack, 0F));
+        list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, "BowEnergyBolt").readFromItem(stack, false));
+        list.add(new ItemConfigField(References2.FLOAT_ID, slot, "BowZoomModifier").setMinMaxAndIncromente(0F, 6F, 0.01F).readFromItem(stack, 0F).setModifier("PLUSPERCENT"));
 
         return list;
     }
@@ -330,7 +330,7 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
             list.add(EnumChatFormatting.DARK_PURPLE + StatCollector.translateToLocal("info.de.capacitorMode.txt") + ": " + ItemNBTHelper.getString(stack, "ProfileName" + preset, "Profile " + preset));
 
             for (ItemConfigField field : getFields(stack, 0)) {
-                if ((field.datatype == References.FLOAT_ID && (Float) field.value > 0) || (field.datatype == References.BOOLEAN_ID && (Boolean) field.value))
+                if ((field.datatype == References2.FLOAT_ID && (Float) field.value > 0) || (field.datatype == References2.BOOLEAN_ID && (Boolean) field.value))
                     list.add(field.getTooltipInfo());
             }
 

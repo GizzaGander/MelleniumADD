@@ -2,7 +2,7 @@ package com.brandon3055.draconicevolution.client.handler;
 
 import com.brandon3055.draconicevolution.client.gui.componentguis.GUIManual;
 import com.brandon3055.draconicevolution.client.utill.CustomResourceLocation;
-import com.brandon3055.draconicevolution.common.lib.References;
+import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.utills.LogHelper;
 import com.google.common.io.ByteStreams;
 import com.google.gson.stream.JsonWriter;
@@ -31,7 +31,7 @@ import java.util.*;
 public class ResourceHandler2 {
     public static ResourceHandler2 instance = new ResourceHandler2();
     private static ResourceLocation defaultParticles;
-    private static ResourceLocation particles = new ResourceLocation(References.RESOURCESPREFIX + "textures/particle/particles.png");
+    private static ResourceLocation particles = new ResourceLocation(References2.RESOURCESPREFIX + "textures/particle/particles.png");
     private static Map<String, ResourceLocation> cachedResources = new HashMap<String, ResourceLocation>();
     public static Map<String, CustomResourceLocation> downloadedImages = new HashMap<String, CustomResourceLocation>();
 
@@ -240,7 +240,7 @@ public class ResourceHandler2 {
 
     public static ResourceLocation getResource(String rs) {
         if (!cachedResources.containsKey(rs))
-            cachedResources.put(rs, new ResourceLocation(References.RESOURCESPREFIX + rs));
+            cachedResources.put(rs, new ResourceLocation(References2.RESOURCESPREFIX + rs));
         return cachedResources.get(rs);
     }
 

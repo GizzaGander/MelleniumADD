@@ -5,9 +5,9 @@ import java.util.List;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool;
-import com.brandon3055.draconicevolution.common.lib.References;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool2;
+import com.brandon3055.draconicevolution.common.lib.References2;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import com.brandon3055.draconicevolution.common.utills.IConfigurableItem;
 import com.brandon3055.draconicevolution.common.utills.IInventoryTool;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
@@ -22,12 +22,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
-public class ChaoticAxe extends MiningTool implements IInventoryTool, IRenderTweak {
+public class ChaoticAxe extends MiningTool2 implements IInventoryTool, IRenderTweak {
 
     public ChaoticAxe() {
         super(ModItems2.CHAOTIC);
         this.setHarvestLevel("axe", 10);
-        this.setUnlocalizedName(Strings.chaoticAxeName);
+        this.setUnlocalizedName(Strings2.chaoticAxeName);
         this.setCapacity(BalanceConfigHandler2.chaoticToolsBaseStorage);
         this.setMaxExtract(BalanceConfigHandler2.chaoticToolsMaxTransfer);
         this.setMaxReceive(BalanceConfigHandler2.chaoticToolsMaxTransfer);
@@ -39,9 +39,9 @@ public class ChaoticAxe extends MiningTool implements IInventoryTool, IRenderTwe
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = super.getFields(stack, slot);
 
-        list.add(new ItemConfigField(References.INT_ID, slot, References.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
-        list.add(new ItemConfigField(References.INT_ID, slot, References.DIG_DEPTH).setMinMaxAndIncromente(1, EnumUpgrade.DIG_DEPTH.getUpgradePoints(stack), 1).readFromItem(stack, 1));
-        list.add(new ItemConfigField(References.BOOLEAN_ID, slot, References.TREE_MODE).readFromItem(stack, false));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.DIG_DEPTH).setMinMaxAndIncromente(1, EnumUpgrade.DIG_DEPTH.getUpgradePoints(stack), 1).readFromItem(stack, 1));
+        list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, References2.TREE_MODE).readFromItem(stack, false));
         return list;
     }
 
@@ -63,7 +63,7 @@ public class ChaoticAxe extends MiningTool implements IInventoryTool, IRenderTwe
 
     @Override
     public boolean onBlockStartBreak(ItemStack stack, int x, int y, int z, EntityPlayer player) {
-        if (IConfigurableItem.ProfileHelper.getBoolean(stack, References.TREE_MODE, false) && isTree(player.worldObj, x, y, z)) {
+        if (IConfigurableItem.ProfileHelper.getBoolean(stack, References2.TREE_MODE, false) && isTree(player.worldObj, x, y, z)) {
             trimLeavs(x, y, z, player, player.worldObj, stack);
             for (int i = 0; i < 9; i++)
                 player.worldObj.playAuxSFX(2001, x, y, z, Block.getIdFromBlock(player.worldObj.getBlock(x, y, z)) + (player.worldObj.getBlockMetadata(x, y, z) << 12));
@@ -137,12 +137,12 @@ public class ChaoticAxe extends MiningTool implements IInventoryTool, IRenderTwe
 //
 //		Block block = world.getBlock(X, Y, Z);
 //		Material mat = block.getMaterial();
-//		if (!ToolHandler.isRightMaterial(mat, ToolHandler.materialsAxe)) {
+//		if (!ToolHandler2.isRightMaterial(mat, ToolHandler2.materialsAxe)) {
 //			return false;
 //		}
 //
 //		if (!tree) {
-//			ToolHandler.disSquare(X, Y, Z, player, world, false, 0, ToolHandler.materialsAxe, stack);
+//			ToolHandler2.disSquare(X, Y, Z, player, world, false, 0, ToolHandler2.materialsAxe, stack);
 //			return false;
 //		}
 //

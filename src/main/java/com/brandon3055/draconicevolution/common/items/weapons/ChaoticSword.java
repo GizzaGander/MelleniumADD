@@ -12,10 +12,10 @@ import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityPersistentItem;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolHandler;
-import com.brandon3055.draconicevolution.common.lib.References;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase2;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolHandler2;
+import com.brandon3055.draconicevolution.common.lib.References2;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import com.brandon3055.draconicevolution.common.network.ToolModePacket;
 import com.brandon3055.draconicevolution.common.utills.*;
 import com.google.common.collect.Multimap;
@@ -39,16 +39,16 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
-public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponItem, IInventoryTool, IRenderTweak, IUpgradableItem, IHudDisplayItem {
+public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponItem2, IInventoryTool, IRenderTweak, IUpgradableItem, IHudDisplayItem {
     protected int capacity = BalanceConfigHandler2.chaoticWeaponsBaseStorage;
     protected int maxReceive = BalanceConfigHandler2.chaoticWeaponsMaxTransfer;
     protected int maxExtract = BalanceConfigHandler2.chaoticWeaponsMaxTransfer;
 
     public ChaoticSword() {
         super(ModItems2.CHAOTIC);
-        this.setUnlocalizedName(Strings.chaoticSwordName);
+        this.setUnlocalizedName(Strings2.chaoticSwordName);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
-        if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings.chaoticSwordName);
+        if (ModItems2.isEnabled(this)) GameRegistry.registerItem(this, Strings2.chaoticSwordName);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     @Override
     public String getUnlocalizedName() {
 
-        return String.format("item.%s%s", References.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
+        return String.format("item.%s%s", References2.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
     }
 
     @Override
@@ -77,14 +77,14 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(References.RESOURCESPREFIX + "chaotic_sword");
+        this.itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_sword");
     }
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
         entity.hurtResistantTime = 0;
-        ToolHandler.AOEAttack(player, entity, stack, IConfigurableItem.ProfileHelper.getInteger(stack, References.ATTACK_AOE, 0));
-        ToolHandler.damageEntityBasedOnHealth(entity, player, 0.2F);
+        ToolHandler2.AOEAttack(player, entity, stack, IConfigurableItem.ProfileHelper.getInteger(stack, References2.ATTACK_AOE, 0));
+        ToolHandler2.damageEntityBasedOnHealth(entity, player, 0.2F);
         return true;
     }
 
@@ -97,10 +97,10 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
             list.add(InfoHelper.ITC() + StatCollector.translateToLocal("info.de.sword.txt"));
             InfoHelper.addLore(stack, list);
         }
-        ToolBase.holdCTRLForUpgrades(list, stack);
+        ToolBase2.holdCTRLForUpgrades(list, stack);
         InfoHelper.addEnergyInfo(stack, list);
         list.add("");
-        list.add(EnumChatFormatting.BLUE + "+" + ToolHandler.getBaseAttackDamage(stack) + " " + StatCollector.translateToLocal("info.de.attackDamage.txt"));
+        list.add(EnumChatFormatting.BLUE + "+" + ToolHandler2.getBaseAttackDamage(stack) + " " + StatCollector.translateToLocal("info.de.attackDamage.txt"));
         list.add(EnumChatFormatting.BLUE + "+20%" + " " + StatCollector.translateToLocal("info.de.bonusHealthDamage.txt"));
     }
 
@@ -193,7 +193,7 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     @Override
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = new ArrayList<ItemConfigField>();
-        list.add(new ItemConfigField(References.INT_ID, slot, References.ATTACK_AOE).setMinMaxAndIncromente(0, EnumUpgrade.ATTACK_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 1).setModifier("AOE"));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.ATTACK_AOE).setMinMaxAndIncromente(0, EnumUpgrade.ATTACK_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 1).setModifier("AOE"));
         return list;
     }
 
@@ -280,10 +280,10 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
 
         int attackaoe = 0;
         for (ItemConfigField field : getFields(stack, 0))
-            if (field.name.equals(References.ATTACK_AOE)) attackaoe = 1 + ((Integer) field.max * 2);
+            if (field.name.equals(References2.ATTACK_AOE)) attackaoe = 1 + ((Integer) field.max * 2);
 
         strings.add(InfoHelper.ITC() + StatCollector.translateToLocal("gui.de.RFCapacity.txt") + ": " + InfoHelper.HITC() + Utills.formatNumber(getMaxEnergyStored(stack)));
-        strings.add(InfoHelper.ITC() + StatCollector.translateToLocal("info.de.attackDamage.txt") + ": " + InfoHelper.HITC() + ToolHandler.getBaseAttackDamage(stack));
+        strings.add(InfoHelper.ITC() + StatCollector.translateToLocal("info.de.attackDamage.txt") + ": " + InfoHelper.HITC() + ToolHandler2.getBaseAttackDamage(stack));
         strings.add(InfoHelper.ITC() + StatCollector.translateToLocal("gui.de.max.txt") + " " + StatCollector.translateToLocal("gui.de.AttackAOE.txt") + ": " + InfoHelper.HITC() + attackaoe + "x" + attackaoe);
 
 
@@ -301,9 +301,9 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
         if (!world.isRemote && !BrandonsCore.proxy.isDedicatedServer()) {
-            ToolBase.handleModeChange(stack, player, InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown());
+            ToolBase2.handleModeChange(stack, player, InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown());
         } else if (world.isRemote && BrandonsCore.proxy.getMCServer() == null) {
-            ToolBase.handleModeChange(stack, player, InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown());
+            ToolBase2.handleModeChange(stack, player, InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown());
             DraconicEvolution.network.sendToServer(new ToolModePacket(InfoHelper.isShiftKeyDown(), InfoHelper.isCtrlKeyDown()));
         }
         return super.onItemRightClick(stack, world, player);

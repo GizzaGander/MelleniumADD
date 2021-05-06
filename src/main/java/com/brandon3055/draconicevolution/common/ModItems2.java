@@ -6,8 +6,8 @@ import com.brandon3055.draconicevolution.common.items.armor.ChaoticArmor;
 import com.brandon3055.draconicevolution.common.items.tools.*;
 import com.brandon3055.draconicevolution.common.items.weapons.ChaoticBow;
 import com.brandon3055.draconicevolution.common.items.weapons.ChaoticSword;
-import com.brandon3055.draconicevolution.common.lib.References;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.lib.References2;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -16,7 +16,7 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
-@GameRegistry.ObjectHolder(References.MODID)
+@GameRegistry.ObjectHolder(References2.MODID)
 public class ModItems2 {
     public static ArmorMaterial CHAOTIC_ARMOR = EnumHelper.addArmorMaterial("CHAOTIC_ARMOR", -1, new int[]{3, 8, 6, 3}, 30);
     public static ToolMaterial CHAOTIC = EnumHelper.addToolMaterial("CHAOTIC", 10, -1, 400.0F, 60.0F, 45);
@@ -55,10 +55,10 @@ public class ModItems2 {
         chaoticHoe = new ChaoticHoe();
         chaoticSword = new ChaoticSword();
         chaoticBow = new ChaoticBow();
-        chaoticHelm = new ChaoticArmor(CHAOTIC_ARMOR, 0, Strings.chaoticHelmName);
-        chaoticChest = new ChaoticArmor(CHAOTIC_ARMOR, 1, Strings.chaoticChestName);
-        chaoticLeggs = new ChaoticArmor(CHAOTIC_ARMOR, 2, Strings.chaoticLeggsName);
-        chaoticBoots = new ChaoticArmor(CHAOTIC_ARMOR, 3, Strings.chaoticBootsName);
+        chaoticHelm = new ChaoticArmor(CHAOTIC_ARMOR, 0, Strings2.chaoticHelmName);
+        chaoticChest = new ChaoticArmor(CHAOTIC_ARMOR, 1, Strings2.chaoticChestName);
+        chaoticLeggs = new ChaoticArmor(CHAOTIC_ARMOR, 2, Strings2.chaoticLeggsName);
+        chaoticBoots = new ChaoticArmor(CHAOTIC_ARMOR, 3, Strings2.chaoticBootsName);
 
         chaoticCore = new ChaoticCore();
         chaotiumEnergyCore = new ChaotiumEnergyCore();

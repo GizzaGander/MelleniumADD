@@ -2,7 +2,7 @@ package com.brandon3055.draconicevolution.client.render.item;
 
 import com.brandon3055.draconicevolution.client.handler.ResourceHandler2;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
-import com.brandon3055.draconicevolution.common.lib.References;
+import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.utills.LogHelper;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -42,7 +42,7 @@ public class RenderArmor2 implements IItemRenderer {
         }
 
         GL11.glPushMatrix();
-        ResourceHandler2.bindResource(armor.getArmorTexture(stack, null, 0, null).replace(References.RESOURCESPREFIX, ""));
+        ResourceHandler2.bindResource(armor.getArmorTexture(stack, null, 0, null).replace(References2.RESOURCESPREFIX, ""));
 
         if (type == ItemRenderType.EQUIPPED_FIRST_PERSON || type == ItemRenderType.EQUIPPED) {
             GL11.glTranslated(0.5, 0.5, 0.5);

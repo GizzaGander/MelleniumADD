@@ -2,7 +2,7 @@ package com.brandon3055.draconicevolution.common.items;
 
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.ModItems2;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -20,7 +20,7 @@ public class ChaotiumEnergyCore extends ItemDE {
     IIcon[] icons = new IIcon[2];
 
     public ChaotiumEnergyCore() {
-        this.setUnlocalizedName(Strings.chaotiumEnergyCoreName);
+        this.setUnlocalizedName(Strings2.chaotiumEnergyCoreName);
         this.setCreativeTab(DraconicEvolution.tabBlocksItems);
         this.setHasSubtypes(true);
         ModItems2.register(this);

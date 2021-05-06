@@ -13,7 +13,7 @@ import com.brandon3055.draconicevolution.common.CommonProxy2;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.blocks.multiblock.IReactorPart;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
-import com.brandon3055.draconicevolution.common.lib.References;
+import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.utills.UpdateChecker;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -139,8 +139,8 @@ public class ClientProxy2 extends CommonProxy2 {
     }
 
     public void registerRenderIDs() {
-        References.idTeleporterStand = RenderingRegistry.getNextAvailableRenderId();
-        References.idPortal = RenderingRegistry.getNextAvailableRenderId();
+        References2.idTeleporterStand = RenderingRegistry.getNextAvailableRenderId();
+        References2.idPortal = RenderingRegistry.getNextAvailableRenderId();
     }
 
     @Override

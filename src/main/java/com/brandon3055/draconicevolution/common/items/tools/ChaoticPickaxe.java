@@ -5,9 +5,9 @@ import java.util.List;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool;
-import com.brandon3055.draconicevolution.common.lib.References;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool2;
+import com.brandon3055.draconicevolution.common.lib.References2;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import com.brandon3055.draconicevolution.common.utills.IInventoryTool;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
 import com.brandon3055.draconicevolution.common.utills.ItemConfigField;
@@ -18,13 +18,13 @@ import net.minecraft.util.StatCollector;
 import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
-public class ChaoticPickaxe extends MiningTool implements IInventoryTool, IRenderTweak {
+public class ChaoticPickaxe extends MiningTool2 implements IInventoryTool, IRenderTweak {
 
 
     public ChaoticPickaxe() {
         super(ModItems2.CHAOTIC);
         this.setHarvestLevel("pickaxe", 10);
-        this.setUnlocalizedName(Strings.chaoticPickaxeName);
+        this.setUnlocalizedName(Strings2.chaoticPickaxeName);
         this.setCapacity(BalanceConfigHandler2.chaoticToolsBaseStorage);
         this.setMaxExtract(BalanceConfigHandler2.chaoticToolsMaxTransfer);
         this.setMaxReceive(BalanceConfigHandler2.chaoticToolsMaxTransfer);
@@ -36,9 +36,9 @@ public class ChaoticPickaxe extends MiningTool implements IInventoryTool, IRende
     @Override
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = super.getFields(stack, slot);
-        list.add(new ItemConfigField(References.INT_ID, slot, References.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
-        list.add(new ItemConfigField(References.INT_ID, slot, References.DIG_DEPTH).setMinMaxAndIncromente(1, EnumUpgrade.DIG_DEPTH.getUpgradePoints(stack), 1).readFromItem(stack, 1));
-        list.add(new ItemConfigField(References.BOOLEAN_ID, slot, References.OBLITERATE).readFromItem(stack, false));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.DIG_DEPTH).setMinMaxAndIncromente(1, EnumUpgrade.DIG_DEPTH.getUpgradePoints(stack), 1).readFromItem(stack, 1));
+        list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, References2.OBLITERATE).readFromItem(stack, false));
         return list;
     }
 
@@ -143,7 +143,7 @@ public class ChaoticPickaxe extends MiningTool implements IInventoryTool, IRende
 //	@Override
 //	public String getUnlocalizedName(){
 //
-//		return String.format("item.%s%s", References.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
+//		return String.format("item.%s%s", References2.MODID.toLowerCase() + ":", super.getUnlocalizedName().substring(super.getUnlocalizedName().indexOf(".") + 1));
 //	}
 //
 //	@Override
@@ -155,9 +155,9 @@ public class ChaoticPickaxe extends MiningTool implements IInventoryTool, IRende
 //	@SideOnly(Side.CLIENT)
 //	public void registerIcons(final IIconRegister iconRegister)
 //	{
-//		this.itemIcon0 = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_pick");
-//		this.itemIcon1 = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_pick_active");
-//		this.itemIcon2 = iconRegister.registerIcon(References.RESOURCESPREFIX + "draconic_pick_obliterate");
+//		this.itemIcon0 = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_pick");
+//		this.itemIcon1 = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_pick_active");
+//		this.itemIcon2 = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_pick_obliterate");
 //	}
 //
 //	@Override
@@ -190,19 +190,19 @@ public class ChaoticPickaxe extends MiningTool implements IInventoryTool, IRende
 //		World world = player.worldObj;
 //		Block block = world.getBlock(x, y, z);
 //		Material mat = block.getMaterial();
-//		if (!ToolHandler.isRightMaterial(mat, ToolHandler.materialsPick)) {
+//		if (!ToolHandler2.isRightMaterial(mat, ToolHandler2.materialsPick)) {
 //			return false;
 //		}
 //		int fortune = EnchantmentHelper.getFortuneModifier(player);
 //		boolean silk = EnchantmentHelper.getSilkTouchModifier(player);
-//		ToolHandler.disSquare(x, y, z, player, world, silk, fortune, ToolHandler.materialsPick, stack);
+//		ToolHandler2.disSquare(x, y, z, player, world, silk, fortune, ToolHandler2.materialsPick, stack);
 //		return false;
 //	}
 //
 //	@Override
 //	public ItemStack onItemRightClick(final ItemStack stack, final World world, final EntityPlayer player)
 //	{
-//		return ToolHandler.changeMode(stack, player, true, 3);
+//		return ToolHandler2.changeMode(stack, player, true, 3);
 //	}
 //
 //	@SuppressWarnings({ "rawtypes", "unchecked" })

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityDragonProjectile;
-import com.brandon3055.draconicevolution.common.items.weapons.IEnergyContainerWeaponItem;
+import com.brandon3055.draconicevolution.common.items.weapons.IEnergyContainerWeaponItem2;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
 import com.brandon3055.draconicevolution.common.utills.LogHelper;
 import net.minecraft.enchantment.Enchantment;
@@ -23,7 +23,7 @@ import net.minecraft.network.play.server.S23PacketBlockChange;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
-public class ToolHandler {
+public class ToolHandler2 {
 //	public static Block[] destroyList = {Blocks.cobblestone, Blocks.stone, Blocks.dirt, Blocks.gravel, Blocks.sand, Blocks.grass, Blocks.netherrack};
 //
 //	public static boolean isRightMaterial(final Material material, final Material[] materialsListing) {
@@ -100,11 +100,11 @@ public class ToolHandler {
 //				return;
 //			}
 //
-//			if (!(stack.getItem() instanceof IEnergyContainerItem) || ((IEnergyContainerItem) stack.getItem()).getEnergyStored(stack) < References.ENERGYPERBLOCK) {
+//			if (!(stack.getItem() instanceof IEnergyContainerItem) || ((IEnergyContainerItem) stack.getItem()).getEnergyStored(stack) < References2.ENERGYPERBLOCK) {
 //				if (!player.capabilities.isCreativeMode) return;
 //			} else {
 //				if (!player.capabilities.isCreativeMode)
-//					((IEnergyContainerItem) stack.getItem()).extractEnergy(stack, References.ENERGYPERBLOCK, false);
+//					((IEnergyContainerItem) stack.getItem()).extractEnergy(stack, References2.ENERGYPERBLOCK, false);
 //			}
 //
 //			if (checkDestroyList(block) && (IConfigurableItem.ProfileHelper.getBoolean(stack, "obliterate", false))) {
@@ -137,12 +137,12 @@ public class ToolHandler {
 
     public static void damageEntityBasedOnHealth(Entity entity, EntityPlayer player, float dmgMult) {
         ItemStack stack = player.getCurrentEquippedItem();
-        if (stack == null || !(stack.getItem() instanceof IEnergyContainerWeaponItem)) {
-            LogHelper.error("[ToolHandler.java:147] WTF? I don't get it... Player " + player.getCommandSenderName() + " whacked something with a DE weapon but that they are not holding? Ok someone is messing with my shit...");
+        if (stack == null || !(stack.getItem() instanceof IEnergyContainerWeaponItem2)) {
+            LogHelper.error("[ToolHandler2.java:147] WTF? I don't get it... Player " + player.getCommandSenderName() + " whacked something with a DE weapon but that they are not holding? Ok someone is messing with my shit...");
             return;
         }
 
-        IEnergyContainerWeaponItem item = (IEnergyContainerWeaponItem) stack.getItem();
+        IEnergyContainerWeaponItem2 item = (IEnergyContainerWeaponItem2) stack.getItem();
         float baseAttack = getDamageAgainstEntity(stack, entity);
 
         if (entity instanceof EntityLivingBase) {
@@ -207,7 +207,7 @@ public class ToolHandler {
         AxisAlignedBB box = AxisAlignedBB.getBoundingBox(entity.posX - range, entity.posY - range, entity.posZ - range, entity.posX + range, entity.posY + range, entity.posZ + range).expand(1.0D, 1.0D, 1.0D);
         List list = world.getEntitiesWithinAABBExcludingEntity(player, box);
         if (range == 0) return;
-        IEnergyContainerWeaponItem item = (IEnergyContainerWeaponItem) stack.getItem();
+        IEnergyContainerWeaponItem2 item = (IEnergyContainerWeaponItem2) stack.getItem();
 
         for (Object entityObject : list) {
             if (item.getEnergyStored(stack) < item.getEnergyPerAttack()) break;

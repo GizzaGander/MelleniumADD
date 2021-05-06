@@ -1,6 +1,6 @@
 package com.brandon3055.draconicevolution.common.lib;
 
-public final class References {
+public final class References2 {
     public static final String MODID = "melads";
     public static final String MODNAME = "Mellenium Addons";
     public static final String VERSION = VersionHandler.FULL_VERSION;

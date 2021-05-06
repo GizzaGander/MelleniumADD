@@ -6,11 +6,11 @@ import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolHandler;
-import com.brandon3055.draconicevolution.common.items.weapons.IEnergyContainerWeaponItem;
-import com.brandon3055.draconicevolution.common.lib.References;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.MiningTool2;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolHandler2;
+import com.brandon3055.draconicevolution.common.items.weapons.IEnergyContainerWeaponItem2;
+import com.brandon3055.draconicevolution.common.lib.References2;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import com.brandon3055.draconicevolution.common.utills.IConfigurableItem;
 import com.brandon3055.draconicevolution.common.utills.IInventoryTool;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
@@ -29,11 +29,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.IItemRenderer;
 import org.lwjgl.opengl.GL11;
 
-public class ChaoticDistructionStaff extends MiningTool implements IInventoryTool, IRenderTweak, IEnergyContainerWeaponItem {
+public class ChaoticDistructionStaff extends MiningTool2 implements IInventoryTool, IRenderTweak, IEnergyContainerWeaponItem2 {
 
     public ChaoticDistructionStaff() {
         super(ModItems2.CHAOTIC);
-        this.setUnlocalizedName(Strings.chaoticDStaffName);
+        this.setUnlocalizedName(Strings2.chaoticDStaffName);
         this.setHarvestLevel("pickaxe", 10);
         this.setHarvestLevel("shovel", 10);
         this.setHarvestLevel("axe", 10);
@@ -53,10 +53,10 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
     @Override
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = super.getFields(stack, slot);
-        list.add(new ItemConfigField(References.INT_ID, slot, References.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
-        list.add(new ItemConfigField(References.INT_ID, slot, References.DIG_DEPTH).setMinMaxAndIncromente(1, EnumUpgrade.DIG_DEPTH.getUpgradePoints(stack), 1).readFromItem(stack, 1));
-        list.add(new ItemConfigField(References.INT_ID, slot, References.ATTACK_AOE).setMinMaxAndIncromente(0, EnumUpgrade.ATTACK_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 1).setModifier("AOE"));
-        list.add(new ItemConfigField(References.BOOLEAN_ID, slot, References.OBLITERATE).readFromItem(stack, false));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.DIG_AOE).setMinMaxAndIncromente(0, EnumUpgrade.DIG_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 0).setModifier("AOE"));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.DIG_DEPTH).setMinMaxAndIncromente(1, EnumUpgrade.DIG_DEPTH.getUpgradePoints(stack), 1).readFromItem(stack, 1));
+        list.add(new ItemConfigField(References2.INT_ID, slot, References2.ATTACK_AOE).setMinMaxAndIncromente(0, EnumUpgrade.ATTACK_AOE.getUpgradePoints(stack), 1).readFromItem(stack, 1).setModifier("AOE"));
+        list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, References2.OBLITERATE).readFromItem(stack, false));
         return list;
     }
 
@@ -78,8 +78,8 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
     @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
         entity.hurtResistantTime = 0;
-        ToolHandler.damageEntityBasedOnHealth(entity, player, 0.3F);
-        ToolHandler.AOEAttack(player, entity, stack, IConfigurableItem.ProfileHelper.getInteger(stack, References.ATTACK_AOE, 0));
+        ToolHandler2.damageEntityBasedOnHealth(entity, player, 0.3F);
+        ToolHandler2.AOEAttack(player, entity, stack, IConfigurableItem.ProfileHelper.getInteger(stack, References2.ATTACK_AOE, 0));
         return true;
     }
 
@@ -95,7 +95,7 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
         super.addInformation(stack, player, list, extended);
 
         list.add("");
-        list.add(EnumChatFormatting.BLUE + "+" + ToolHandler.getBaseAttackDamage(stack) + " " + StatCollector.translateToLocal("info.de.attackDamage.txt"));
+        list.add(EnumChatFormatting.BLUE + "+" + ToolHandler2.getBaseAttackDamage(stack) + " " + StatCollector.translateToLocal("info.de.attackDamage.txt"));
         list.add(EnumChatFormatting.BLUE + "+30%" + " " + StatCollector.translateToLocal("info.de.bonusHealthDamage.txt"));
     }
 
@@ -185,7 +185,7 @@ public class ChaoticDistructionStaff extends MiningTool implements IInventoryToo
     @Override
     public List<String> getUpgradeStats(ItemStack stack) {
         List<String> list = super.getUpgradeStats(stack);
-        list.add(InfoHelper.ITC() + StatCollector.translateToLocal("info.de.attackDamage.txt") + ": " + InfoHelper.HITC() + ToolHandler.getBaseAttackDamage(stack));
+        list.add(InfoHelper.ITC() + StatCollector.translateToLocal("info.de.attackDamage.txt") + ": " + InfoHelper.HITC() + ToolHandler2.getBaseAttackDamage(stack));
         return list;
     }
 

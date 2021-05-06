@@ -7,7 +7,7 @@ import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.keybinding.KeyBindings;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
-import com.brandon3055.draconicevolution.common.lib.References;
+import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.network.ToolModePacket;
 import com.brandon3055.draconicevolution.common.utills.IConfigurableItem;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
@@ -36,7 +36,7 @@ import java.util.Set;
 /**
  * Created by Brandon on 2/01/2015.
  */
-public class ToolBase extends RFItemBase {
+public class ToolBase2 extends RFItemBase2 {
 
     private static final Set SHOVEL_OVERRIDES = Sets.newHashSet(Blocks.grass, Blocks.dirt, Blocks.sand, Blocks.gravel, Blocks.snow_layer, Blocks.snow, Blocks.clay, Blocks.farmland, Blocks.soul_sand, Blocks.mycelium, Material.grass, Material.ground, Material.sand, Material.snow, Material.craftedSnow, Material.clay);
     private static final Set PICKAXE_OVERRIDES = Sets.newHashSet(Blocks.cobblestone, Blocks.double_stone_slab, Blocks.stone_slab, Blocks.stone, Blocks.sandstone, Blocks.mossy_cobblestone, Blocks.iron_ore, Blocks.iron_block, Blocks.coal_ore, Blocks.gold_block, Blocks.gold_ore, Blocks.diamond_ore, Blocks.diamond_block, Blocks.ice, Blocks.netherrack, Blocks.lapis_ore, Blocks.lapis_block, Blocks.redstone_ore, Blocks.lit_redstone_ore, Blocks.rail, Blocks.detector_rail, Blocks.golden_rail, Blocks.activator_rail, Material.iron, Material.anvil, Material.rock, Material.glass, Material.ice, Material.packedIce);
@@ -61,7 +61,7 @@ public class ToolBase extends RFItemBase {
      */
     public int energyPerOperation = 0;
 
-    protected ToolBase(float baseDamage, Item.ToolMaterial material, Set blockOverrides) {
+    protected ToolBase2(float baseDamage, Item.ToolMaterial material, Set blockOverrides) {
         this.toolMaterial = material;
         this.blockOverrides = blockOverrides == null ? new HashSet() : blockOverrides;
         this.maxStackSize = 1;
@@ -123,7 +123,7 @@ public class ToolBase extends RFItemBase {
         }
 
         if (getEnergyStored(stack) >= energyPerOperation) {
-            float f = IConfigurableItem.ProfileHelper.getFloat(stack, References.DIG_SPEED_MULTIPLIER, 1f);
+            float f = IConfigurableItem.ProfileHelper.getFloat(stack, References2.DIG_SPEED_MULTIPLIER, 1f);
             if (speed > 50f) f *= f;
             return f * speed;
         } else {
@@ -135,9 +135,9 @@ public class ToolBase extends RFItemBase {
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = super.getFields(stack, slot);
         if (!getToolClasses(stack).isEmpty())
-            list.add(new ItemConfigField(References.FLOAT_ID, slot, References.DIG_SPEED_MULTIPLIER).setMinMaxAndIncromente(0f, 1f, 0.01f).readFromItem(stack, 1f).setModifier("PERCENT"));
+            list.add(new ItemConfigField(References2.FLOAT_ID, slot, References2.DIG_SPEED_MULTIPLIER).setMinMaxAndIncromente(0f, 1f, 0.01f).readFromItem(stack, 1f).setModifier("PERCENT"));
         if (!getToolClasses(stack).isEmpty())
-            list.add(new ItemConfigField(References.BOOLEAN_ID, slot, References.BASE_SAFE_AOE).readFromItem(stack, false));
+            list.add(new ItemConfigField(References2.BOOLEAN_ID, slot, References2.BASE_SAFE_AOE).readFromItem(stack, false));
         return list;
     }
 
@@ -197,7 +197,7 @@ public class ToolBase extends RFItemBase {
         if (shift && !ctrl) {
             List<ItemConfigField> fields = item.getFields(stack, player.inventory.currentItem);
             for (ItemConfigField field : fields) {
-                if (field.name.equals(References.DIG_AOE)) {
+                if (field.name.equals(References2.DIG_AOE)) {
                     int aoe = (Integer) field.value;
                     aoe++;
                     if (aoe > (Integer) field.max) aoe = (Integer) field.min;
@@ -208,7 +208,7 @@ public class ToolBase extends RFItemBase {
         } else if (ctrl && !shift) {
             List<ItemConfigField> fields = item.getFields(stack, player.inventory.currentItem);
             for (ItemConfigField field : fields) {
-                if (field.name.equals(References.DIG_DEPTH)) {
+                if (field.name.equals(References2.DIG_DEPTH)) {
                     int aoe = (Integer) field.value;
                     aoe++;
                     if (aoe > (Integer) field.max) aoe = (Integer) field.min;
@@ -219,7 +219,7 @@ public class ToolBase extends RFItemBase {
         } else if (ctrl && shift) {
             List<ItemConfigField> fields = item.getFields(stack, player.inventory.currentItem);
             for (ItemConfigField field : fields) {
-                if (field.name.equals(References.ATTACK_AOE)) {
+                if (field.name.equals(References2.ATTACK_AOE)) {
                     int aoe = (Integer) field.value;
                     aoe++;
                     if (aoe > (Integer) field.max) aoe = (Integer) field.min;

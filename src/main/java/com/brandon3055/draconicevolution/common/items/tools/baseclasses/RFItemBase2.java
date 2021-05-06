@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by Brandon on 8/01/2015.
  */
-public class RFItemBase extends ItemDE implements IEnergyContainerItem, IConfigurableItem, IHudDisplayItem {
+public class RFItemBase2 extends ItemDE implements IEnergyContainerItem, IConfigurableItem, IHudDisplayItem {
     protected int capacity = 0;
     /**
      * Max Receive
@@ -37,7 +37,7 @@ public class RFItemBase extends ItemDE implements IEnergyContainerItem, IConfigu
      */
     protected int maxExtract = 0;
 
-    public RFItemBase() {
+    public RFItemBase2() {
         this.setMaxStackSize(1);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
     }

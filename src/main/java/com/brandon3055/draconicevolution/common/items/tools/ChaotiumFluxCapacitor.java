@@ -10,9 +10,9 @@ import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.RFItemBase;
-import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase;
-import com.brandon3055.draconicevolution.common.lib.Strings;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.RFItemBase2;
+import com.brandon3055.draconicevolution.common.items.tools.baseclasses.ToolBase2;
+import com.brandon3055.draconicevolution.common.lib.Strings2;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -30,11 +30,11 @@ import net.minecraft.world.World;
 /**
  * Created by Brandon on 24/11/2014.
  */
-public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem {
+public class ChaotiumFluxCapacitor extends RFItemBase2 implements IUpgradableItem {
     IIcon[] icons = new IIcon[2];
 
     public ChaotiumFluxCapacitor() {
-        this.setUnlocalizedName(Strings.chaotiumFluxCapacitorName);
+        this.setUnlocalizedName(Strings2.chaotiumFluxCapacitorName);
         this.setCreativeTab(DraconicEvolution.tabToolsWeapons);
         this.setHasSubtypes(true);
         this.setMaxStackSize(1);
@@ -141,7 +141,7 @@ public class ChaotiumFluxCapacitor extends RFItemBase implements IUpgradableItem
             list.add(InfoHelper.ITC() + StatCollector.translateToLocal("info.de.capacitorMode.txt") + ": " + InfoHelper.HITC() + StatCollector.translateToLocal("info.de.capacitorMode" + ItemNBTHelper.getShort(stack, "Mode", (short) 0) + ".txt"));
             //InfoHelper.addLore(stack, list);
         }
-        ToolBase.holdCTRLForUpgrades(list, stack);
+        ToolBase2.holdCTRLForUpgrades(list, stack);
         InfoHelper.addEnergyInfo(stack, list);
     }
 

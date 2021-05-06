@@ -3,7 +3,7 @@ package com.Mellenium.Addons;
 import com.brandon3055.draconicevolution.client.creativetab.DETab;
 import com.brandon3055.draconicevolution.common.CommonProxy2;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
-import com.brandon3055.draconicevolution.common.lib.References;
+import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.utills.LogHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -15,20 +15,20 @@ import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 
-@Mod(modid = References.MODID, name = References.MODNAME, version = References.VERSION, canBeDeactivated = false, guiFactory = References.GUIFACTORY, dependencies = "after:NotEnoughItems;" +
+@Mod(modid = References2.MODID, name = References2.MODNAME, version = References2.VERSION, canBeDeactivated = false, guiFactory = References2.GUIFACTORY, dependencies = "after:NotEnoughItems;" +
         "after:NotEnoughItems;" +
         "after:ThermalExpansion;" +
         "after:ThermalFoundation;" +
         "required-after:BrandonsCore@[1.0.0.11,);")
 public class MelleniumAddons {
 
-    @Mod.Instance(References.MODID)
+    @Mod.Instance(References2.MODID)
     public static MelleniumAddons instance;
 
-    @SidedProxy(clientSide = References.CLIENTPROXYLOCATION, serverSide = References.SERVERPROXYLOCATION)
+    @SidedProxy(clientSide = References2.CLIENTPROXYLOCATION, serverSide = References2.SERVERPROXYLOCATION)
     public static CommonProxy2 proxy;
 
-    public static CreativeTabs tabToolsWeapons = new DETab(CreativeTabs.getNextID(), References.MODID, "toolsAndWeapons", 0);
+    public static CreativeTabs tabToolsWeapons = new DETab(CreativeTabs.getNextID(), References2.MODID, "toolsAndWeapons", 0);
 
     public static final String networkChannelName = "DEvolutionNC";
     public static SimpleNetworkWrapper network;
@@ -51,7 +51,7 @@ public class MelleniumAddons {
 //		event.getModMetadata().authorList = Arrays.asList("brandon3055");
 //		event.getModMetadata().logoFile = "banner.png";
 //		event.getModMetadata().url = "http://www.brandon3055.com/";
-//		event.getModMetadata().version = References.VERSION + "-MC1.7.10";
+//		event.getModMetadata().version = References2.VERSION + "-MC1.7.10";
 
         proxy.preInit(event);
 

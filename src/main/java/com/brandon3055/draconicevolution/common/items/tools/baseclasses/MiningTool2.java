@@ -9,7 +9,7 @@ import com.brandon3055.brandonscore.common.utills.InfoHelper;
 import com.brandon3055.brandonscore.common.utills.ItemNBTHelper;
 import com.brandon3055.brandonscore.common.utills.Utills;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
-import com.brandon3055.draconicevolution.common.lib.References;
+import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.utills.IConfigurableItem;
 import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
 import com.brandon3055.draconicevolution.common.utills.ItemConfigField;
@@ -38,10 +38,10 @@ import net.minecraftforge.event.world.BlockEvent;
 /**
  * Created by Brandon on 2/01/2015.
  */
-public abstract class MiningTool extends ToolBase implements IUpgradableItem {
+public abstract class MiningTool2 extends ToolBase2 implements IUpgradableItem {
 
 
-    public MiningTool(ToolMaterial material) {
+    public MiningTool2(ToolMaterial material) {
         super(0, material, null);
     }
 
@@ -68,27 +68,27 @@ public abstract class MiningTool extends ToolBase implements IUpgradableItem {
 
     @Override
     public boolean onBlockStartBreak(ItemStack stack, int x, int y, int z, EntityPlayer player) {
-        int radius = IConfigurableItem.ProfileHelper.getInteger(stack, References.DIG_AOE, 0);
-        int depth = IConfigurableItem.ProfileHelper.getInteger(stack, References.DIG_DEPTH, 1) - 1;
+        int radius = IConfigurableItem.ProfileHelper.getInteger(stack, References2.DIG_AOE, 0);
+        int depth = IConfigurableItem.ProfileHelper.getInteger(stack, References2.DIG_DEPTH, 1) - 1;
 
         return getEnergyStored(stack) >= energyPerOperation && (radius > 0) ? breakAOEBlocks(stack, x, y, z, radius, depth, player) : super.onBlockStartBreak(stack, x, y, z, player);
     }
 
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World p_150894_2_, Block p_150894_3_, int p_150894_4_, int p_150894_5_, int p_150894_6_, EntityLivingBase p_150894_7_) {
-        if (IConfigurableItem.ProfileHelper.getInteger(stack, References.DIG_AOE, 0) == 0)
+        if (IConfigurableItem.ProfileHelper.getInteger(stack, References2.DIG_AOE, 0) == 0)
             extractEnergy(stack, energyPerOperation, false);
         return super.onBlockDestroyed(stack, p_150894_2_, p_150894_3_, p_150894_4_, p_150894_5_, p_150894_6_, p_150894_7_);
     }
 
     @Override
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-        ToolHandler.updateGhostBlocks(player, world);
+        ToolHandler2.updateGhostBlocks(player, world);
         return super.onItemRightClick(stack, world, player);
     }
 
     public boolean breakAOEBlocks(ItemStack stack, int x, int y, int z, int breakRadius, int breakDepth, EntityPlayer player) {
-        Map<Block, Integer> blockMap = IConfigurableItem.ProfileHelper.getBoolean(stack, References.OBLITERATE, false) ? getObliterationList(stack) : new HashMap<Block, Integer>();
+        Map<Block, Integer> blockMap = IConfigurableItem.ProfileHelper.getBoolean(stack, References2.OBLITERATE, false) ? getObliterationList(stack) : new HashMap<Block, Integer>();
         Block block = player.worldObj.getBlock(x, y, z);
         int meta = player.worldObj.getBlockMetadata(x, y, z);
         boolean effective = false;
@@ -104,9 +104,9 @@ public abstract class MiningTool extends ToolBase implements IUpgradableItem {
         float refStrength = ForgeHooks.blockStrength(block, player, player.worldObj, x, y, z);
 
 
-        MovingObjectPosition mop = ToolHandler.raytraceFromEntity(player.worldObj, player, 4.5d);
+        MovingObjectPosition mop = ToolHandler2.raytraceFromEntity(player.worldObj, player, 4.5d);
         if (mop == null) {
-            ToolHandler.updateGhostBlocks(player, player.worldObj);
+            ToolHandler2.updateGhostBlocks(player, player.worldObj);
             return true;
         }
         int sideHit = mop.sideHit;
@@ -156,7 +156,7 @@ public abstract class MiningTool extends ToolBase implements IUpgradableItem {
                 break;
         }
 
-        if (IConfigurableItem.ProfileHelper.getBoolean(stack, References.BASE_SAFE_AOE, false)) {
+        if (IConfigurableItem.ProfileHelper.getBoolean(stack, References2.BASE_SAFE_AOE, false)) {
             for (int xPos = x - xMin; xPos <= x + xMax; xPos++) {
                 for (int yPos = y + yOffset - yMin; yPos <= y + yOffset + yMax; yPos++) {
                     for (int zPos = z - zMin; zPos <= z + zMax; zPos++) {
@@ -295,9 +295,9 @@ public abstract class MiningTool extends ToolBase implements IUpgradableItem {
         int depth = 0;
         int attackaoe = 0;
         for (ItemConfigField field : getFields(stack, 0)) {
-            if (field.name.equals(References.DIG_AOE)) digaoe = 1 + ((Integer) field.max * 2);
-            else if (field.name.equals(References.DIG_DEPTH)) depth = (Integer) field.max;
-            else if (field.name.equals(References.ATTACK_AOE)) attackaoe = 1 + ((Integer) field.max * 2);
+            if (field.name.equals(References2.DIG_AOE)) digaoe = 1 + ((Integer) field.max * 2);
+            else if (field.name.equals(References2.DIG_DEPTH)) depth = (Integer) field.max;
+            else if (field.name.equals(References2.ATTACK_AOE)) attackaoe = 1 + ((Integer) field.max * 2);
         }
 
         strings.add(InfoHelper.ITC() + StatCollector.translateToLocal("gui.de.RFCapacity.txt") + ": " + InfoHelper.HITC() + Utills.formatNumber(getMaxEnergyStored(stack)));
