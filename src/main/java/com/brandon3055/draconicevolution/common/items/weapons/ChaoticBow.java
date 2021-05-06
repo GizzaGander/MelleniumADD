@@ -25,6 +25,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
@@ -32,6 +33,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.EnumHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -192,7 +194,13 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     public boolean isEnchantValid(Enchantment enchant) {
         return enchant.type == EnumEnchantmentType.bow || enchant.effectId == MelleniumAddons.reaperEnchant.effectId;
     }
+    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
 
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity2;
+    }
     @Override
     public List<ItemConfigField> getFields(ItemStack stack, int slot) {
         List<ItemConfigField> list = new ArrayList<ItemConfigField>();

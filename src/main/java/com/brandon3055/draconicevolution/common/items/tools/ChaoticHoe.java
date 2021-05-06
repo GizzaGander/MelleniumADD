@@ -28,14 +28,17 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import org.lwjgl.opengl.GL11;
 
@@ -181,6 +184,13 @@ public class ChaoticHoe extends ItemHoe implements IEnergyContainerItem, IRender
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
+    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity2;
+    }
     @Override
     public void addInformation(final ItemStack stack, final EntityPlayer player, final List list, final boolean extraInformation) {
         InfoHelper.addEnergyInfo(stack, list);
