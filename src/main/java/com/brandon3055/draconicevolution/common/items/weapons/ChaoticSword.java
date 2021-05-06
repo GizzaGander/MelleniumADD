@@ -37,6 +37,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.client.IItemRenderer;
+import net.minecraftforge.common.util.EnumHelper;
 import org.lwjgl.opengl.GL11;
 
 public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponItem2, IInventoryTool, IRenderTweak, IUpgradableItem, IHudDisplayItem {
@@ -103,10 +104,11 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
         list.add(EnumChatFormatting.BLUE + "+" + ToolHandler2.getBaseAttackDamage(stack) + " " + StatCollector.translateToLocal("info.de.attackDamage.txt"));
         list.add(EnumChatFormatting.BLUE + "+20%" + " " + StatCollector.translateToLocal("info.de.bonusHealthDamage.txt"));
     }
+    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
 
     @Override
     public EnumRarity getRarity(ItemStack stack) {
-        return EnumRarity.rare;
+        return EnumRarity2;
     }
 
     @Override

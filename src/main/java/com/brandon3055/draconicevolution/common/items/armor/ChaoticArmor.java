@@ -40,10 +40,12 @@ import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ISpecialArmor;
+import net.minecraftforge.common.util.EnumHelper;
 import thaumcraft.api.IGoggles;
 import thaumcraft.api.nodes.IRevealer;
 
@@ -132,10 +134,11 @@ public class ChaoticArmor extends ItemArmor implements ISpecialArmor, IConfigura
             return References2.RESOURCESPREFIX + "textures/models/armor/chaotic_layer_2.png";
         }
     }
+    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
 
     @Override
     public EnumRarity getRarity(ItemStack p_77613_1_) {
-        return EnumRarity.epic;
+        return EnumRarity2;
     }
 
     @Override

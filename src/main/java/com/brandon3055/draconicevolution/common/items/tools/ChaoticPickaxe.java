@@ -13,9 +13,12 @@ import com.brandon3055.draconicevolution.common.utills.IUpgradableItem;
 import com.brandon3055.draconicevolution.common.utills.ItemConfigField;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.client.IItemRenderer;
+import net.minecraftforge.common.util.EnumHelper;
 import org.lwjgl.opengl.GL11;
 
 public class ChaoticPickaxe extends MiningTool2 implements IInventoryTool, IRenderTweak {
@@ -224,10 +227,12 @@ public class ChaoticPickaxe extends MiningTool2 implements IInventoryTool, IRend
 //		}
 //	}
 //
-//	@Override
-//	public EnumRarity getRarity(ItemStack stack)
-//	{
-//		return EnumRarity.rare;
+private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
+
+    @Override
+	public EnumRarity getRarity(ItemStack stack)
+	{
+		return EnumRarity2;
 //	}
 //
 //	@Override
