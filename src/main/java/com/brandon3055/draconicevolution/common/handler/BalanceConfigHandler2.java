@@ -48,9 +48,9 @@ public class BalanceConfigHandler2 {
     public static int chaoticArmorMaxTransfer = 1000000;
     public static int chaoticArmorEnergyPerProtectionPoint = 1000;
     public static int chaoticArmorEnergyToRemoveEffects = 5000;
-    public static int chaoticToolsBaseStorage = 10000000;
+    public static int chaoticToolsBaseStorage = 50000000;
     public static int chaoticToolsStoragePerUpgrade = 5000000;
-    public static int chaoticToolsMaxTransfer = 500000;
+    public static int chaoticToolsMaxTransfer = 1000000;
     public static int chaoticToolsEnergyPerAction = 80;
     public static int chaoticCapacitorBaseStorage = 750000000;
     public static int chaoticCapacitorStoragePerUpgrade = 60000000;
