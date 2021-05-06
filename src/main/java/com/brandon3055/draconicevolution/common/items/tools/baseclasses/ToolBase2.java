@@ -26,6 +26,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.util.EnumHelper;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
@@ -170,11 +171,13 @@ public class ToolBase2 extends RFItemBase2 {
 
         list.add(StatCollector.translateToLocal("info.de.press.txt") + " " + key + " " + StatCollector.translateToLocal("info.de.toOpenConfigGUI.txt"));
     }
+    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
 
     @Override
     public EnumRarity getRarity(ItemStack stack) {
         if (stack.getUnlocalizedName().contains(":wyvern")) return EnumRarity.rare;
         if (stack.getUnlocalizedName().contains(":draconic")) return EnumRarity.epic;
+        if (stack.getUnlocalizedName().contains(":chaotic")) return EnumRarity2;
         return EnumRarity.uncommon;
     }
 
