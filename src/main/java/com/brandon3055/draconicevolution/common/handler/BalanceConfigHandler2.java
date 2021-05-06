@@ -23,11 +23,11 @@ public class BalanceConfigHandler2 {
     public static final int chaoticWeaponsMinAttackDamageUpgradePoints = 0;
     public static final int chaoticWeaponsMaxAttackDamageUpgradePoints = 16;
     public static final int chaoticBowMinDrawSpeedUpgradePoints = 5;
-    public static final int chaoticBowMaxDrawSpeedUpgradePoints = 7;
+    public static final int chaoticBowMaxDrawSpeedUpgradePoints = 10;
     public static final int chaoticBowMinArrowSpeedUpgradePoints = 5;
-    public static final int chaoticBowMaxArrowSpeedUpgradePoints = 20;
+    public static final int chaoticBowMaxArrowSpeedUpgradePoints = 30;
     public static final int chaoticBowMinArrowDamageUpgradePoints = 10;
-    public static final int chaoticBowMaxArrowDamageUpgradePoints = 30;
+    public static final int chaoticBowMaxArrowDamageUpgradePoints = 60;
     public static final int chaoticStaffMinDigAOEUpgradePoints = 4;
     public static final int chaoticStaffMaxDigAOEUpgradePoints = 7;
     public static final int chaoticStaffMinDigDepthUpgradePoints = 9;
@@ -73,9 +73,9 @@ public class BalanceConfigHandler2 {
     public static int chaoticWeaponsMaxCapacityUpgradePoints = 50;
     public static int chaoticWeaponsMaxUpgrades = 12;
     public static int chaoticWeaponsMaxUpgradePoints = 50;
-    public static int chaoticBowMaxCapacityUpgradePoints = 50;
+    public static int chaoticBowMaxCapacityUpgradePoints = 80;
     public static int chaoticBowMaxUpgrades = 15;
-    public static int chaoticBowMaxUpgradePoints = 50;
+    public static int chaoticBowMaxUpgradePoints = 80;
     public static int chaoticStaffMaxCapacityUpgradePoints = 50;
     public static int chaoticStaffMaxUpgrades = 15;
     public static int chaoticStaffMaxUpgradePoints = 50;
