@@ -85,7 +85,7 @@ public class ChaoticSword extends ItemSword implements IEnergyContainerWeaponIte
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
         entity.hurtResistantTime = 0;
         ToolHandler2.AOEAttack(player, entity, stack, IConfigurableItem.ProfileHelper.getInteger(stack, References2.ATTACK_AOE, 0));
-        ToolHandler2.damageEntityBasedOnHealth(entity, player, 0.2F);
+        ToolHandler2.damageEntityBasedOnHealth(entity, player, 0.4F);
         return true;
     }
 

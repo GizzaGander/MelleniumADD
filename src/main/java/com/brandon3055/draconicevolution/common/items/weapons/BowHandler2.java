@@ -4,6 +4,7 @@ import java.util.Random;
 
 import cofh.api.energy.IEnergyContainerItem;
 import com.brandon3055.draconicevolution.common.ModItems;
+import com.brandon3055.draconicevolution.common.ModItems2;
 import com.brandon3055.draconicevolution.common.entity.EntityChaoticArrow2;
 import com.brandon3055.draconicevolution.common.entity.EntityEnderArrow;
 import com.brandon3055.draconicevolution.common.handler.BalanceConfigHandler2;
@@ -137,7 +138,7 @@ public class BowHandler2 {
         public String cantFireMessage = null;
 
         public BowProperties() {
-            this.bow = new ItemStack(ModItems.wyvernBow);
+            this.bow = new ItemStack(ModItems2.chaoticBow);
             this.player = null;
         }
 

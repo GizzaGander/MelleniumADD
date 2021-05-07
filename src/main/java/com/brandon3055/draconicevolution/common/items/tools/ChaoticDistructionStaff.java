@@ -78,7 +78,7 @@ public class ChaoticDistructionStaff extends MiningTool2 implements IInventoryTo
     @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
         entity.hurtResistantTime = 0;
-        ToolHandler2.damageEntityBasedOnHealth(entity, player, 0.9F);
+        ToolHandler2.damageEntityBasedOnHealth(entity, player, 1F);
         ToolHandler2.AOEAttack(player, entity, stack, IConfigurableItem.ProfileHelper.getInteger(stack, References2.ATTACK_AOE, 0));
         return true;
     }
