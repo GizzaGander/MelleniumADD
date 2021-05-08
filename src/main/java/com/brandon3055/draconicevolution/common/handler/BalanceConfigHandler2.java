@@ -31,7 +31,7 @@ public class BalanceConfigHandler2 {
     public static final int chaoticStaffMinDigAOEUpgradePoints = 4;
     public static final int chaoticStaffMaxDigAOEUpgradePoints = 7;
     public static final int chaoticStaffMinDigDepthUpgradePoints = 9;
-    public static final int chaoticStaffMaxDigDepthUpgradePoints = 13;
+    public static final int chaoticStaffMaxDigDepthUpgradePoints = 15;
     public static final int chaoticStaffMinAttackAOEUpgradePoints = 4;
     public static final int chaoticStaffMaxAttackAOEUpgradePoints = 15;
     public static final int chaoticStaffMinAttackDamageUpgradePoints = 6;

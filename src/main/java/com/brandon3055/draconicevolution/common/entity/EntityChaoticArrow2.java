@@ -1,6 +1,7 @@
 package com.brandon3055.draconicevolution.common.entity;
 
 import com.Mellenium.Addons.MelleniumAddons;
+import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.handler.ParticleHandler;
 import com.brandon3055.draconicevolution.client.render.particle.Particles;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
@@ -421,7 +422,7 @@ public class EntityChaoticArrow2 extends EntityArrow {
             setDead();
         }
         if (bowProperties.shockWavePower > 0 && !worldObj.isRemote) {
-            MelleniumAddons.network.sendToAllAround(new GenericParticlePacket(GenericParticlePacket.ARROW_SHOCK_WAVE, posX, posY, posZ, (int) (bowProperties.shockWavePower * 100)), new NetworkRegistry.TargetPoint(dimension, posX, posY, posZ, 256));
+            DraconicEvolution.network.sendToAllAround(new GenericParticlePacket(GenericParticlePacket.ARROW_SHOCK_WAVE, posX, posY, posZ, (int) (bowProperties.shockWavePower * 100)), new NetworkRegistry.TargetPoint(dimension, posX, posY, posZ, 256));
             worldObj.playSoundEffect(posX, posY, posZ, "random.explode", 4.0F, (1.0F + (this.worldObj.rand.nextFloat() - this.worldObj.rand.nextFloat()) * 0.2F) * 0.7F);
 
             double range = (double) bowProperties.shockWavePower + 5;

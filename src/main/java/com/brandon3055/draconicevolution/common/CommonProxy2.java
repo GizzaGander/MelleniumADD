@@ -12,9 +12,7 @@ import com.brandon3055.draconicevolution.common.handler.*;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
 import com.brandon3055.draconicevolution.common.magic.PotionHandler;
 import com.brandon3055.draconicevolution.common.network.*;
-import com.brandon3055.draconicevolution.common.utills.DragonChunkLoader;
 import com.brandon3055.draconicevolution.common.utills.LogHelper;
-import com.brandon3055.draconicevolution.common.world.DraconicWorldGenerator;
 import com.brandon3055.draconicevolution.integration.ModHelper;
 import com.brandon3055.draconicevolution.integration.computers.CCOCIntegration;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -72,13 +70,11 @@ public class CommonProxy2 {
     public void init(FMLInitializationEvent event) {
         CraftingHandler.init();
         registerGuiHandeler();
-        registerWorldGen();
         registerEntities();
         DETab2.initialize();
         PotionHandler.init();
         CCOCIntegration.init();
         ModHelper.init();
-        DragonChunkLoader.init();
 
         LogHelper.info("Finished Initialization");
     }
@@ -125,10 +121,6 @@ public class CommonProxy2 {
 
     public void registerGuiHandeler() {
         new GuiHandler();
-    }
-
-    public void registerWorldGen() {
-        GameRegistry.registerWorldGenerator(new DraconicWorldGenerator(), 0);
     }
 
     public void registerOres() {

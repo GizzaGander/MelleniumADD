@@ -3,7 +3,7 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/BrandonsCore-1.0.0.12-deobf.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/Draconic-Evolution-1.7.10-1.0.2h-client-deobf.jar!/" />
-      <root url="jar://$PROJECT_DIR$/libs/Thaumcraft-1.7.10-4.2.3.5_client-deobf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/Thaumcraft-deobf-1.7.10-4.2.3.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

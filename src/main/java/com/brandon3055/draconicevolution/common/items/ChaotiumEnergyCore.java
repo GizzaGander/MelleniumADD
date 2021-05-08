@@ -30,8 +30,6 @@ public class ChaotiumEnergyCore extends ItemDE2 {
     }
 
     @SideOnly(Side.CLIENT)
-    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
-
     @Override
     public EnumRarity getRarity(ItemStack stack)
     {

@@ -14,7 +14,7 @@ public class ItemDE2 extends Item {
     public String getUnwrappedUnlocalizedName(final String unlocalizedName) {
         return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
     }
-    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
+    public static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
 
     @Override
     public EnumRarity getRarity(ItemStack stack)

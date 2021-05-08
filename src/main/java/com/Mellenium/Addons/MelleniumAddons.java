@@ -1,5 +1,6 @@
 package com.Mellenium.Addons;
 
+import com.Mellenium.Addons.Thaum.MelTab;
 import com.brandon3055.draconicevolution.client.creativetab.DETab2;
 import com.brandon3055.draconicevolution.common.CommonProxy2;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
@@ -70,7 +71,7 @@ public class MelleniumAddons {
     @Mod.EventHandler
     public void postInit(final FMLPostInitializationEvent event) {
         if (debug) System.out.println("postInit()");
-
+        MelTab.setupResearchPages();
         proxy.postInit(event);
     }
 

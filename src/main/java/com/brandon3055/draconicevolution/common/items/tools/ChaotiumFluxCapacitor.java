@@ -45,8 +45,6 @@ public class ChaotiumFluxCapacitor extends RFItemBase2 implements IUpgradableIte
     }
 
     @SideOnly(Side.CLIENT)
-    private static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
-
     @Override
     public EnumRarity getRarity(ItemStack stack)
     {
