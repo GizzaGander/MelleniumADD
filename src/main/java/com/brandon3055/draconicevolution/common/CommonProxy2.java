@@ -50,7 +50,6 @@ public class CommonProxy2 {
         PotionHandler.init();
         CCOCIntegration.init();
         ModHelper.init();
-
         LogHelper.info("Finished Initialization");
     }
 
