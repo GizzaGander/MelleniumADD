@@ -40,29 +40,6 @@ public class CommonProxy2 {
         registerTileEntities();
         initializeNetwork();
         registerOres();
-//
-//		Potion[] potionTypes = null;
-//		LogHelper.info("Expanding Potion array size to 256");
-//
-//		for (Field f : Potion.class.getDeclaredFields()) {
-//			f.setAccessible(true);
-//
-//			try {
-//				if (f.getName().equals("potionTypes") || f.getName().equals("field_76425_a")) {
-//					Field modfield = Field.class.getDeclaredField("modifiers");
-//					modfield.setAccessible(true);
-//					modfield.setInt(f, f.getModifiers() & ~Modifier.FINAL);
-//					potionTypes = (Potion[]) f.get(null);
-//					final Potion[] newPotionTypes = new Potion[256];
-//					System.arraycopy(potionTypes, 0, newPotionTypes, 0, potionTypes.length);
-//					f.set(null, newPotionTypes);
-//				}
-//			}
-//			catch (Exception e) {
-//				LogHelper.error("Severe error, please report this to the mod author:");
-//				e.printStackTrace();
-//			}
-//		}
         LogHelper.info("Finished PreInitialization");
     }
 
@@ -74,7 +51,6 @@ public class CommonProxy2 {
         PotionHandler.init();
         CCOCIntegration.init();
         ModHelper.init();
-
         LogHelper.info("Finished Initialization");
     }
 

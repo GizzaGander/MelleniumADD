@@ -2,6 +2,7 @@ package com.Mellenium.Addons;
 
 import com.Mellenium.Addons.Thaum.MelCrafts;
 import com.Mellenium.Addons.Thaum.MelTab;
+import com.Mellenium.Addons.common.ModBlocks;
 import com.brandon3055.draconicevolution.client.creativetab.DETab2;
 import com.brandon3055.draconicevolution.common.CommonProxy2;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
@@ -15,7 +16,6 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.Enchantment;
 
 @Mod(modid = References2.MODID, name = References2.MODNAME, version = References2.VERSION, canBeDeactivated = false, guiFactory = References2.GUIFACTORY, dependencies = "after:NotEnoughItems;" +
         "after:NotEnoughItems;" +
@@ -44,7 +44,7 @@ public class MelleniumAddons {
     @Mod.EventHandler
     public static void preInit(final FMLPreInitializationEvent event) {
         if (debug) LogHelper.info("Initialization");
-
+        ModBlocks.init();
         proxy.preInit(event);
 
     }
@@ -52,11 +52,8 @@ public class MelleniumAddons {
     @Mod.EventHandler
     public void init(final FMLInitializationEvent event) {
         if (debug) System.out.println("init()");
+
         proxy.init(event);
-
-        //	===
-
-        //	===
     }
 
     @Mod.EventHandler

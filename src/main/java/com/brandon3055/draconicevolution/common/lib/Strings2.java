@@ -13,6 +13,7 @@ public class Strings2 {//                                              public st
     public static final String chaoticChestName = "chaoticChest";
     public static final String chaoticLeggsName = "chaoticLeggs";
     public static final String chaoticBootsName = "chaoticBoots";
+    public static final String DecrypterName = "Decrypter";
     public static final String chaotiumEnergyCoreName = "chaotiumEnergyCore";
     public static final String chaotiumFluxCapacitorName = "chaotiumFluxCapacitor";
 }
