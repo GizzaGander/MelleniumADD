@@ -44,13 +44,13 @@ public class CommonProxy2 {
     }
 
     public void init(FMLInitializationEvent event) {
-        CraftingHandler.init();
         registerGuiHandeler();
         registerEntities();
         DETab2.initialize();
         PotionHandler.init();
         CCOCIntegration.init();
         ModHelper.init();
+
         LogHelper.info("Finished Initialization");
     }
 

@@ -42,54 +42,6 @@ public class ClientProxy2 extends CommonProxy2 {
         super.preInit(event);
 
         ResourceHandler2.init(event);
-
-//		downloadLocation = event.getModConfigurationDirectory().getParentFile().getAbsolutePath() + "/mods/derspack";
-//		downloadLocation = downloadLocation.replaceAll("\\\\", "/");
-//
-//		File rescourcePack = new File(event.getModConfigurationDirectory().getParentFile(), "/mods/derspack");
-//
-//
-//		//File file = new File(downloadLocation);
-//		if (!rescourcePack.exists()) rescourcePack.mkdir();
-//
-//		LogHelper.info("Downloading Images");
-//
-//		try {
-//			URL url = new URL("http://i.imgur.com/oHRx1yQ.jpg");
-//			String fileName = url.getFile();
-//			//String destName = downloadLocation + fileName.substring(fileName.lastIndexOf("/"));
-//			File dll = new File(rescourcePack, fileName.substring(fileName.lastIndexOf("/")));
-//
-//			InputStream is = url.openStream();
-//			OutputStream os = new FileOutputStream(dll);
-//
-//			ByteStreams.copy(is, os);
-//
-//			is.close();
-//			os.close();
-//		}catch (IOException e){
-//			LogHelper.info(e);
-//		}
-//
-//
-//		List defaultResourcePacks = Lists.newArrayList();
-//		Field f = ReflectionHelper.findField(Minecraft.class, "defaultResourcePacks", "field_110449_ao");
-//		f.setAccessible(true);
-//		try {
-//			defaultResourcePacks = (List)f.get(Minecraft.getMinecraft());
-//			defaultResourcePacks.add(new FolderResourcePack(rescourcePack));
-//			for (Object o : defaultResourcePacks){
-//				if (o instanceof FolderResourcePack) LogHelper.info(((FolderResourcePack) o).getPackName());
-//				if (o instanceof FileResourcePack) LogHelper.info(((FileResourcePack)o).getPackName());
-//			}
-//
-//			f.set(Minecraft.getMinecraft(), defaultResourcePacks);
-//		}
-//		catch (IllegalAccessException e) {
-//			e.printStackTrace();
-//		}
-
-
     }
 
     @Override
@@ -131,18 +83,9 @@ public class ClientProxy2 extends CommonProxy2 {
             MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBow, new RenderBowModel2(true));
         }
 
-
-        //ISimpleBlockRendering
-
-        //TileEntitySpecialRenderers
-
-        //Entitys
     }
 
-    public void registerRenderIDs() {
-        References2.idTeleporterStand = RenderingRegistry.getNextAvailableRenderId();
-        References2.idPortal = RenderingRegistry.getNextAvailableRenderId();
-    }
+    public void registerRenderIDs() {}
 
     @Override
     public ParticleEnergyBeam energyBeam(World worldObj, double x, double y, double z, double tx, double ty, double tz, int powerFlow, boolean advanced, ParticleEnergyBeam oldBeam, boolean render, int beamType) {
