@@ -32,12 +32,10 @@ public class MelleniumAddons {
 
     public static CreativeTabs tabMelleniumAds = new DETab2(CreativeTabs.getNextID(), References2.MODID, "tabMelleniumAds", 0);
 
-    public static final String networkChannelName = "DEvolutionNC";
     public static SimpleNetworkWrapper network;
 
-    public static boolean debug = false;//todo
+    public static boolean debug = false;
 
-    public static Enchantment reaperEnchant;
 
     public MelleniumAddons() {
         LogHelper.info("Hello Minecraft!!!");
