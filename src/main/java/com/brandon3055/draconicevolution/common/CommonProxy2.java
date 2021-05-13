@@ -67,6 +67,7 @@ public class CommonProxy2 {
 
     public void initializeNetwork() {
         DraconicEvolution.network = NetworkRegistry.INSTANCE.newSimpleChannel(DraconicEvolution.networkChannelName);
+        MelleniumAddons.network.registerMessage(ButtonPacket2.Handler2.class, ButtonPacket2.class, 0, Side.SERVER);
         DraconicEvolution.network.registerMessage(ButtonPacket.Handler.class, ButtonPacket.class, 0, Side.SERVER);
         DraconicEvolution.network.registerMessage(ParticleGenPacket.Handler.class, ParticleGenPacket.class, 1, Side.SERVER);
         DraconicEvolution.network.registerMessage(PlacedItemPacket.Handler.class, PlacedItemPacket.class, 2, Side.SERVER);

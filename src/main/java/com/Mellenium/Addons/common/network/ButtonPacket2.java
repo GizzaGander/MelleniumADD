@@ -33,7 +33,7 @@ public class ButtonPacket2 implements IMessage {
         bytes.writeBoolean(state);
     }
 
-    public static class Handler implements IMessageHandler<ButtonPacket2, IMessage> {
+    public static class Handler2 implements IMessageHandler<ButtonPacket2, IMessage> {
 
         @Override
         public IMessage onMessage(ButtonPacket2 message, MessageContext ctx) {
