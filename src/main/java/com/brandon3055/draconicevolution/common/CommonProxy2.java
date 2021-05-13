@@ -1,9 +1,5 @@
 package com.brandon3055.draconicevolution.common;
 
-import com.Mellenium.Addons.MelleniumAddons;
-import com.Mellenium.Addons.client.gui.GuiHandler2;
-import com.Mellenium.Addons.common.network.ButtonPacket2;
-import com.Mellenium.Addons.common.tileentity.TileDecrypter;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.creativetab.DETab2;
 import com.brandon3055.draconicevolution.client.gui.GuiHandler;
@@ -14,7 +10,6 @@ import com.brandon3055.draconicevolution.common.achievements.Achievements;
 import com.brandon3055.draconicevolution.common.entity.*;
 import com.brandon3055.draconicevolution.common.handler.*;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
-import com.brandon3055.draconicevolution.common.lib.References2;
 import com.brandon3055.draconicevolution.common.magic.PotionHandler;
 import com.brandon3055.draconicevolution.common.network.*;
 import com.brandon3055.draconicevolution.common.utills.LogHelper;
@@ -26,7 +21,6 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import net.minecraft.client.audio.ISound;
 import net.minecraft.item.ItemStack;
@@ -67,7 +61,6 @@ public class CommonProxy2 {
 
     public void initializeNetwork() {
         DraconicEvolution.network = NetworkRegistry.INSTANCE.newSimpleChannel(DraconicEvolution.networkChannelName);
-        MelleniumAddons.network.registerMessage(ButtonPacket2.Handler2.class, ButtonPacket2.class, 0, Side.SERVER);
         DraconicEvolution.network.registerMessage(ButtonPacket.Handler.class, ButtonPacket.class, 0, Side.SERVER);
         DraconicEvolution.network.registerMessage(ParticleGenPacket.Handler.class, ParticleGenPacket.class, 1, Side.SERVER);
         DraconicEvolution.network.registerMessage(PlacedItemPacket.Handler.class, PlacedItemPacket.class, 2, Side.SERVER);
@@ -91,7 +84,6 @@ public class CommonProxy2 {
     }
 
     public void registerTileEntities() {
-        GameRegistry.registerTileEntity(TileDecrypter.class, References2.RESOURCESPREFIX + "TileDecrypter");
         }
 
     public void registerEventListeners(Side s) {
@@ -103,7 +95,6 @@ public class CommonProxy2 {
 
     public void registerGuiHandeler() {
         new GuiHandler();
-        new GuiHandler2();
     }
 
     public void registerOres() {

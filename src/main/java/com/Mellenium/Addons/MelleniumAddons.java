@@ -43,7 +43,7 @@ public class MelleniumAddons {
 
     @Mod.EventHandler
     public static void preInit(final FMLPreInitializationEvent event) {
-        if (debug) LogHelper.info("Initialization");;
+        if (debug) LogHelper.info("Initialization");
         ModBlocks.init();
         proxy.preInit(event);
 
