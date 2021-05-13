@@ -1,5 +1,7 @@
 package com.brandon3055.draconicevolution.client;
 
+import com.Mellenium.Addons.client.render.RenderTileDecrypter;
+import com.Mellenium.Addons.common.tileentity.TileDecrypter;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.handler.*;
 import com.brandon3055.draconicevolution.client.keybinding.KeyBindings;
@@ -15,6 +17,7 @@ import com.brandon3055.draconicevolution.common.blocks.multiblock.IReactorPart;
 import com.brandon3055.draconicevolution.common.handler.ConfigHandler;
 import com.brandon3055.draconicevolution.common.lib.References2;
 import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -82,7 +85,7 @@ public class ClientProxy2 extends CommonProxy2 {
             MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticHoe, new RenderTool2("models/tools/ChaoticHoe.obj", "textures/models/tools/ChaoticHoe.png", (IRenderTweak) ModItems2.chaoticHoe));
             MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBow, new RenderBowModel2(true));
         }
-
+        ClientRegistry.bindTileEntitySpecialRenderer(TileDecrypter.class, new RenderTileDecrypter());
     }
 
     public void registerRenderIDs() {}
