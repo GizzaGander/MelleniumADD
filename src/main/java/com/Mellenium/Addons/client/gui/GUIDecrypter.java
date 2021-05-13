@@ -36,7 +36,7 @@ public class GUIDecrypter extends GuiContainer {
         this.player = invPlayer.player;
     }
 
-    private static final ResourceLocation texture = new ResourceLocation(References2.MODID.toLowerCase(), "textures/gui/DissDecrypter.png");
+    private static final ResourceLocation texture = new ResourceLocation(References2.MODID.toLowerCase(), "textures/gui/Decrypter.png");
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float f, int x, int y) {
