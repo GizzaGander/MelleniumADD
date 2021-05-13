@@ -2,6 +2,7 @@ package com.Mellenium.Addons;
 
 import com.Mellenium.Addons.Thaum.MelCrafts;
 import com.Mellenium.Addons.Thaum.MelTab;
+import com.Mellenium.Addons.common.BlocksRegistry;
 import com.Mellenium.Addons.common.ModBlocks;
 import com.brandon3055.draconicevolution.client.creativetab.DETab2;
 import com.brandon3055.draconicevolution.common.CommonProxy2;
@@ -43,7 +44,8 @@ public class MelleniumAddons {
 
     @Mod.EventHandler
     public static void preInit(final FMLPreInitializationEvent event) {
-        if (debug) LogHelper.info("Initialization");
+        if (debug) LogHelper.info("Initialization");;
+        BlocksRegistry.register();
         ModBlocks.init();
         proxy.preInit(event);
 
