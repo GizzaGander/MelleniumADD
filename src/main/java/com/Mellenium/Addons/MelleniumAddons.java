@@ -2,7 +2,9 @@ package com.Mellenium.Addons;
 
 import com.Mellenium.Addons.Thaum.MelCrafts;
 import com.Mellenium.Addons.Thaum.MelTab;
+import com.Mellenium.Addons.common.GuiHandler;
 import com.Mellenium.Addons.common.ModBlocks;
+import com.Mellenium.Addons.common.tiles.TileEntityDecrypter;
 import com.brandon3055.draconicevolution.client.creativetab.DETab2;
 import com.brandon3055.draconicevolution.common.CommonProxy2;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
@@ -14,7 +16,9 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 
 @Mod(modid = References2.MODID, name = References2.MODNAME, version = References2.VERSION, canBeDeactivated = false, guiFactory = References2.GUIFACTORY, dependencies = "after:NotEnoughItems;" +
@@ -46,7 +50,8 @@ public class MelleniumAddons {
         if (debug) LogHelper.info("Initialization");
         ModBlocks.init();
         proxy.preInit(event);
-
+        GameRegistry.registerTileEntity(TileEntityDecrypter.class, "tileEntityDecrypter");
+        NetworkRegistry.INSTANCE.registerGuiHandler(MelleniumAddons.instance, new GuiHandler());
     }
 
     @Mod.EventHandler
