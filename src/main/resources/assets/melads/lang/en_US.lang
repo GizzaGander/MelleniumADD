@@ -15,6 +15,9 @@ item.melads:chaotiumFluxCapacitor1.name=Chaotic Flux Capacitor
 item.melads:chaotiumIngot.name=Chaotic Ingot
 item.melads:nugget.chaotic.name=Chaotic Nugget
 
+//Tile Entity
+tile.melads:Decrypter.name=Decrypter
+
 //Item Groups ----------------------------------------------------------------------------------------------------------------------------------------
 itemGroup.tabMelleniumAds=Mellenium Addon
 

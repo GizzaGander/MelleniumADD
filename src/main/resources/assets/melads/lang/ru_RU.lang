@@ -15,6 +15,8 @@ item.melads:chaotiumFluxCapacitor1.name=Флаксовый Конденсато�
 item.melads:chaotiumIngot.name=Слиток Хаоса
 item.melads:nugget.chaotic.name=Самородок Хаоса
 
+//Tile Entity
+tile.melads:Decrypter.name=Дешифровальщик
 //Item Groups ----------------------------------------------------------------------------------------------------------------------------------------
 itemGroup.tabMelleniumAds=Mellenium Addon
 
@@ -25,7 +27,6 @@ item.melads:chaoticShovel.lore=2Even more efficient\nyou can dig an even larger 
 item.melads:chaoticHoe.lore=2Draconium even improves farming\nentire areas can be tilled and placed in a single click
 item.melads:chaoticSword.lore=2Wyvern was good, but chaotic weapons\nare even more powerful and hit more enemies
 item.melads:chaoticBow.lore=2The peak of ranged perfection faster shooting,\nexplosive arrows, what more could you want?
-
 item.melads:chaoticHelm.lore=2No longer do you fear the night\nyou now can see all the time regardless\nof what is out there
 item.melads:chaoticChest.lore=2Using the heart of a dragon\nyou are stronger and have the gift of flight
 item.melads:chaoticLeggs.lore=2Even stronger armor\nthe soul of a dragon protects you and moves you even faster
