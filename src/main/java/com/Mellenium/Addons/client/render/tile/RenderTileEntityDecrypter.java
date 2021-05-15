@@ -17,10 +17,6 @@ import org.lwjgl.opengl.GL11;
 
 public class RenderTileEntityDecrypter extends TileEntitySpecialRenderer {
 
-    //private final ResourceLocation texture = new ResourceLocation(References.MODID.toLowerCase(), "textures/models/EnergyInfuserTextureSheet.png");
-
-    //private static float pxl = 1F / 256F;
-
     @Override
     public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f) {
         GL11.glPushMatrix();
@@ -48,43 +44,16 @@ public class RenderTileEntityDecrypter extends TileEntitySpecialRenderer {
         GL11.glRotatef(90, 1, 0, 0);
         GL11.glTranslated(0, 1.2, -0.27);
         GL11.glRotatef(180, 1, 0, 0);
-        renderItem(tile, 1, f, false);
         GL11.glPopMatrix();
         if (Minecraft.isFancyGraphicsEnabled()) {
             GL11.glPushMatrix();
             GL11.glTranslated(0, 0.4, 0);
-            renderItem(tile, 0, f, true);
             GL11.glPopMatrix();
         } else {
             GL11.glPushMatrix();
             GL11.glRotatef(90, 1, 0, 0);
             GL11.glTranslated(0, 1.2, -0.37);
             GL11.glRotatef(180, 1, 0, 0);
-            renderItem(tile, 0, f, false);
-            GL11.glPopMatrix();
-        }
-    }
-
-    public void renderItem(TileEntityDecrypter tile, int i, float f, boolean rotate) {
-        if (tile.getStackInSlot(i) != null) {
-            GL11.glPushMatrix();
-
-            ItemStack stack = tile.getStackInSlot(i).copy();
-            stack.stackSize = 1;
-            EntityItem itemEntity = new EntityItem(tile.getWorldObj(), 0, 0, 0, stack);
-            itemEntity.hoverStart = 0.0F;
-
-            GL11.glTranslatef(0.5F, 0.5F, 0.5F);
-            GL11.glScalef(1F, 1F, 1F);
-            if (stack.getItem() instanceof ItemBlock) {
-                GL11.glScalef(1F, 1F, 1F);
-                GL11.glTranslatef(0F, 0.045F, 0.0f);
-            }
-
-            RenderItem.renderInFrame = true;
-            RenderManager.instance.renderEntityWithPosYaw(itemEntity, 0.0D, 0.0D, 0.0D, 0.0F, 0.0F);
-            RenderItem.renderInFrame = false;
-
             GL11.glPopMatrix();
         }
     }

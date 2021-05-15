@@ -69,4 +69,19 @@ public class Decrypter extends BlockCustomDrop {
     public TileEntity createNewTileEntity(World world, int meta) {
         return new TileEntityDecrypter();
     }
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public int getRenderType() {
+        return super.getRenderType();
+    }
+
+    @Override
+    public boolean renderAsNormalBlock() {
+        return false;
+    }
 }

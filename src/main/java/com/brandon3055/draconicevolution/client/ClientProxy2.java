@@ -4,7 +4,6 @@ import com.Mellenium.Addons.client.render.tile.RenderTileEntityDecrypter;
 import com.Mellenium.Addons.common.tiles.TileEntityDecrypter;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.handler.*;
-import com.brandon3055.draconicevolution.client.keybinding.KeyBindings;
 import com.brandon3055.draconicevolution.client.keybinding.KeyInputHandler;
 import com.brandon3055.draconicevolution.client.render.IRenderTweak;
 import com.brandon3055.draconicevolution.client.render.item.*;
@@ -86,6 +85,7 @@ public class ClientProxy2 extends CommonProxy2 {
             MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBow, new RenderBowModel2(true));
         }
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDecrypter.class, new RenderTileEntityDecrypter());
+
     }
 
     public void registerRenderIDs() {}
