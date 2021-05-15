@@ -77,11 +77,11 @@ public class ChaoticBow extends ItemBow implements IInventoryTool, IUpgradableIt
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_bow" + "_standby");
+        this.itemIcon = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_bow" + "_standby");
         this.iconArray = new IIcon[bowPullIconNameArray.length];
 
         for (int i = 0; i < this.iconArray.length; ++i) {
-            this.iconArray[i] = iconRegister.registerIcon(References2.RESOURCESPREFIX + "draconic_bow" + "_" + bowPullIconNameArray[i]);
+            this.iconArray[i] = iconRegister.registerIcon(References2.RESOURCESPREFIX + "chaotic_bow" + "_" + bowPullIconNameArray[i]);
         }
     }
 
