@@ -24,6 +24,12 @@ buildscript {
 
 apply plugin: 'forge'
 
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+options.encoding = 'UTF-8'
+}
+
 version = "1.0"
 group= "com.brandon3055.draconicevolution" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "melads"
