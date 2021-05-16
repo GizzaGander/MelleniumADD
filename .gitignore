@@ -1,5 +1,7 @@
 .gradle
+.gradle/gradle.log
 .gradle/3.0/taskArtifacts/cache.properties.lock
+.gradle/3.0/taskArtifacts/cache.properties
 .gradle/3.0/taskArtifacts/fileHashes.bin
 .gradle/3.0/taskArtifacts/fileSnapshots.bin
 .gradle/3.0/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin
