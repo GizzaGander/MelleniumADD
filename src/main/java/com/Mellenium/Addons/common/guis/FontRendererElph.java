@@ -4,8 +4,6 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.opengl.GL11;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -24,7 +22,6 @@ public class FontRendererElph extends FontRenderer {
         {
             throw new RuntimeException(ioexception);
         }
-
         final int singleCharWidth = bufferedimage.getWidth()/16/2;
 
         for(int i = 0; i < this.charWidth.length; i++){
@@ -51,4 +48,5 @@ public class FontRendererElph extends FontRenderer {
             return 0f;
         }
     }
+
 }

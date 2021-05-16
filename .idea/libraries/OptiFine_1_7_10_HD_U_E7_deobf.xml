@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="OptiFine-1.7.10_HD_U_E7-deobf">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/OptiFine-1.7.10_HD_U_E7-deobf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

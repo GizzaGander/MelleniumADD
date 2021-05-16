@@ -40,7 +40,7 @@ public class GuiDecrypter extends GuiContainer {
     @Override
     protected void drawGuiContainerForegroundLayer(int p_146979_1_, int p_146979_2_) {
         String s = decrypterInv.getInventoryName();
-        fontRenderer2.drawString("абвбвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ", 8, 8, 0xFFFFFF);
+        fontRenderer2.drawString("абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ", 16, 16, 0xFFFFFF);
         fontRenderer2.drawString(s, xSize/2-fontRendererObj
                 .getStringWidth(s)/2, 6, 4210752);
         fontRendererObj.drawString(playerInv.getInventoryName(),

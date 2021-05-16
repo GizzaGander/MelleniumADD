@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="malisiscore-1.7.10-0.14.3-deobf">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/malisiscore-1.7.10-0.14.3-deobf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
