@@ -22,7 +22,7 @@ public class FontRendererElph extends FontRenderer {
         {
             throw new RuntimeException(ioexception);
         }
-        final int singleCharWidth = bufferedimage.getWidth()/16/2;
+        final int singleCharWidth = bufferedimage.getWidth()/28/2;
 
         for(int i = 0; i < this.charWidth.length; i++){
             this.charWidth[i] = singleCharWidth;
