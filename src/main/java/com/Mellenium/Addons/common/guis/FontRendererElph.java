@@ -26,10 +26,60 @@ public class FontRendererElph extends FontRenderer {
         {
             throw new RuntimeException(ioexception);
         }
-        final int singleCharWidth = bufferedimage.getWidth()/28/2;
+        final int singleCharWidth = bufferedimage.getWidth()/32/2;
 
         for(int i = 0; i < this.elphCharWidth.length; i++){
-            this.elphCharWidth[i] = singleCharWidth;
+            switch(i) {
+                case 16*8://А
+                case 16*10://а
+                case 16*8+5://Е
+                case 16*10+5://е
+                case 16*8+7:
+                case 16*10+7:
+                case 16*8+8:
+                case 16*10+8:
+                case 16*8+14:
+                case 16*10+14:
+                case 16*9+3:
+                case 16*11+3:
+                case 16*9+12:
+                case 16*11+12:
+                    this.elphCharWidth[i] = singleCharWidth/2;
+                    break;
+                case 16*8+9:
+                case 16*10+9:
+                case 16*8+15:
+                case 16*10+15:
+                case 16*9:
+                case 16*11:
+                case 16*9+1:
+                case 16*11+1:
+                case 16*9+2:
+                case 16*11+2:
+                case 16*9+4:
+                case 16*11+4:
+                case 16*9+7:
+                case 16*11+7:
+                case 16*9+8:
+                case 16*11+8:
+                case 16*9+9:
+                case 16*11+9:
+                case 16*9+14:
+                case 16*11+14:
+                case 16*9+15:
+                case 16*11+15:
+                    this.elphCharWidth[i] = singleCharWidth/2+singleCharWidth/4;
+                    break;
+                case 16*8+3:
+                case 16*10+3:
+                case 16*8+13:
+                case 16*10+13:
+                    this.elphCharWidth[i] = singleCharWidth+singleCharWidth/5;
+                    break;
+                default:
+                    this.elphCharWidth[i] = singleCharWidth;
+                    break;
+            }
         }
     }
 
