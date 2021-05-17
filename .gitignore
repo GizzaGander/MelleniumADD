@@ -9,4 +9,8 @@
 .gradle/3.0/taskArtifacts/taskArtifacts.bin
 .gradle/gradle.log
 .idea/encodings.xml
-.idea
+.idea/
+eclipse/
+MelAds.iml
+MelAds.ipr
+MelAds.iws

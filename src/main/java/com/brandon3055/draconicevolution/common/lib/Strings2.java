@@ -1,6 +1,7 @@
 package com.brandon3055.draconicevolution.common.lib;
 
-public class Strings2 {//                                              public static Block name
+public class Strings2 {
+    //Items
     public static final String chaoticPickaxeName = "chaoticPickaxe";
     public static final String chaoticSwordName = "chaoticSword";
     public static final String chaotiumIngotName = "chaotiumIngot";

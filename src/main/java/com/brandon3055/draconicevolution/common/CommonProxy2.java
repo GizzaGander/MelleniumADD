@@ -1,5 +1,6 @@
 package com.brandon3055.draconicevolution.common;
 
+import com.Mellenium.Addons.common.ModItems;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.creativetab.DETab2;
 import com.brandon3055.draconicevolution.client.gui.GuiHandler;
@@ -36,6 +37,7 @@ public class CommonProxy2 {
         BalanceConfigHandler2.init(event.getModConfigurationDirectory());
         registerEventListeners(event.getSide());
         ModItems2.init();
+        ModItems.init();
         ContributorHandler.init();
         registerTileEntities();
         initializeNetwork();

@@ -8,7 +8,7 @@ import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 
-public class TileEntityDecrypter extends TileEntityFurnace implements ISidedInventory, IUpdatePlayerListBox {
+public class TileEntityDecrypter extends TileEntity implements ISidedInventory, IUpdatePlayerListBox {
 
 
     @Override

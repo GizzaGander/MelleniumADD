@@ -33,7 +33,11 @@ item.melads:chaoticLeggs.lore=2Even stronger armor\nthe soul of a dragon protect
 item.melads:chaoticBoots.lore=2Stronger, faster, better than before\nthe heart of a dragon grants you\nhigher jumping
 
 item.melads:chaoticDistructionStaff.lore=2A long and ardous road, true power!\none tool to do it all, mine, battle, and death!
-
+//Text Lenses
+text.TerraLens=Эта линза нужна для расшифровки эльфийской книги Земли.
+text.AquaLens=Эта линза нужна для расшифровки эльфийской книги Воды.
+text.PerditioLens=Эта линза нужна для расшифровки эльфийской книги Хаоса.
+text.MagicLens=Эта линза нужна для расшифровки эльфийской книги Магии.
 //Damage ----------------------------------------------------------------------------------------------------------------------------------------
 death.attack.chaos=%1$s was torn apart by a Chaos Guardian
 death.attack.damage.de.fusionExplode=%1$s was vaporized by a high energy fusion explosion
