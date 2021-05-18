@@ -1,10 +1,12 @@
 package com.brandon3055.draconicevolution.common.lib;
 
+import com.Mellenium.Addons.common.lib.Versions;
+
 public final class References2 {
     public static final String MODID = "melads";
     public static final String MODNAME = "Mellenium Addons";
-    public static final String VERSION = VersionHandler.FULL_VERSION;
-    public static final String MCVERSION = VersionHandler.MCVERSION;
+    public static final String VERSION = Versions.FULL_VERSION;
+    public static final String MCVERSION = Versions.MCVERSION;
     public static final String CLIENTPROXYLOCATION = "com.brandon3055.draconicevolution.client.ClientProxy2";
     public static final String SERVERPROXYLOCATION = "com.brandon3055.draconicevolution.common.CommonProxy2";
     public static final String GUIFACTORY = "com.brandon3055.draconicevolution.client.gui.DEGUIFactory";

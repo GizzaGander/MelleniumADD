@@ -36,8 +36,8 @@ item.melads:chaoticDistructionStaff.lore=2A long and ardous road, true power!\no
 //Text Lenses
 text.TerraLens=Эта линза нужна для расшифровки эльфийской книги Земли.
 text.AquaLens=Эта линза нужна для расшифровки эльфийской книги Воды.
-text.PerditioLens=Эта линза нужна для расшифровки эльфийской книги Хаоса.
-text.MagicLens=Эта линза нужна для расшифровки эльфийской книги Магии.
+text.AerLens=Эта линза нужна для расшифровки эльфийской книги Воздуха.
+text.IgnisLens=Эта линза нужна для расшифровки эльфийской книги Огня.
 //Damage ----------------------------------------------------------------------------------------------------------------------------------------
 death.attack.chaos=%1$s was torn apart by a Chaos Guardian
 death.attack.damage.de.fusionExplode=%1$s was vaporized by a high energy fusion explosion

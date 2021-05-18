@@ -1,6 +1,8 @@
 package com.brandon3055.draconicevolution.client;
 
+import com.Mellenium.Addons.client.render.items.DecrypterLensRenderer;
 import com.Mellenium.Addons.client.render.tile.RenderTileEntityDecrypter;
+import com.Mellenium.Addons.common.ModItems;
 import com.Mellenium.Addons.common.tiles.TileEntityDecrypter;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.handler.*;
@@ -33,6 +35,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 import thaumcraft.api.ThaumcraftApiHelper;
+import thaumcraft.client.renderers.item.ItemThaumometerRenderer;
+import thaumcraft.common.config.ConfigItems;
 
 public class ClientProxy2 extends CommonProxy2 {
     private final static boolean debug = DraconicEvolution.debug;
@@ -67,6 +71,7 @@ public class ClientProxy2 extends CommonProxy2 {
     public void registerRendering() {
         //Item Renderers
         MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticBow, new RenderBow2());
+        MinecraftForgeClient.registerItemRenderer(ModItems.decrypterLens, new DecrypterLensRenderer());
 
         if (!ConfigHandler.useOldArmorModel) {
             MinecraftForgeClient.registerItemRenderer(ModItems2.chaoticHelm, new RenderArmor2(ModItems2.chaoticHelm));

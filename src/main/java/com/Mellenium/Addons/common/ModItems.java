@@ -11,7 +11,7 @@ public class ModItems {
         decrypterLens = new DecrypterLens();
     }
 
-    public static void register(final ItemMel item) {
+    public static void register(final DecrypterLens item) {
         String name = item.getUnwrappedUnlocalizedName(item.getUnlocalizedName());
         GameRegistry.registerItem(item, name.substring(name.indexOf(":") + 1));
     }
