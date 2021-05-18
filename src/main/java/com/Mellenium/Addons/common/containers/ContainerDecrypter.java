@@ -19,7 +19,7 @@ public class ContainerDecrypter extends Container {
         sizeInventory = inv.getSizeInventory();
         addSlotToContainer(new Slot(blockInv, TileEntityDecrypter.slotEnum.INPUT_SLOT.ordinal(), 27, 23));
         addSlotToContainer(new Slot(blockInv, TileEntityDecrypter.slotEnum.INPUT_SLOT.ordinal(), 134, 23));
-        addSlotToContainer(new Slot(blockInv, TileEntityDecrypter.slotEnum.OUTPUT_SLOT.ordinal(), 76, 23));
+        addSlotToContainer(new Slot(blockInv, TileEntityDecrypter.slotEnum.OUTPUT_SLOT.ordinal(), 80, 24));
         // add player inventory slots
         // note that the slot numbers are within the player inventory so can
         // be same as the tile entity inventory
