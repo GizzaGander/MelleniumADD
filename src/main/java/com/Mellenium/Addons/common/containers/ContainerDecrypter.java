@@ -17,8 +17,8 @@ public class ContainerDecrypter extends Container {
     public ContainerDecrypter(InventoryPlayer playerInv, IInventory inv) {
         blockInv = inv;
         sizeInventory = inv.getSizeInventory();
-        addSlotToContainer(new Slot(blockInv, TileEntityDecrypter.slotEnum.INPUT_SLOT.ordinal(), 27, 23));
-        addSlotToContainer(new Slot(blockInv, TileEntityDecrypter.slotEnum.INPUT_SLOT.ordinal(), 134, 23));
+        addSlotToContainer(new Slot(blockInv, TileEntityDecrypter.slotEnum.LENS_SLOT.ordinal(), 27, 23));
+        addSlotToContainer(new Slot(blockInv, TileEntityDecrypter.slotEnum.BOOK_SLOT.ordinal(), 134, 23));
         addSlotToContainer(new Slot(blockInv, TileEntityDecrypter.slotEnum.OUTPUT_SLOT.ordinal(), 80, 24));
         // add player inventory slots
         // note that the slot numbers are within the player inventory so can
@@ -61,7 +61,7 @@ public class ContainerDecrypter extends Container {
                 }
 
                 slot.onSlotChange(itemStack2, itemStack1);
-            } else if (slotIndex != TileEntityDecrypter.slotEnum.INPUT_SLOT
+            } else if (slotIndex != TileEntityDecrypter.slotEnum.BOOK_SLOT
                     .ordinal()) {
                 // check if there is a grinding recipe for the stack
                 if (DecrypterRecipes.getInstance().getDecriptingResult(itemStack2) != null) {

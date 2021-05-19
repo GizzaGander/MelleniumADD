@@ -17,7 +17,7 @@ public class TileEntityDecrypter extends TileEntity implements ISidedInventory, 
     }
 
     public enum slotEnum {
-        INPUT_SLOT, OUTPUT_SLOT
+        BOOK_SLOT, LENS_SLOT, OUTPUT_SLOT
     }
 
     private ItemStack[] slots = new ItemStack[2];
