@@ -20,7 +20,7 @@ public class TileEntityDecrypter extends TileEntity implements ISidedInventory, 
         BOOK_SLOT, LENS_SLOT, OUTPUT_SLOT
     }
 
-    private ItemStack[] slots = new ItemStack[2];
+    private ItemStack[] slots = new ItemStack[3];
 
     @Override
     public int[] getAccessibleSlotsFromSide(int i) {

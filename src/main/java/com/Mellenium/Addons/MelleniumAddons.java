@@ -2,10 +2,12 @@ package com.Mellenium.Addons;
 
 import com.Mellenium.Addons.Thaum.MelCrafts;
 import com.Mellenium.Addons.Thaum.MelTab;
-import com.Mellenium.Addons.common.GuiHandler;
+import com.Mellenium.Addons.common.GuiHandlerMel;
 import com.Mellenium.Addons.common.ModBlocks;
 import com.Mellenium.Addons.common.tiles.TileEntityDecrypter;
+import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.creativetab.DETab2;
+import com.brandon3055.draconicevolution.client.gui.GuiHandler;
 import com.brandon3055.draconicevolution.common.CommonProxy2;
 import com.brandon3055.draconicevolution.common.lib.OreDoublingRegistry;
 import com.brandon3055.draconicevolution.common.lib.References2;
@@ -51,7 +53,8 @@ public class MelleniumAddons {
         ModBlocks.init();
         proxy.preInit(event);
         GameRegistry.registerTileEntity(TileEntityDecrypter.class, "tileEntityDecrypter");
-        NetworkRegistry.INSTANCE.registerGuiHandler(MelleniumAddons.instance, new GuiHandler());
+        NetworkRegistry.INSTANCE.registerGuiHandler(DraconicEvolution.instance, new GuiHandler());
+        NetworkRegistry.INSTANCE.registerGuiHandler(MelleniumAddons.instance, new GuiHandlerMel());
     }
 
     @Mod.EventHandler
