@@ -1,4 +1,4 @@
-package com.Mellenium.Addons.common.guis;
+package com.Mellenium.Addons.client.gui;
 
 import com.Mellenium.Addons.client.font.FontRendererElph;
 import com.Mellenium.Addons.common.containers.ContainerDecrypter;

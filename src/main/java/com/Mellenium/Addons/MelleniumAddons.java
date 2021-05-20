@@ -2,7 +2,7 @@ package com.Mellenium.Addons;
 
 import com.Mellenium.Addons.Thaum.MelCrafts;
 import com.Mellenium.Addons.Thaum.MelTab;
-import com.Mellenium.Addons.common.GuiHandlerMel;
+import com.Mellenium.Addons.client.gui.GuiHandlerMel;
 import com.Mellenium.Addons.common.ModBlocks;
 import com.Mellenium.Addons.common.tiles.TileEntityDecrypter;
 import com.brandon3055.draconicevolution.DraconicEvolution;

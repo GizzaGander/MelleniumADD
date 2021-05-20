@@ -1,6 +1,6 @@
 package com.brandon3055.draconicevolution.common;
 
-import com.Mellenium.Addons.common.GuiHandlerMel;
+import com.Mellenium.Addons.client.gui.GuiHandlerMel;
 import com.Mellenium.Addons.common.ModItems;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.client.creativetab.DETab2;

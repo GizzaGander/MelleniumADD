@@ -1,6 +1,7 @@
 package com.Mellenium.Addons.common.blocks;
 
 import com.Mellenium.Addons.MelleniumAddons;
+import com.Mellenium.Addons.client.gui.GuiHandlerMel;
 import com.Mellenium.Addons.common.ModBlocks;
 import com.Mellenium.Addons.common.tiles.TileEntityDecrypter;
 import com.brandon3055.draconicevolution.common.lib.References2;
@@ -60,7 +61,7 @@ public class Decrypter extends BlockCustomDrop {
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
         if(!world.isRemote){
-            player.openGui(MelleniumAddons.instance, 0, world, x,y,z);
+            player.openGui(MelleniumAddons.instance, GuiHandlerMel.GUIID_DECRYPTER, world, x,y,z);
         }
         return true;
     }
