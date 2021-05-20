@@ -14,13 +14,6 @@ public class ItemDE2 extends Item {
     public String getUnwrappedUnlocalizedName(final String unlocalizedName) {
         return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
     }
-    public static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
-
-    @Override
-    public EnumRarity getRarity(ItemStack stack)
-    {
-        return EnumRarity2;
-    }
     @Override
     public String getUnlocalizedName() {
         return String.format("item.%s%s", References2.MODID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
@@ -40,5 +33,12 @@ public class ItemDE2 extends Item {
     @Override
     public boolean hasCustomEntity(ItemStack stack) {
         return false;
+    }
+    public static final EnumRarity EnumRarity2 = EnumHelper.addRarity("legendary", EnumChatFormatting.GOLD, "Legendary");
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity2;
     }
 }

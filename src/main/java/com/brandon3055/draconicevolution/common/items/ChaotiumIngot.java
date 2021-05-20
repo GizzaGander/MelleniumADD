@@ -16,9 +16,4 @@ public class ChaotiumIngot extends ItemDE2 {
         this.setCreativeTab(MelleniumAddons.tabMelleniumAds);
         ModItems2.register(this);
     }
-
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean extended) {
-        list.add("Hello");
-    }
 }

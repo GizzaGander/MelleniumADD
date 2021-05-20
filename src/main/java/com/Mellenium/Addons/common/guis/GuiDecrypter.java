@@ -1,6 +1,6 @@
 package com.Mellenium.Addons.common.guis;
 
-import com.Mellenium.Addons.MelleniumAddons;
+import com.Mellenium.Addons.client.font.FontRendererElph;
 import com.Mellenium.Addons.common.containers.ContainerDecrypter;
 import com.brandon3055.draconicevolution.common.lib.References2;
 import cpw.mods.fml.relauncher.Side;

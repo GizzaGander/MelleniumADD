@@ -1,4 +1,4 @@
-package com.Mellenium.Addons.common.guis;
+package com.Mellenium.Addons.client.font;
 
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.texture.TextureManager;
