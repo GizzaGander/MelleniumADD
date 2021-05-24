@@ -19,7 +19,7 @@ item.melads:nugget.chaotic.name=Самородок Хаоса
 tile.melads:Decrypter.name=Дешифровальщик
 //Item Groups ----------------------------------------------------------------------------------------------------------------------------------------
 itemGroup.tabMelleniumAds=Mellenium Addon
-
+pageIndicator.book=Стр.
 //Lore ----------------------------------------------------------------------------------------------------------------------------------------
 item.melads:chaoticPickaxe.lore=2Great care and research has\nallowed you to mine even larger areas
 item.melads:chaoticAxe.lore=2After lots of trial and error\nyou can now feel an entire tree with one try

@@ -12,12 +12,11 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
 public class GuiBooks extends GuiScreen {
-    private final int bookImageHeight = 192;
-    private final int bookImageWidth = 192;
+    private final int bookImageHeight = 181;
+    private final int bookImageWidth = 256;
     private int currPage = 0;
     private static final int bookTotalPages = 4;
-    private static ResourceLocation[] bookPageTextures =
-            new ResourceLocation[bookTotalPages];
+    private static ResourceLocation[] bookPageTextures = new ResourceLocation[bookTotalPages];
     private static String[] stringPageText = new String[bookTotalPages];
     private GuiButton buttonDone;
     private NextPageButton buttonNextPage;
@@ -26,15 +25,12 @@ public class GuiBooks extends GuiScreen {
     public GuiBooks()
     {
         bookPageTextures[0] = new ResourceLocation(
-                References2.MODID+":textures/gui/book_cover.png");
+                References2.MODID+":textures/gui/book.png");
         bookPageTextures[1] = new ResourceLocation(
                 References2.MODID+":textures/gui/book.png");
-        bookPageTextures[2] = new ResourceLocation(
-                References2.MODID+":textures/gui/book.png");
-        stringPageText[0] = "";
-        stringPageText[1] = "The Mysterious Stranger admired your family cow and asked if it was for sale.\n\nWhen you nodded, he offered to trade some Magic Beans, that (if planted in tilled dirt) would lead to more wealth than you could imagine.";
-        stringPageText[2]="So you handed him your cow, and grabbed the Magic Beans.\n\nPleased with yourself, you hurried away, looking for tilled dirt in which to plant the Magic Beans.\n\nYou couldn't wait to see how proud your mother would be for";
-        stringPageText[3]="being so shrewd!  Untold wealth in return for an old, milkless cow; what a good deal you made!\n\nSo off you went, looking for a place to plant the Magic Beans with room to grow...";
+        stringPageText[0]="The Mysterious Stranger admired your family cow and asked if it was for sale.\n\nWhen you nodded, he offered to trade some Magic Beans, that (if planted in tilled dirt) would lead to more wealth than you could imagine.";
+        stringPageText[1]="So you handed him your cow, and grabbed the Magic Beans.\n\nPleased with yourself, you hurried away, looking for tilled dirt in which to plant the Magic Beans.\n\nYou couldn't wait to see how proud your mother would be for";
+        stringPageText[2]="being so shrewd!  Untold wealth in return for an old, milkless cow; what a good deal you made!\n\nSo off you went, looking for a place to plant the Magic Beans with room to grow...";
     }
 
     /**
@@ -44,7 +40,7 @@ public class GuiBooks extends GuiScreen {
     public void initGui()
     {
         // DEBUG
-        System.out.println("GuiMysteriousStranger initGUI()");
+        System.out.println("GuiBooks initGUI()");
         buttonList.clear();
         Keyboard.enableRepeatEvents(true);
 
@@ -95,10 +91,18 @@ public class GuiBooks extends GuiScreen {
                 new Object[] {Integer.valueOf(currPage + 1), bookTotalPages});
         widthOfString = fontRendererObj.getStringWidth(stringPageIndicator);
         fontRendererObj.drawString(stringPageIndicator,
-                offsetFromScreenLeft - widthOfString + bookImageWidth - 44,
+                offsetFromScreenLeft - widthOfString + bookImageWidth - 132,
                 offsetFromScreenUp + bookImageHeight - 15, 0);
         fontRendererObj.drawSplitString(stringPageText[currPage],
-                offsetFromScreenLeft + 36, offsetFromScreenUp + 34, 116, 0);
+                offsetFromScreenLeft + 18, offsetFromScreenUp + 7, 104, 0);
+        try {
+            fontRendererObj.drawSplitString(stringPageText[currPage + 1],
+                    offsetFromScreenLeft + 138, offsetFromScreenUp + 7, 104, 0);
+        }
+        catch (NullPointerException e){
+            fontRendererObj.drawSplitString(stringPageText[currPage],
+                    offsetFromScreenLeft + 18, offsetFromScreenUp + 7, 104, 0);
+        }
         super.drawScreen(parWidth, parHeight, p_73863_3_);
 
     }

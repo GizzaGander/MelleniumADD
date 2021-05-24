@@ -20,6 +20,7 @@ tile.melads:Decrypter.name=Decrypter
 
 //Item Groups ----------------------------------------------------------------------------------------------------------------------------------------
 itemGroup.tabMelleniumAds=Mellenium Addon
+pageIndicator.book=Page.
 //Text Lenses
 text.TerraLens=This lens is needed to decipher the Elven Book of Terra.
 text.AquaLens=This lens is needed to decipher the Elven Book of Aqua.
