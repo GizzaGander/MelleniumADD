@@ -15,7 +15,7 @@ public class GuiBooks extends GuiScreen {
     private final int bookImageHeight = 181;
     private final int bookImageWidth = 256;
     private int currPage = 0;
-    private static final int bookTotalPages = 4;
+    private static final int bookTotalPages = 3;
     private static ResourceLocation[] bookPageTextures = new ResourceLocation[bookTotalPages];
     private static String[] stringPageText = new String[bookTotalPages];
     private GuiButton buttonDone;
@@ -51,9 +51,9 @@ public class GuiBooks extends GuiScreen {
         int offsetFromScreenLeft = (width - bookImageWidth) / 2;
         int offsetFromScreenUp = (height - bookImageHeight) / 2;
         buttonList.add(buttonNextPage = new NextPageButton(1,
-                offsetFromScreenLeft + 120, offsetFromScreenUp + 156, true));
+                offsetFromScreenLeft + 226, offsetFromScreenUp + 156, true));
         buttonList.add(buttonPreviousPage = new NextPageButton(2,
-                offsetFromScreenLeft + 38, offsetFromScreenUp + 156, false));
+                offsetFromScreenLeft + 18, offsetFromScreenUp + 156, false));
     }
 
     /**
@@ -99,7 +99,7 @@ public class GuiBooks extends GuiScreen {
             fontRendererObj.drawSplitString(stringPageText[currPage + 1],
                     offsetFromScreenLeft + 138, offsetFromScreenUp + 7, 104, 0);
         }
-        catch (NullPointerException e){
+        catch (NullPointerException | ArrayIndexOutOfBoundsException e){
             fontRendererObj.drawSplitString(stringPageText[currPage],
                     offsetFromScreenLeft + 18, offsetFromScreenUp + 7, 104, 0);
         }
@@ -161,7 +161,7 @@ public class GuiBooks extends GuiScreen {
     @Override
     public boolean doesGuiPauseGame()
     {
-        return true;
+        return false;
     }
 
     @SideOnly
@@ -175,6 +175,7 @@ public class GuiBooks extends GuiScreen {
         {
             super(parButtonId, parPosX, parPosY, 23, 13, "");
             isNextButton = parIsNextButton;
+
         }
 
         /**
@@ -191,23 +192,25 @@ public class GuiBooks extends GuiScreen {
                         && parY < yPosition + height);
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 mc.getTextureManager().bindTexture(bookPageTextures[1]);
-                int textureX = 0;
-                int textureY = 192;
+                int textureX = 12;
+                int textureY = 182;
 
                 if (isButtonPressed)
                 {
-                    textureX += 23;
+                    textureX += 0;
                 }
 
                 if (!isNextButton)
                 {
-                    textureY += 13;
+                    textureY += 0;
+                    textureX -= 12;
                 }
 
                 drawTexturedModalRect(xPosition, yPosition,
                         textureX, textureY,
-                        23, 13);
+                        12, 13);
             }
         }
     }
+
 }
