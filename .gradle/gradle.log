@@ -1,3 +1,12 @@
+#################################################
+         ForgeGradle 1.2-SNAPSHOT-399976c5        
+  https://github.com/AlkCorp/ForgeGradle  
+#################################################
+               Powered by MCP unknown               
+             http://modcoderpack.com             
+         by: Searge, ProfMobius, Fesh0r,         
+         R4wk, ZeuX, IngisKahn, bspkrs           
+#################################################
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
@@ -10,19 +19,397 @@ Note: Recompile with -Xlint:unchecked for details.
 :processResources UP-TO-DATE
 :classes
 :jar
-:compileTestJava UP-TO-DATE
-:processTestResources UP-TO-DATE
-:testClasses UP-TO-DATE
-:test UP-TO-DATE
-:extractMcpData UP-TO-DATE
 :getVersionJson
 :extractUserDev UP-TO-DATE
-:genSrgs SKIPPED
-:reobf
-:assemble
-:check UP-TO-DATE
-:build
+:extractNatives UP-TO-DATE
+:getAssetsIndex
+:getAssets
+:makeStart
+[ant:javac] warning: [options] bootstrap class path not set in conjunction with -source 1.6
+[ant:javac] 1 warning
+:runClient
+[16:52:50] [main/INFO] [GradleStart]: [FG_1.2.1] Doing Classloader hack.
+[16:52:50] [main/INFO] [GradleStart]: [FG_1.2.1] Setting private method 'initializePath' to be accessible.
+[16:52:50] [main/INFO] [GradleStart]: [FG_1.2.1] Invoking 'initializePath' with arg 'java.library.path'.
+[16:52:50] [main/INFO] [GradleStart]: [FG_1.2.1] Path Value: C:\Program Files\Java\jdk1.8.0_271\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Embarcadero\Studio\21.0\bin;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl;C:\Program Files (x86)\Embarcadero\Studio\21.0\bin64;C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\Win64;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Users\Gizza\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.3\bin;;G:\Games\PyCharm Community Edition 2020.2\bin;;C:\Users\Gizza\AppData\Local\GitHubDesktop\bin;;.;C:/Users/Gizza/.gradle/caches/minecraft/net/minecraft/minecraft_natives/1.7.10
+[16:52:50] [main/INFO] [GradleStart]: [FG_1.2.1] Setting private field 'usr_paths' to be accessible.
+[16:52:50] [main/INFO] [GradleStart]: [FG_1.2.1] Injecting path data.
+[16:52:50] [main/INFO] [GradleStart]: [FG_1.2.1] Finished Classloader hack.
+[16:52:50] [main/INFO] [GradleStart]: Loading ForgeGradle 1.2.1 - By Alkalus
+[16:52:50] [main/INFO] [GradleStart]: Extra: []
+[16:52:50] [main/INFO] [GradleStart]: Found and added coremod: com.brandon3055.brandonscore.asm.LoadingPlugin
+[16:52:50] [main/INFO] [GradleStart]: Found and added coremod: thaumcraft.codechicken.core.launch.DepLoader
+[16:52:50] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/Gizza/.gradle/caches/minecraft/assets, --assetIndex, 1.7.10, --accessToken, {REDACTED}, --version, 1.7.10, --tweakClass, cpw.mods.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[16:52:50] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[16:52:51] [main/INFO] [LaunchWrapper]: Using primary tweak class name cpw.mods.fml.common.launcher.FMLTweaker
+[16:52:51] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[16:52:51] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLTweaker
+[16:52:51] [main/INFO] [FML]: Forge Mod Loader version 7.99.40.1614 for Minecraft 1.7.10 loading
+[16:52:51] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_271, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jdk1.8.0_271\jre
+[16:52:51] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[16:52:51] [main/INFO] [FML]: Found a command line coremod : thaumcraft.codechicken.core.launch.DepLoader
+[16:52:51] [main/WARN] [FML]: The coremod thaumcraft.codechicken.core.launch.DepLoader does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+[16:52:51] [main/INFO] [FML]: Found a command line coremod : com.brandon3055.brandonscore.asm.LoadingPlugin
+[16:52:51] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[16:52:51] [main/INFO] [GradleStart]: Injecting location in coremod cpw.mods.fml.relauncher.FMLCorePlugin
+[16:52:51] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[16:52:51] [main/INFO] [GradleStart]: Injecting location in coremod thaumcraft.codechicken.core.launch.DepLoader
+[16:52:51] [main/INFO] [GradleStart]: Injecting location in coremod com.brandon3055.brandonscore.asm.LoadingPlugin
+[16:52:51] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[16:52:51] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[16:52:51] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[16:52:51] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[16:52:51] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
+[16:52:51] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[16:52:51] [main/ERROR] [FML]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[16:52:52] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[16:52:52] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[16:52:52] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[16:52:52] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLDeobfTweaker
+[16:52:52] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
+[16:52:52] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[16:52:52] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.TerminalTweaker
+[16:52:52] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.TerminalTweaker
+[16:52:52] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[16:52:53] [main/INFO]: Setting user: Player417
+[16:52:55] [Client thread/INFO]: LWJGL Version: 2.9.1
+[16:52:56] [Client thread/INFO] [STDOUT]: [cpw.mods.fml.client.SplashProgress:start:188]: ---- Minecraft Crash Report ----
+// Shall we play a game?
 
-BUILD SUCCESSFUL
+Time: 27.05.21 16:52
+Description: Loading screen debug info
 
-Total time: 3.369 secs
+This is just a prompt for computer specs to be printed. THIS IS NOT A ERROR
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_271, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 264273640 bytes (252 MB) / 298844160 bytes (285 MB) up to 5710020608 bytes (5445 MB)
+	JVM Flags: 0 total; 
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 461.09' Renderer: 'GeForce GTX 1060 6GB/PCIe/SSE2'
+[16:52:56] [Client thread/INFO] [MinecraftForge]: Attempting early MinecraftForge initialization
+[16:52:56] [Client thread/INFO] [FML]: MinecraftForge v10.13.4.1614 Initialized
+[16:52:56] [Client thread/INFO] [FML]: Replaced 183 ore recipies
+[16:52:56] [Client thread/INFO] [MinecraftForge]: Completed early MinecraftForge initialization
+[16:52:56] [Client thread/INFO] [FML]: Found 0 mods from the command line. Injecting into mod discoverer
+[16:52:56] [Client thread/INFO] [FML]: Searching E:\Mellenium\Mods\MelAds\eclipse\mods for mods
+[16:52:56] [Client thread/INFO] [FML]: Also searching E:\Mellenium\Mods\MelAds\eclipse\mods\1.7.10 for mods
+[16:53:02] [Client thread/INFO] [FML]: Forge Mod Loader has identified 8 mods to load
+[16:53:02] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, Baubles, BrandonsCore, DraconicEvolution, Thaumcraft, melads] at CLIENT
+[16:53:02] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, Baubles, BrandonsCore, DraconicEvolution, Thaumcraft, melads] at SERVER
+[16:53:02] [Client thread/INFO] [Brandon's Core]: Hello Minecraft!!!
+[16:53:02] [Client thread/INFO] [Draconic Evolution]: Hello Minecraft!!!
+[16:53:03] [Client thread/INFO] [Draconic Evolution]: Hello Minecraft!!!
+[16:53:03] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Baubles, FMLFileResourcePack:Brandon's Core, FMLFileResourcePack:Draconic Evolution, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:Mellenium Addons
+[16:53:03] [Client thread/INFO] [FML]: Processing ObjectHolder annotations
+[16:53:03] [Client thread/INFO] [FML]: Found 341 ObjectHolder annotations
+[16:53:03] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotations
+[16:53:03] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotations
+[16:53:03] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0
+[16:53:03] [Client thread/INFO] [Draconic Evolution]: Finished PreInitialization
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:815)
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:768)
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:717)
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:689)
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at net.minecraftforge.common.ForgeVersion$1.run(ForgeVersion.java:94)
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:183)
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	at com.google.gson.Gson.fromJson(Gson.java:803)
+[16:53:03] [Forge Version Check/INFO] [STDERR]: [java.lang.Throwable$WrappedPrintStream:println:749]: 	... 4 more
+[16:53:05] [Client thread/INFO] [Draconic Evolution]: Finished PreInitialization
+[16:53:05] [Client thread/INFO] [FML]: Applying holder lookups
+[16:53:05] [Client thread/INFO] [FML]: Holder lookups applied
+[16:53:05] [Client thread/INFO] [FML]: Injecting itemstacks
+[16:53:05] [Client thread/INFO] [FML]: Itemstack injection complete
+[16:53:05] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[16:53:05] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
+[16:53:05] [Thread-10/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
+[16:53:05] [Thread-10/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[16:53:05] [Thread-10/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
+[16:53:05] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[16:53:05] [Sound Library Loader/INFO]: Sound engine started
+[16:53:06] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[16:53:06] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[16:53:06] [Client thread/INFO] [Draconic Evolution]: Iron Chests was not detected! using fallback chest recipe
+[16:53:06] [Client thread/INFO] [Draconic Evolution]: Finished Initialization
+[16:53:06] [Thread-12/INFO] [Draconic Evolution]: [Update Checker] Thread Started
+[16:53:07] [Thread-12/INFO] [Draconic Evolution]: [Update Checker] Thread Finished
+[16:53:07] [Client thread/INFO] [Draconic Evolution]: RS Added
+[16:53:07] [Client thread/INFO] [Draconic Evolution]: Finished Initialization
+[16:53:07] [Client thread/INFO] [Draconic Evolution]: RS Added
+[16:53:07] [Client thread/INFO] [FML]: Injecting itemstacks
+[16:53:07] [Client thread/INFO] [FML]: Itemstack injection complete
+[16:53:07] [Client thread/INFO] [Draconic Evolution]: Finished PostInitialization
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Found potion array with a size of 32
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Extending Potion.potionTypes array to 40
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Initializing PotionFluxTaint with id 31
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Initializing PotionVisExhaust with id 32
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Initializing PotionInfectiousVisExhaust with id 33
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Initializing PotionUnnaturalHunger with id 34
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Initializing PotionWarpWard with id 35
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Initializing PotionDeathGaze with id 36
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Initializing PotionBlurredVision with id 37
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Initializing PotionSunScorned with id 38
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Initializing PotionThaumarhia with id 39
+[16:53:07] [Client thread/INFO] [THAUMCRAFT]: Adding entities to MFR safari net blacklist.
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Zombie] to spawn champion mobs at level [0]
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Spider] to spawn champion mobs at level [0]
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Blaze] to spawn champion mobs at level [0]
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Enderman] to spawn champion mobs at level [0]
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Skeleton] to spawn champion mobs at level [0]
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Witch] to spawn champion mobs at level [1]
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Thaumcraft.EldritchCrab] to spawn champion mobs at level [0]
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Thaumcraft.Taintacle] to spawn champion mobs at level [2]
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Thaumcraft.Wisp] to spawn champion mobs at level [1]
+[16:53:07] [Client thread/WARN] [THAUMCRAFT]: Whitelisting [Thaumcraft.InhabitedZombie] to spawn champion mobs at level [3]
+[16:53:07] [Client thread/INFO] [Draconic Evolution]: Finished PostInitialization
+[16:53:07] [Client thread/INFO] [FML]:   Unknown recipe class! com.brandon3055.draconicevolution.common.utills.ShapedOreEnergyRecipe Modder please refer to net.minecraftforge.oredict.RecipeSorter
+[16:53:07] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 8 mods
+[16:53:07] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Baubles, FMLFileResourcePack:Brandon's Core, FMLFileResourcePack:Draconic Evolution, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:Mellenium Addons, resources, resources
+[16:53:08] [Client thread/INFO]: Created: 512x512 textures/blocks-atlas
+[16:53:08] [Client thread/INFO]: Created: 512x512 textures/items-atlas
+[16:53:08] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[16:53:08] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
+[16:53:08] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
+[16:53:08] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[16:53:08] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[16:53:08] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
+[16:53:09] [Thread-13/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
+[16:53:09] [Thread-13/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[16:53:09] [Thread-13/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
+[16:53:09] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[16:53:09] [Sound Library Loader/INFO]: Sound engine started
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]: The following texture errors were found.
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]: ==================================================
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]:   DOMAIN draconicevolution
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]: --------------------------------------------------
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]:   domain draconicevolution is missing 1 texture
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]:     domain draconicevolution has 3 locations:
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]:       mod DraconicEvolution resources at E:\Mellenium\Mods\MelAds\libs\Draconic-Evolution-1.7.10-1.0.2h-client-deobf.jar
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]:       resource pack at path E:\Mellenium\Mods\MelAds\eclipse\config\draconicevolution\resources
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]:       resource pack at path E:\Mellenium\Mods\MelAds\eclipse\config\draconicevolution\resources
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]: -------------------------
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]:     The missing resources for domain draconicevolution are:
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]:       textures/items/chaosFragment.png
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]: -------------------------
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]:     No other errors exist for domain draconicevolution
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]: ==================================================
+[16:53:09] [Client thread/ERROR] [TEXTURE ERRORS]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[16:53:14] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[16:53:14] [Server thread/INFO]: Generating keypair
+[16:53:14] [Server thread/INFO] [FML]: Injecting existing block and item data into this server instance
+[16:53:14] [Server thread/INFO] [FML]: Applying holder lookups
+[16:53:14] [Server thread/INFO] [FML]: Holder lookups applied
+[16:53:14] [Server thread/INFO] [FML]: Loading dimension 0 (New World) (net.minecraft.server.integrated.IntegratedServer@7d197ad4)
+[16:53:14] [Server thread/INFO] [FML]: Loading dimension -42 (New World) (net.minecraft.server.integrated.IntegratedServer@7d197ad4)
+[16:53:14] [Server thread/INFO] [FML]: Loading dimension 1 (New World) (net.minecraft.server.integrated.IntegratedServer@7d197ad4)
+[16:53:14] [Server thread/INFO] [FML]: Loading dimension -1 (New World) (net.minecraft.server.integrated.IntegratedServer@7d197ad4)
+[16:53:14] [Server thread/INFO]: Preparing start region for level 0
+[16:53:15] [Server thread/INFO]: Changing view distance to 12, from 10
+[16:53:15] [Netty Client IO #0/INFO] [FML]: Server protocol version 2
+[16:53:15] [Netty IO #1/INFO] [FML]: Client protocol version 2
+[16:53:15] [Netty IO #1/INFO] [FML]: Client attempting to join with 8 mods : Thaumcraft@4.2.3.5,FML@7.10.99.99,DraconicEvolution@1.0.2h,Forge@10.13.4.1614,mcp@9.05,Baubles@1.0.1.10,BrandonsCore@1.0.0.12,melads@1.0
+[16:53:15] [Netty IO #1/INFO] [FML]: Attempting connection with missing mods [] at CLIENT
+[16:53:15] [Netty Client IO #0/INFO] [FML]: Attempting connection with missing mods [] at SERVER
+[16:53:15] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
+[16:53:15] [Client thread/INFO] [FML]: [Client thread] Client side modded connection established
+[16:53:16] [Server thread/WARN] [Baubles]: Data not found for Player417. Trying to load backup data.
+[16:53:16] [Server thread/WARN] [THAUMCRAFT]: Thaumcraft data not found for Player417. Trying to load backup Thaumcraft data.
+[16:53:16] [Server thread/INFO] [THAUMCRAFT]: Assigning initial aspects to Player417
+[16:53:16] [Server thread/INFO]: Player417[local:E:cea3a623] logged in with entity id 260 at (-95.57323334381701, 72.99227113445887, 235.39417992814916)
+[16:53:16] [Server thread/INFO]: Player417 joined the game
+[16:53:16] [Client thread/INFO] [THAUMCRAFT]: Client received server config settings.
+[16:53:16] [Client thread/INFO] [THAUMCRAFT]: CHEAT_SHEET[false], WARDED_STONE[true], MIRRORS[true], HARD_NODES[true], WUSS_MODE[false], RESEARCH_DIFFICULTY[0], ASPECT_TOTAL_CAP[100
+[16:53:16] [Client thread/WARN] [FML]: =============================================================
+[16:53:16] [Client thread/WARN] [FML]: MOD HAS DIRECT REFERENCE System.exit() THIS IS NOT ALLOWED REROUTING TO FML!
+[16:53:16] [Client thread/WARN] [FML]: Offendor: truetyper/TrueTypeFont.loadImage(Ljava/awt/image/BufferedImage;)I
+[16:53:16] [Client thread/WARN] [FML]: Use FMLCommonHandler.exitJava instead
+[16:53:16] [Client thread/WARN] [FML]: =============================================================
+[16:53:17] [Client thread/INFO] [STDOUT]: [truetyper.TrueTypeFont:<init>:94]: TrueTypeFont loaded: java.awt.Font[family=Arial,name=Arial,style=plain,size=12] - AntiAlias = true
+[16:53:17] [Client thread/INFO] [Draconic Evolution]: Requesting speed packet from server
+[16:53:17] [Client thread/INFO] [Draconic Evolution]: Server speed is set to 10.0
+[16:53:17] [Client thread/INFO] [STDOUT]: [com.Mellenium.Addons.client.gui.GuiBooks:initGui:48]: GuiBooks initGUI()
+[16:53:17] [Client thread/INFO]: [CHAT] §cДанный предмет не ваш.
+[16:53:18] [Server thread/INFO]: Stopping server
+[16:53:18] [Server thread/INFO]: Saving players
+[16:53:18] [Server thread/INFO]: Saving worlds
+[16:53:18] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[16:53:18] [Netty Client IO #0/INFO] [THAUMCRAFT]: Restoring client configs.
+[16:53:18] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[16:53:18] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[16:53:18] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
+[16:53:18] [Server thread/INFO] [FML]: Unloading dimension 0
+[16:53:18] [Server thread/INFO] [FML]: Unloading dimension -1
+[16:53:18] [Server thread/INFO] [FML]: Unloading dimension 1
+[16:53:18] [Server thread/INFO] [FML]: Unloading dimension -42
+[16:53:18] [Server thread/INFO] [FML]: Applying holder lookups
+[16:53:18] [Server thread/INFO] [FML]: Holder lookups applied
+[16:53:18] [Client thread/FATAL]: Reported exception thrown!
+net.minecraft.util.ReportedException: Rendering screen
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1168) ~[EntityRenderer.class:?]
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067) ~[Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:164) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_271]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_271]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_271]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_271]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source) [start/:?]
+	at GradleStart.main(Unknown Source) [start/:?]
+Caused by: java.lang.ArrayIndexOutOfBoundsException: -1
+	at com.Mellenium.Addons.client.font.FontRendererElph.getCharWidth(FontRendererElph.java:358) ~[FontRendererElph.class:?]
+	at net.minecraft.client.gui.FontRenderer.sizeStringToWidth(FontRenderer.java:880) ~[FontRenderer.class:?]
+	at net.minecraft.client.gui.FontRenderer.wrapFormattedStringToWidth(FontRenderer.java:822) ~[FontRenderer.class:?]
+	at net.minecraft.client.gui.FontRenderer.listFormattedStringToWidth(FontRenderer.java:814) ~[FontRenderer.class:?]
+	at net.minecraft.client.gui.FontRenderer.renderSplitString(FontRenderer.java:766) ~[FontRenderer.class:?]
+	at net.minecraft.client.gui.FontRenderer.drawSplitString(FontRenderer.java:757) ~[FontRenderer.class:?]
+	at com.Mellenium.Addons.client.gui.GuiBooks.drawScreen(GuiBooks.java:98) ~[GuiBooks.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1137) ~[EntityRenderer.class:?]
+	... 11 more
+[16:53:18] [Client thread/INFO] [STDOUT]: [net.minecraft.client.Minecraft:displayCrashReport:388]: ---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 27.05.21 16:53
+Description: Rendering screen
+
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at com.Mellenium.Addons.client.font.FontRendererElph.getCharWidth(FontRendererElph.java:358)
+	at net.minecraft.client.gui.FontRenderer.sizeStringToWidth(FontRenderer.java:880)
+	at net.minecraft.client.gui.FontRenderer.wrapFormattedStringToWidth(FontRenderer.java:822)
+	at net.minecraft.client.gui.FontRenderer.listFormattedStringToWidth(FontRenderer.java:814)
+	at net.minecraft.client.gui.FontRenderer.renderSplitString(FontRenderer.java:766)
+	at net.minecraft.client.gui.FontRenderer.drawSplitString(FontRenderer.java:757)
+	at com.Mellenium.Addons.client.gui.GuiBooks.drawScreen(GuiBooks.java:98)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1137)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at com.Mellenium.Addons.client.font.FontRendererElph.getCharWidth(FontRendererElph.java:358)
+	at net.minecraft.client.gui.FontRenderer.sizeStringToWidth(FontRenderer.java:880)
+	at net.minecraft.client.gui.FontRenderer.wrapFormattedStringToWidth(FontRenderer.java:822)
+	at net.minecraft.client.gui.FontRenderer.listFormattedStringToWidth(FontRenderer.java:814)
+	at net.minecraft.client.gui.FontRenderer.renderSplitString(FontRenderer.java:766)
+	at net.minecraft.client.gui.FontRenderer.drawSplitString(FontRenderer.java:757)
+	at com.Mellenium.Addons.client.gui.GuiBooks.drawScreen(GuiBooks.java:98)
+
+-- Screen render details --
+Details:
+	Screen name: com.Mellenium.Addons.client.gui.GuiBooks
+	Mouse location: Scaled: (213, 119). Absolute: (427, 240)
+	Screen size: Scaled: (427, 240). Absolute: (854, 480). Scale factor of 2
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player417'/260, l='MpServer', x=-95,57, y=74,61, z=235,39]]
+	Chunk stats: MultiplayerChunkCache: 170, 170
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-142,64,283), Chunk: (at 2,4,11 in -9,17; contains blocks -144,0,272 to -129,255,287), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 95638 game time, 95638 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 107 total; [EntityClientPlayerMP['Player417'/260, l='MpServer', x=-95,57, y=74,61, z=235,39], EntityZombie['Zombie'/315, l='MpServer', x=-142,50, y=15,00, z=241,50], EntityZombie['Zombie'/323, l='MpServer', x=-63,66, y=48,00, z=273,34], EntityZombie['Zombie'/102, l='MpServer', x=-162,41, y=14,00, z=199,28], EntityCreeper['Creeper'/103, l='MpServer', x=-163,00, y=64,00, z=202,56], EntityZombie['Zombie'/104, l='MpServer', x=-171,50, y=17,00, z=221,44], EntitySpider['Spider'/105, l='MpServer', x=-175,50, y=17,00, z=218,50], EntitySkeleton['Skeleton'/106, l='MpServer', x=-175,50, y=32,00, z=220,50], EntitySheep['Sheep'/107, l='MpServer', x=-170,69, y=63,00, z=209,81], EntityCreeper['Creeper'/108, l='MpServer', x=-171,50, y=63,00, z=208,50], EntitySkeleton['Skeleton'/109, l='MpServer', x=-171,50, y=19,00, z=235,50], EntityZombie['Zombie'/110, l='MpServer', x=-175,50, y=19,00, z=236,50], EntitySkeleton['Skeleton'/111, l='MpServer', x=-160,50, y=47,00, z=243,50], EntitySkeleton['Skeleton'/112, l='MpServer', x=-169,50, y=49,00, z=274,50], EntityBat['Bat'/114, l='MpServer', x=-150,94, y=33,44, z=169,50], EntityCreeper['Creeper'/115, l='MpServer', x=-150,50, y=45,00, z=180,50], EntityBat['Bat'/116, l='MpServer', x=-155,60, y=37,70, z=206,58], EntitySheep['Sheep'/117, l='MpServer', x=-144,22, y=72,00, z=205,28], EntityBat['Bat'/118, l='MpServer', x=-158,66, y=16,00, z=222,32], EntityHorse['Horse'/119, l='MpServer', x=-154,53, y=67,00, z=239,66], EntitySheep['Sheep'/120, l='MpServer', x=-144,59, y=72,00, z=224,81], EntityCreeper['Creeper'/121, l='MpServer', x=-159,25, y=47,00, z=241,94], EntityBat['Bat'/122, l='MpServer', x=-145,51, y=39,78, z=257,40], EntityCreeper['Creeper'/123, l='MpServer', x=-146,03, y=41,00, z=269,31], EntitySkeleton['Skeleton'/124, l='MpServer', x=-152,69, y=37,00, z=263,38], EntityBat['Bat'/125, l='MpServer', x=-144,08, y=41,70, z=270,67], EntityZombie['Zombie'/126, l='MpServer', x=-145,53, y=65,00, z=304,91], EntityZombie['Zombie'/130, l='MpServer', x=-135,50, y=20,00, z=187,50], EntityZombie['Zombie'/131, l='MpServer', x=-133,50, y=64,00, z=194,50], EntityBat['Bat'/132, l='MpServer', x=-135,75, y=29,10, z=221,31], EntityCreeper['Creeper'/133, l='MpServer', x=-140,50, y=18,00, z=221,50], EntityBat['Bat'/134, l='MpServer', x=-143,41, y=22,64, z=214,59], EntitySheep['Sheep'/135, l='MpServer', x=-138,84, y=71,00, z=215,84], EntityBat['Bat'/136, l='MpServer', x=-134,75, y=34,10, z=232,94], EntityZombie['Zombie'/137, l='MpServer', x=-136,50, y=35,00, z=239,50], EntityCreeper['Creeper'/138, l='MpServer', x=-130,50, y=35,00, z=251,50], EntityCreeper['Creeper'/139, l='MpServer', x=-128,00, y=69,00, z=241,41], EntityBat['Bat'/140, l='MpServer', x=-138,52, y=26,00, z=271,75], EntityBat['Bat'/141, l='MpServer', x=-135,31, y=28,24, z=272,38], EntityCreeper['Creeper'/142, l='MpServer', x=-132,50, y=44,00, z=272,50], EntityCreeper['Creeper'/143, l='MpServer', x=-138,70, y=39,65, z=275,80], EntityCreeper['Creeper'/144, l='MpServer', x=-128,72, y=37,00, z=273,09], EntityHorse['Horse'/152, l='MpServer', x=-122,91, y=67,00, z=195,91], EntityHorse['Horse'/153, l='MpServer', x=-120,59, y=69,00, z=215,00], EntityHorse['Horse'/154, l='MpServer', x=-122,34, y=70,00, z=211,13], EntityCreeper['Creeper'/155, l='MpServer', x=-125,09, y=70,00, z=212,69], EntityZombie['Zombie'/156, l='MpServer', x=-126,50, y=15,00, z=233,50], EntityHorse['Horse'/157, l='MpServer', x=-127,91, y=70,00, z=233,00], EntityZombie['Zombie'/158, l='MpServer', x=-112,50, y=36,00, z=280,50], EntityZombie['Zombie'/162, l='MpServer', x=-111,50, y=53,00, z=188,50], EntityBat['Bat'/163, l='MpServer', x=-108,60, y=52,77, z=189,54], EntityHorse['Horse'/164, l='MpServer', x=-102,25, y=69,00, z=184,28], EntityHorse['Horse'/165, l='MpServer', x=-108,72, y=66,00, z=186,28], EntityHorse['Horse'/166, l='MpServer', x=-106,84, y=64,00, z=179,03], EntityHorse['Horse'/167, l='MpServer', x=-96,16, y=64,00, z=177,03], EntityHorse['Horse'/168, l='MpServer', x=-105,91, y=69,00, z=204,22], EntityHorse['Horse'/169, l='MpServer', x=-98,94, y=68,00, z=203,72], EntityHorse['Horse'/170, l='MpServer', x=-97,06, y=68,00, z=211,00], EntityHorse['Horse'/171, l='MpServer', x=-100,97, y=64,00, z=233,16], EntitySkeleton['Skeleton'/172, l='MpServer', x=-108,22, y=68,00, z=256,66], EntityHorse['Horse'/173, l='MpServer', x=-106,06, y=69,00, z=290,16], EntityHorse['Horse'/174, l='MpServer', x=-97,22, y=69,00, z=294,06], EntityHorse['Horse'/177, l='MpServer', x=-85,97, y=63,00, z=178,97], EntityHorse['Horse'/178, l='MpServer', x=-94,88, y=69,00, z=189,34], EntityHorse['Horse'/179, l='MpServer', x=-83,00, y=65,00, z=184,00], EntityHorse['Horse'/180, l='MpServer', x=-95,44, y=68,00, z=201,72], EntityHorse['Horse'/181, l='MpServer', x=-96,50, y=68,00, z=198,88], EntityHorse['Horse'/182, l='MpServer', x=-91,06, y=68,00, z=201,88], EntityHorse['Horse'/183, l='MpServer', x=-83,44, y=65,00, z=223,25], EntitySkeleton['Skeleton'/184, l='MpServer', x=-89,16, y=65,00, z=246,50], EntityPig['Pig'/185, l='MpServer', x=-84,38, y=69,00, z=290,16], EntityPig['Pig'/186, l='MpServer', x=-84,19, y=70,00, z=314,13], EntityHorse['Horse'/190, l='MpServer', x=-69,72, y=68,00, z=216,50], EntitySkeleton['Skeleton'/191, l='MpServer', x=-79,94, y=65,00, z=245,47], EntityZombie['Zombie'/192, l='MpServer', x=-78,50, y=47,00, z=266,50], EntityHorse['Horse'/193, l='MpServer', x=-59,78, y=68,00, z=219,00], EntityWitch['Witch'/194, l='MpServer', x=-49,50, y=32,00, z=247,50], EntityBat['Bat'/195, l='MpServer', x=-47,07, y=36,10, z=259,67], EntityBrainyZombie['Angry Zombie'/196, l='MpServer', x=-58,72, y=70,00, z=288,00], EntityCreeper['Creeper'/197, l='MpServer', x=-57,50, y=70,00, z=287,50], EntityCreeper['Creeper'/198, l='MpServer', x=-57,50, y=37,00, z=294,50], EntityCreeper['Creeper'/199, l='MpServer', x=-57,50, y=37,00, z=296,50], EntityHorse['Horse'/200, l='MpServer', x=-62,88, y=71,00, z=301,97], EntityHorse['Horse'/201, l='MpServer', x=-58,09, y=71,00, z=312,41], EntityHorse['Horse'/204, l='MpServer', x=-33,00, y=67,00, z=211,34], EntityHorse['Horse'/205, l='MpServer', x=-45,97, y=66,00, z=213,03], EntityCreeper['Creeper'/206, l='MpServer', x=-36,50, y=24,00, z=233,50], EntityHorse['Horse'/207, l='MpServer', x=-37,47, y=68,00, z=235,00], EntityHorse['Horse'/208, l='MpServer', x=-35,03, y=68,00, z=226,63], EntityHorse['Horse'/209, l='MpServer', x=-32,88, y=70,00, z=239,00], EntitySkeleton['Skeleton'/210, l='MpServer', x=-42,50, y=20,00, z=240,50], EntitySkeleton['Skeleton'/211, l='MpServer', x=-45,50, y=42,00, z=242,50], EntityHorse['Horse'/212, l='MpServer', x=-37,78, y=72,00, z=261,00], EntityHorse['Horse'/213, l='MpServer', x=-39,16, y=71,00, z=285,34], EntityHorse['Horse'/214, l='MpServer', x=-26,97, y=68,00, z=222,16], EntityBat['Bat'/215, l='MpServer', x=-24,25, y=21,07, z=232,14], EntityHorse['Horse'/216, l='MpServer', x=-31,94, y=68,00, z=230,91], EntitySheep['Sheep'/217, l='MpServer', x=-28,59, y=70,00, z=239,13], EntityHorse['Horse'/218, l='MpServer', x=-26,88, y=74,00, z=270,25], EntityHorse['Horse'/219, l='MpServer', x=-19,75, y=74,00, z=266,63], EntityZombie['Zombie'/220, l='MpServer', x=-20,25, y=74,00, z=256,88], EntityHorse['Horse'/221, l='MpServer', x=-27,34, y=74,00, z=275,13], EntitySpider['Spider'/222, l='MpServer', x=-23,06, y=12,00, z=311,81], EntitySkeleton['Skeleton'/223, l='MpServer', x=-27,13, y=13,00, z=311,44], EntityZombie['Zombie'/225, l='MpServer', x=-23,50, y=12,00, z=313,50], EntityZombie['Zombie'/226, l='MpServer', x=-24,50, y=12,00, z=314,50], EntityCreeper['Creeper'/227, l='MpServer', x=-21,78, y=12,00, z=310,63]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2566)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:984)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_271, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 514248640 bytes (490 MB) / 1000865792 bytes (954 MB) up to 5710020608 bytes (5445 MB)
+	JVM Flags: 0 total; 
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 8 mods loaded, 8 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10-deobf.jar) 
+	UCHIJAAAA	BrandonsCore{1.0.0.12} [Brandon's Core] (BrandonsCore-1.0.0.12-deobf.jar) 
+	UCHIJAAAA	DraconicEvolution{1.0.2h} [Draconic Evolution] (Draconic-Evolution-1.7.10-1.0.2h-client-deobf.jar) 
+	UCHIJAAAA	Thaumcraft{4.2.3.5} [Thaumcraft] (Thaumcraft-deobf-1.7.10-4.2.3.5.jar) 
+	UCHIJAAAA	melads{1.0} [Mellenium Addons] (melads-1.0.jar) 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 461.09' Renderer: 'GeForce GTX 1060 6GB/PCIe/SSE2'
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: GeForce GTX 1060 6GB/PCIe/SSE2 GL version 4.6.0 NVIDIA 461.09, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)
+[16:53:18] [Client thread/INFO] [STDOUT]: [net.minecraft.client.Minecraft:displayCrashReport:398]: #@!@# Game crashed! Crash report saved to: #@!@# E:\Mellenium\Mods\MelAds\eclipse\.\crash-reports\crash-2021-05-27_16.53.18-client.txt
+AL lib: (EE) alc_cleanup: 1 device not closed
+:runClient FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':runClient'.
+> Process 'command 'C:\Program Files\Java\jdk1.8.0_271\bin\java.exe'' finished with non-zero exit value -1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 42.186 secs

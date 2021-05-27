@@ -1,4 +1,5 @@
 package com.Mellenium.Addons.common.items.books;
+
 import com.Mellenium.Addons.MelleniumAddons;
 import com.Mellenium.Addons.client.gui.GuiHandlerMel;
 import com.Mellenium.Addons.common.ModItems;
@@ -9,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class BookOfTerra extends BookBase {
-
     public BookOfTerra() {
         super();
         this.setMaxStackSize(1);

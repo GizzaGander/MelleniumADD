@@ -1,9 +1,11 @@
 package com.Mellenium.Addons.client.gui;
 
+import com.Mellenium.Addons.client.font.FontRendererElph;
 import com.brandon3055.draconicevolution.common.lib.References2;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -12,6 +14,8 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
 public class GuiBooks extends GuiScreen {
+
+    private final FontRenderer fontRenderer2;
     private final int bookImageHeight = 181;
     private final int bookImageWidth = 256;
     private int currPage = 0;
@@ -24,11 +28,12 @@ public class GuiBooks extends GuiScreen {
 
     public GuiBooks()
     {
+        fontRenderer2 = new FontRendererElph(Minecraft.getMinecraft().gameSettings, new ResourceLocation(References2.MODID+":textures/font/ascii_elf.png"), Minecraft.getMinecraft().renderEngine, false);
         bookPageTextures[0] = new ResourceLocation(
                 References2.MODID+":textures/gui/book.png");
         bookPageTextures[1] = new ResourceLocation(
                 References2.MODID+":textures/gui/book.png");
-        stringPageText[0]="The Mysterious Stranger admired your family cow and asked if it was for sale.\n\nWhen you nodded, he offered to trade some Magic Beans, that (if planted in tilled dirt) would lead to more wealth than you could imagine.";
+        stringPageText[0]="Привет Андрей";
         stringPageText[1]="So you handed him your cow, and grabbed the Magic Beans.\n\nPleased with yourself, you hurried away, looking for tilled dirt in which to plant the Magic Beans.\n\nYou couldn't wait to see how proud your mother would be for";
         stringPageText[2]="being so shrewd!  Untold wealth in return for an old, milkless cow; what a good deal you made!\n\nSo off you went, looking for a place to plant the Magic Beans with room to grow...";
     }
@@ -43,13 +48,11 @@ public class GuiBooks extends GuiScreen {
         System.out.println("GuiBooks initGUI()");
         buttonList.clear();
         Keyboard.enableRepeatEvents(true);
-
-        buttonDone = new GuiButton(0, width / 2 + 2, bookImageHeight - 16,
-                98, 20, I18n.format("gui.done", new Object[0]));
-
-        buttonList.add(buttonDone);
         int offsetFromScreenLeft = (width - bookImageWidth) / 2;
         int offsetFromScreenUp = (height - bookImageHeight) / 2;
+        buttonDone = new GuiButton(0, offsetFromScreenLeft + 162, offsetFromScreenUp+155,
+                50, 12, I18n.format("gui.done", new Object[0]));
+        buttonList.add(buttonDone);
         buttonList.add(buttonNextPage = new NextPageButton(1,
                 offsetFromScreenLeft + 226, offsetFromScreenUp + 156, true));
         buttonList.add(buttonPreviousPage = new NextPageButton(2,
@@ -87,20 +90,19 @@ public class GuiBooks extends GuiScreen {
         drawTexturedModalRect(offsetFromScreenLeft, offsetFromScreenUp, 0, 0, bookImageWidth,
                 bookImageHeight);
         int widthOfString;
-        String stringPageIndicator = I18n.format("book.pageIndicator",
-                new Object[] {Integer.valueOf(currPage + 1), bookTotalPages});
+        String stringPageIndicator = I18n.format("book.pageIndicator", Integer.valueOf(currPage + 1), bookTotalPages);
         widthOfString = fontRendererObj.getStringWidth(stringPageIndicator);
         fontRendererObj.drawString(stringPageIndicator,
                 offsetFromScreenLeft - widthOfString + bookImageWidth - 132,
                 offsetFromScreenUp + bookImageHeight - 15, 0);
-        fontRendererObj.drawSplitString(stringPageText[currPage],
+        fontRenderer2.drawSplitString(stringPageText[currPage],
                 offsetFromScreenLeft + 18, offsetFromScreenUp + 7, 104, 0);
         try {
-            fontRendererObj.drawSplitString(stringPageText[currPage + 1],
+            fontRenderer2.drawSplitString(stringPageText[currPage + 1],
                     offsetFromScreenLeft + 138, offsetFromScreenUp + 7, 104, 0);
         }
         catch (NullPointerException | ArrayIndexOutOfBoundsException e){
-            fontRendererObj.drawSplitString(stringPageText[currPage],
+            fontRenderer2.drawSplitString(stringPageText[currPage],
                     offsetFromScreenLeft + 18, offsetFromScreenUp + 7, 104, 0);
         }
         super.drawScreen(parWidth, parHeight, p_73863_3_);
@@ -198,6 +200,7 @@ public class GuiBooks extends GuiScreen {
                 if (isButtonPressed)
                 {
                     textureX += 0;
+                    textureY -= 1;
                 }
 
                 if (!isNextButton)
