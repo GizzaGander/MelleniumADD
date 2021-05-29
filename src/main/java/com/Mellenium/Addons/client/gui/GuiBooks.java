@@ -90,7 +90,7 @@ public class GuiBooks extends GuiScreen {
         drawTexturedModalRect(offsetFromScreenLeft, offsetFromScreenUp, 0, 0, bookImageWidth,
                 bookImageHeight);
         int widthOfString;
-        String stringPageIndicator = I18n.format("book.pageIndicator", Integer.valueOf(currPage + 1), bookTotalPages);
+        String stringPageIndicator = I18n.format("book.pageIndicator", Math.round(Math.ceil(currPage/2) + 1), (int)(Math.ceil(bookTotalPages/2f)));
         widthOfString = fontRendererObj.getStringWidth(stringPageIndicator);
         fontRendererObj.drawString(stringPageIndicator,
                 offsetFromScreenLeft - widthOfString + bookImageWidth - 132,
@@ -134,14 +134,14 @@ public class GuiBooks extends GuiScreen {
         {
             if (currPage < bookTotalPages - 1)
             {
-                ++currPage;
+                currPage+=2;
             }
         }
         else if (parButton == buttonPreviousPage)
         {
             if (currPage > 0)
             {
-                --currPage;
+                currPage-=2;
             }
         }
     }
