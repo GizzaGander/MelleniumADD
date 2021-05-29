@@ -15,7 +15,7 @@ import org.lwjgl.opengl.GL11;
 
 public class GuiBooks extends GuiScreen {
 
-    private final FontRenderer fontRenderer2;
+    private FontRenderer fontRenderer2;
     private final int bookImageHeight = 181;
     private final int bookImageWidth = 256;
     private int currPage = 0;
@@ -26,9 +26,11 @@ public class GuiBooks extends GuiScreen {
     private NextPageButton buttonNextPage;
     private NextPageButton buttonPreviousPage;
 
-    public GuiBooks()
+    private boolean isDecripting;
+
+    public GuiBooks(boolean isDecripting)
     {
-        fontRenderer2 = new FontRendererElph(Minecraft.getMinecraft().gameSettings, new ResourceLocation(References2.MODID+":textures/font/ascii_elf.png"), Minecraft.getMinecraft().renderEngine, false);
+        this.isDecripting = isDecripting;
         bookPageTextures[0] = new ResourceLocation(
                 References2.MODID+":textures/gui/book.png");
         bookPageTextures[1] = new ResourceLocation(
@@ -44,6 +46,11 @@ public class GuiBooks extends GuiScreen {
     @Override
     public void initGui()
     {
+        if(isDecripting) {
+            fontRenderer2 = new FontRendererElph(Minecraft.getMinecraft().gameSettings, new ResourceLocation(References2.MODID + ":textures/font/ascii_elf.png"), Minecraft.getMinecraft().renderEngine, false);
+        }else{
+            fontRenderer2 = fontRendererObj;
+        }
         // DEBUG
         System.out.println("GuiBooks initGUI()");
         buttonList.clear();

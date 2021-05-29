@@ -19,7 +19,14 @@ public class BookOfTerra extends BookBase {
 
     @Override
     public ItemStack onItemRightClick(ItemStack p_77659_1_, World world, EntityPlayer player) {
-        FMLNetworkHandler.openGui(player, MelleniumAddons.instance, GuiHandlerMel.GUIID_BOOKS, world, (int) player.posX, (int) player.posY, (int) player.posZ);
+        FMLNetworkHandler.openGui(player, MelleniumAddons.instance, GuiHandlerMel.GUIID_BOOKS, world, isDecripted(p_77659_1_) ? 0 : 1, (int) player.posY, (int) player.posZ);
         return super.onItemRightClick(p_77659_1_, world, player);
     }
+
+    private final static String TAG_DECRYPTED = "isDecripted";
+
+    public static boolean isDecripted(ItemStack stack){
+        return stack.getTagCompound().getBoolean(TAG_DECRYPTED);
+    }
+
 }

@@ -42,7 +42,7 @@ public class GuiHandlerMel implements IGuiHandler {
                 }
                 break;
             case GUIID_BOOKS:
-                    return new GuiBooks();
+                    return new GuiBooks(i1 != 0);
         }
         return null;
     }
