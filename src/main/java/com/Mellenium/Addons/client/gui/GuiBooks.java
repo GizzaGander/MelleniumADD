@@ -21,7 +21,7 @@ public class GuiBooks extends GuiScreen {
     private int currPage = 0;
     private static final int bookTotalPages = 3;
     private static ResourceLocation[] bookPageTextures = new ResourceLocation[bookTotalPages];
-    private static String[] stringPageText = new String[bookTotalPages];
+    private static String[] stringPageText = new String[bookTotalPages+2];
     private GuiButton buttonDone;
     private NextPageButton buttonNextPage;
     private NextPageButton buttonPreviousPage;
@@ -36,6 +36,8 @@ public class GuiBooks extends GuiScreen {
         stringPageText[0]="Привет Андрей";
         stringPageText[1]="So you handed him your cow, and grabbed the Magic Beans.\n\nPleased with yourself, you hurried away, looking for tilled dirt in which to plant the Magic Beans.\n\nYou couldn't wait to see how proud your mother would be for";
         stringPageText[2]="being so shrewd!  Untold wealth in return for an old, milkless cow; what a good deal you made!\n\nSo off you went, looking for a place to plant the Magic Beans with room to grow...";
+        stringPageText[3]="Если ты читаешь это то знай, это проверка на баги";
+        stringPageText[4]="Это окончательная\nпроверка на баги и\nесли это сработает\nвсё будет отлично)";
     }
 
     /**
@@ -65,8 +67,8 @@ public class GuiBooks extends GuiScreen {
     @Override
     public void updateScreen()
     {
-        buttonDone.visible = (currPage == bookTotalPages - 1);
-        buttonNextPage.visible = (currPage < bookTotalPages - 1);
+        buttonDone.visible = (currPage == bookTotalPages || currPage == bookTotalPages + 1);
+        buttonNextPage.visible = (currPage < bookTotalPages);
         buttonPreviousPage.visible = currPage > 0;
     }
 
@@ -90,7 +92,7 @@ public class GuiBooks extends GuiScreen {
         drawTexturedModalRect(offsetFromScreenLeft, offsetFromScreenUp, 0, 0, bookImageWidth,
                 bookImageHeight);
         int widthOfString;
-        String stringPageIndicator = I18n.format("book.pageIndicator", Math.round(Math.ceil(currPage/2) + 1), (int)(Math.ceil(bookTotalPages/2f)));
+        String stringPageIndicator = I18n.format("book.pageIndicator", Integer.valueOf((currPage+2)/2), bookTotalPages);
         widthOfString = fontRendererObj.getStringWidth(stringPageIndicator);
         fontRendererObj.drawString(stringPageIndicator,
                 offsetFromScreenLeft - widthOfString + bookImageWidth - 132,
@@ -106,7 +108,6 @@ public class GuiBooks extends GuiScreen {
                     offsetFromScreenLeft + 18, offsetFromScreenUp + 7, 104, 0);
         }
         super.drawScreen(parWidth, parHeight, p_73863_3_);
-
     }
 
     /**
@@ -132,16 +133,18 @@ public class GuiBooks extends GuiScreen {
         }
         else if (parButton == buttonNextPage)
         {
-            if (currPage < bookTotalPages - 1)
-            {
-                currPage+=2;
+            if (currPage < bookTotalPages) {
+                currPage++;
+                currPage++;
             }
+
         }
         else if (parButton == buttonPreviousPage)
         {
             if (currPage > 0)
             {
-                currPage-=2;
+                currPage--;
+                currPage--;
             }
         }
     }
